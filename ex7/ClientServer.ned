@@ -38,6 +38,9 @@ network ClientServer
 
         @display("bgb=232,193");
     types:
+        channel conn_internet_gw extends ThruputMeteringChannel
+        {
+        }
         channel conn_gw_bb extends ThruputMeteringChannel
         {
             datarate = 10Mbps;
@@ -56,10 +59,14 @@ network ClientServer
         }
 
     submodules:
+        internet: StandardHost {
+            gates:
+                pppg[1];
+        }
         gateway: Router {
             @display("p=215,79");
             gates:
-                pppg[5];
+                pppg[1+5];
         }
         backbone[num_bb]: Router {
             @display("p=145,110");
@@ -87,11 +94,14 @@ network ClientServer
             @display("p=184,142");
         }
     connections:
-		// note: connectin #0 is always the connection to the "higher up" router
+        // connect gateway to internet
+        internet.pppg[0] <--> conn_internet_gw <--> gateway.pppg[0];
+
+		// note: connection #0 is always the connection to the "higher up" router
 
         // connect backbones to gateway
         for i=0..(num_access-1) {
-            gateway.pppg[i] <--> conn_gw_bb <--> backbone[i].pppg[0];
+            gateway.pppg[i+1] <--> conn_gw_bb <--> backbone[i].pppg[0];
         }
 
         // connect backbones to access points
