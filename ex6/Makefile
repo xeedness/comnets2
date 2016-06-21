@@ -1,12 +1,12 @@
 #
-# OMNeT++/OMNEST Makefile for ex5
+# OMNeT++/OMNEST Makefile for ex6
 #
 # This file was generated with the command:
 #  opp_makemake -f --deep -O out -LC:/Users/xeedn/Documents/workspaces/uni/inet/out/$$\(CONFIGNAME\)/src -linet -DINET_IMPORT -KINET_PROJ=C:/Users/xeedn/Documents/workspaces/uni/inet
 #
 
 # Name of target to be created (-o option)
-TARGET = ex5$(EXE_SUFFIX)
+TARGET = ex6$(EXE_SUFFIX)
 
 # User interface (uncomment one) (-u option)
 USERIF_LIBS = $(ALL_ENV_LIBS) # that is, $(TKENV_LIBS) $(CMDENV_LIBS)
@@ -107,7 +107,7 @@ msgheaders: $(MSGFILES:.msg=_m.h)
 clean:
 	$(qecho) Cleaning...
 	$(Q)-rm -rf $O
-	$(Q)-rm -f ex5 ex5.exe libex5.so libex5.a libex5.dll libex5.dylib
+	$(Q)-rm -f ex6 ex6.exe libex6.so libex6.a libex6.dll libex6.dylib
 	$(Q)-rm -f ./*_m.cc ./*_m.h
 	$(Q)-rm -f results/*_m.cc results/*_m.h
 

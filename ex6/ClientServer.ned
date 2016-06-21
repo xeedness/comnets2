@@ -38,7 +38,7 @@ network ClientServer
             per = per;
         }
     submodules:
-        client1: StandardHost {
+        client: StandardHost {
             parameters:
                 @display("p=53,67;i=device/pc3");
         }
@@ -50,10 +50,10 @@ network ClientServer
             parameters:
                 @display("p=53,134");
         }
-        netAnimTrace: NetAnimTrace {
-            @display("p=184,142");
-        }
+        //netAnimTrace: NetAnimTrace {
+        //    @display("p=184,142");
+        //}
     connections:
-        client1.pppg++ <--> C <--> server.pppg++;
+        client.pppg++ <--> C <--> server.pppg++;
 }
 
