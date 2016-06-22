@@ -27,6 +27,9 @@ import inet.networklayer.autorouting.ipv4.FlatNetworkConfigurator;
 network CurrentNetwork
 {
     parameters:
+        int fileSize;   // in kB
+        volatile double delayTime @unit(s);   // delay between content requests
+
         double per = default(0);
         int num_conn_gw_bb = 5;
         int num_conn_bb_access = 5 * num_conn_gw_bb;
