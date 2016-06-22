@@ -27,9 +27,6 @@ import inet.networklayer.autorouting.ipv4.FlatNetworkConfigurator;
 network CurrentNetwork
 {
     parameters:
-        int fileSize;   // in kB
-        volatile double delayTime @unit(s);   // delay between content requests
-
         double per = default(0);
         int num_conn_gw_bb = 5;
         int num_conn_bb_access = 5 * num_conn_gw_bb;
@@ -69,7 +66,7 @@ network CurrentNetwork
         gateway: Router {
             @display("p=215,79");
             gates:
-                pppg[1+5];
+                pppg[1+num_bb];
         }
         backbone[num_bb]: Router {
             @display("p=145,110");
@@ -83,7 +80,7 @@ network CurrentNetwork
                 // 1 conn to backbone, 25 to users
                 pppg[26];
         }
-        user[num_user]: StandardHost {
+        user[num_users]: StandardHost {
             parameters:
                 @display("p=53,23;i=device/pc3");
             gates:
