@@ -28,18 +28,25 @@ network CurrentNetwork
 {
     parameters:
         double per = default(0);
-        int num_conn_gw_bb = 5;
-        int num_conn_bb_access = 5 * num_conn_gw_bb;
-        int num_conn_access_users = 25* num_conn_gw_bb;
+        int num_bb = 1;
+        int num_access_per_bb = 1;
+        int num_user_per_access = 1;
+        
+        int num_access = num_access_per_bb * num_bb;
+        int num_users = num_user_per_access * num_access;
+        
+        int num_conn_gw_bb = num_bb;
+        int num_conn_bb_access = num_access_per_bb * num_bb;
+        int num_conn_access_users = num_user_per_access * num_access;
 
-        int num_bb = 5;
-        int num_access = 5 * num_bb;
-        int num_users = 25* num_access;
+        
 
-        @display("bgb=232,193");
+        @display("bgb=576,407");
     types:
         channel conn_internet_gw extends ThruputMeteringChannel
         {
+            datarate = 100Mbps;
+            delay = 10ms;
         }
         channel conn_gw_bb extends ThruputMeteringChannel
         {
@@ -60,25 +67,26 @@ network CurrentNetwork
 
     submodules:
         internet: StandardHost {
+            @display("p=502,44");
             gates:
                 pppg[1];
         }
         gateway: Router {
-            @display("p=215,79");
+            @display("p=294,33");
             gates:
                 pppg[1+num_bb];
         }
         backbone[num_bb]: Router {
-            @display("p=145,110");
+            @display("p=396,110");
             gates:
                 // 1 conn to gateway, 5 to access
-                pppg[1 + num_conn_gw_bb];
+                pppg[1 + num_access_per_bb];
         }
         accesspoint[num_access]: Router {
-            @display("p=53,79");
+            @display("p=203,96");
             gates:
                 // 1 conn to backbone, 25 to users
-                pppg[26];
+                pppg[1 + num_user_per_access];
         }
         user[num_users]: StandardHost {
             parameters:
@@ -88,10 +96,10 @@ network CurrentNetwork
         }
         configurator: FlatNetworkConfigurator {
             parameters:
-                @display("p=53,134");
+                @display("p=404,339");
         }
         netAnimTrace: NetAnimTrace {
-            @display("p=184,142");
+            @display("p=502,346");
         }
     connections:
         // connect gateway to internet
@@ -114,7 +122,7 @@ network CurrentNetwork
 
         // connect access points to users
         for i=0..(num_users-1) {
-            accesspoint[i/num_access].pppg[(i % (num_access))+1] <--> conn_access_users <--> user[i].pppg[0];
-		}
+            accesspoint[i/num_user_per_access].pppg[(i % (num_user_per_access))+1] <--> conn_access_users <--> user[i].pppg[0];
+        }
 }
 
