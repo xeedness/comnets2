@@ -103,18 +103,21 @@ network CurrentNetwork
 		// note: connection #0 is always the connection to the "higher up" router
 
         // connect backbones to gateway
-        for i=0..(num_access-1) {
+        for i=0..(num_bb-1) {
             gateway.pppg[i+1] <--> conn_gw_bb <--> backbone[i].pppg[0];
         }
 
         // connect backbones to access points
         for i=0..(num_access-1) {
-            backbone[(i % num_bb)].pppg[((num_bb+1) % num_bb+1)] <--> conn_bb_access <--> accesspoint[i].pppg[0];
+            backbone[i/num_bb].pppg[(i % (num_conn_gw_bb))+1] <--> conn_bb_access <--> accesspoint[i].pppg[0];
         }
+
+//for i in range(num_access-1): print("backbone[%d].pppg[%d] <--> conn_bb_access <--> accesspoint[%d].pppg[0]" % ((i/5), ((i % num_conn_gw_bb)+1), i));
+
 
         // connect access points to users
         for i=0..(num_users-1) {
-            accesspoint[(i % num_access)].pppg[((num_access+1) % num_access+1)] <--> conn_access_users <--> user[i].pppg[0];
-        }
+            accesspoint[i/num_access].pppg[(i % (num_access))+1] <--> conn_access_users <--> user[i].pppg[0];
+		}
 }
 
