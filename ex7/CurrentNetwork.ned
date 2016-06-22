@@ -28,9 +28,9 @@ network CurrentNetwork
 {
     parameters:
         double per = default(0);
-        int num_bb = 1;
-        int num_access_per_bb = 1;
-        int num_user_per_access = 1;
+        int num_bb = 2;
+        int num_access_per_bb = 2;
+        int num_user_per_access = 2;
         
         int num_access = num_access_per_bb * num_bb;
         int num_users = num_user_per_access * num_access;
