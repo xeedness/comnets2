@@ -109,9 +109,6 @@ network CurrentNetwork
             backbone[i/num_bb].pppg[(i % (num_conn_gw_bb))+1] <--> conn_bb_access <--> accesspoint[i].pppg[0];
         }
 
-//for i in range(num_access-1): print("backbone[%d].pppg[%d] <--> conn_bb_access <--> accesspoint[%d].pppg[0]" % ((i/5), ((i % num_conn_gw_bb)+1), i));
-
-
         // connect access points to users
         for i=0..(num_users-1) {
             accesspoint[i/num_access].pppg[(i % (num_access))+1] <--> conn_access_users <--> user[i].pppg[0];
