@@ -2,7 +2,7 @@
 # OMNeT++/OMNEST Makefile for ex7
 #
 # This file was generated with the command:
-#  opp_makemake -f --deep -O out -LC:/Users/xeedn/Documents/workspaces/uni/inet/out/$$\(CONFIGNAME\)/src -linet -DINET_IMPORT -KINET_PROJ=C:/Users/xeedn/Documents/workspaces/uni/inet
+#  opp_makemake -f --deep -O out -IC:/Users/xeedn/Documents/workspaces/uni/inet/src/linklayer/ieee80211/radio -IC:/Users/xeedn/Documents/workspaces/uni/inet/src/networklayer/routing/aodv -IC:/Users/xeedn/Documents/workspaces/uni/inet/src/networklayer/common -IC:/Users/xeedn/Documents/workspaces/uni/inet/src/networklayer/icmpv6 -IC:/Users/xeedn/Documents/workspaces/uni/inet/src -IC:/Users/xeedn/Documents/workspaces/uni/inet/src/world/obstacles -IC:/Users/xeedn/Documents/workspaces/uni/inet/src/networklayer/xmipv6 -IC:/Users/xeedn/Documents/workspaces/uni/inet/src/networklayer/contract -IC:/Users/xeedn/Documents/workspaces/uni/inet/src/networklayer/autorouting/ipv4 -IC:/Users/xeedn/Documents/workspaces/uni/inet/src/util -IC:/Users/xeedn/Documents/workspaces/uni/inet/src/linklayer/common -IC:/Users/xeedn/Documents/workspaces/uni/inet/src/transport/contract -IC:/Users/xeedn/Documents/workspaces/uni/inet/src/status -IC:/Users/xeedn/Documents/workspaces/uni/inet/src/linklayer/radio/propagation -IC:/Users/xeedn/Documents/workspaces/uni/inet/src/linklayer/ieee80211/radio/errormodel -IC:/Users/xeedn/Documents/workspaces/uni/inet/src/linklayer/radio -IC:/Users/xeedn/Documents/workspaces/uni/inet/src/applications/udpapp -IC:/Users/xeedn/Documents/workspaces/uni/inet/src/util/headerserializers/tcp -IC:/Users/xeedn/Documents/workspaces/uni/inet/src/networklayer/ipv4 -IC:/Users/xeedn/Documents/workspaces/uni/inet/src/mobility/contract -IC:/Users/xeedn/Documents/workspaces/uni/inet/src/util/headerserializers/ipv4 -IC:/Users/xeedn/Documents/workspaces/uni/inet/src/applications/common -IC:/Users/xeedn/Documents/workspaces/uni/inet/src/base -IC:/Users/xeedn/Documents/workspaces/uni/inet/src/util/headerserializers -IC:/Users/xeedn/Documents/workspaces/uni/inet/src/world/radio -IC:/Users/xeedn/Documents/workspaces/uni/inet/src/linklayer/ieee80211/mac -IC:/Users/xeedn/Documents/workspaces/uni/inet/src/transport/sctp -IC:/Users/xeedn/Documents/workspaces/uni/inet/src/networklayer/ipv6 -IC:/Users/xeedn/Documents/workspaces/uni/inet/src/util/headerserializers/udp -IC:/Users/xeedn/Documents/workspaces/uni/inet/src/networklayer/ipv6tunneling -IC:/Users/xeedn/Documents/workspaces/uni/inet/src/applications/pingapp -IC:/Users/xeedn/Documents/workspaces/uni/inet/src/battery/models -IC:/Users/xeedn/Documents/workspaces/uni/inet/src/util/headerserializers/ipv6 -IC:/Users/xeedn/Documents/workspaces/uni/inet/src/util/headerserializers/sctp -IC:/Users/xeedn/Documents/workspaces/uni/inet/src/linklayer/contract -IC:/Users/xeedn/Documents/workspaces/uni/inet/src/networklayer/arp -IC:/Users/xeedn/Documents/workspaces/uni/inet/src/transport/tcp_common -IC:/Users/xeedn/Documents/workspaces/uni/inet/src/transport/udp -LC:/Users/xeedn/Documents/workspaces/uni/inet/out/$$\(CONFIGNAME\)/src -linet -DINET_IMPORT -KINET_PROJ=C:/Users/xeedn/Documents/workspaces/uni/inet
 #
 
 # Name of target to be created (-o option)
@@ -14,7 +14,47 @@ USERIF_LIBS = $(ALL_ENV_LIBS) # that is, $(TKENV_LIBS) $(CMDENV_LIBS)
 #USERIF_LIBS = $(TKENV_LIBS)
 
 # C++ include paths (with -I)
-INCLUDE_PATH = -I. -Iresults
+INCLUDE_PATH = \
+    -I$(INET_PROJ)/src/linklayer/ieee80211/radio \
+    -I$(INET_PROJ)/src/networklayer/routing/aodv \
+    -I$(INET_PROJ)/src/networklayer/common \
+    -I$(INET_PROJ)/src/networklayer/icmpv6 \
+    -I$(INET_PROJ)/src \
+    -I$(INET_PROJ)/src/world/obstacles \
+    -I$(INET_PROJ)/src/networklayer/xmipv6 \
+    -I$(INET_PROJ)/src/networklayer/contract \
+    -I$(INET_PROJ)/src/networklayer/autorouting/ipv4 \
+    -I$(INET_PROJ)/src/util \
+    -I$(INET_PROJ)/src/linklayer/common \
+    -I$(INET_PROJ)/src/transport/contract \
+    -I$(INET_PROJ)/src/status \
+    -I$(INET_PROJ)/src/linklayer/radio/propagation \
+    -I$(INET_PROJ)/src/linklayer/ieee80211/radio/errormodel \
+    -I$(INET_PROJ)/src/linklayer/radio \
+    -I$(INET_PROJ)/src/applications/udpapp \
+    -I$(INET_PROJ)/src/util/headerserializers/tcp \
+    -I$(INET_PROJ)/src/networklayer/ipv4 \
+    -I$(INET_PROJ)/src/mobility/contract \
+    -I$(INET_PROJ)/src/util/headerserializers/ipv4 \
+    -I$(INET_PROJ)/src/applications/common \
+    -I$(INET_PROJ)/src/base \
+    -I$(INET_PROJ)/src/util/headerserializers \
+    -I$(INET_PROJ)/src/world/radio \
+    -I$(INET_PROJ)/src/linklayer/ieee80211/mac \
+    -I$(INET_PROJ)/src/transport/sctp \
+    -I$(INET_PROJ)/src/networklayer/ipv6 \
+    -I$(INET_PROJ)/src/util/headerserializers/udp \
+    -I$(INET_PROJ)/src/networklayer/ipv6tunneling \
+    -I$(INET_PROJ)/src/applications/pingapp \
+    -I$(INET_PROJ)/src/battery/models \
+    -I$(INET_PROJ)/src/util/headerserializers/ipv6 \
+    -I$(INET_PROJ)/src/util/headerserializers/sctp \
+    -I$(INET_PROJ)/src/linklayer/contract \
+    -I$(INET_PROJ)/src/networklayer/arp \
+    -I$(INET_PROJ)/src/transport/tcp_common \
+    -I$(INET_PROJ)/src/transport/udp \
+    -I. \
+    -Iresults
 
 # Additional object and library files to link with
 EXTRA_OBJS =
@@ -29,7 +69,7 @@ PROJECTRELATIVE_PATH =
 O = $(PROJECT_OUTPUT_DIR)/$(CONFIGNAME)/$(PROJECTRELATIVE_PATH)
 
 # Object files for local .cc and .msg files
-OBJS =
+OBJS = $O/VoIPApp.o
 
 # Message files
 MSGFILES =
@@ -119,4 +159,18 @@ depend:
 	$(Q)$(MAKEDEPEND) $(INCLUDE_PATH) -f Makefile -P\$$O/ -- $(MSG_CC_FILES)  ./*.cc results/*.cc
 
 # DO NOT DELETE THIS LINE -- make depend depends on it.
+$O/VoIPApp.o: VoIPApp.cc \
+	VoIPApp.h \
+	$(INET_PROJ)/src/applications/common/ApplicationBase.h \
+	$(INET_PROJ)/src/applications/udpapp/UDPBasicApp.h \
+	$(INET_PROJ)/src/base/Compat.h \
+	$(INET_PROJ)/src/base/ILifecycle.h \
+	$(INET_PROJ)/src/base/INETDefs.h \
+	$(INET_PROJ)/src/base/LifecycleOperation.h \
+	$(INET_PROJ)/src/base/NodeOperations.h \
+	$(INET_PROJ)/src/base/OperationalBase.h \
+	$(INET_PROJ)/src/networklayer/contract/IPv4Address.h \
+	$(INET_PROJ)/src/networklayer/contract/IPv6Address.h \
+	$(INET_PROJ)/src/networklayer/contract/IPvXAddress.h \
+	$(INET_PROJ)/src/transport/contract/UDPSocket.h
 
