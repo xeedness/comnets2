@@ -61,7 +61,7 @@ network CurrentNetwork
 
         channel conn_access_users extends ThruputMeteringChannel
         {
-            datarate = 64kbps;
+            datarate = 2Mbps;
             delay = 40ms;
         }
 
