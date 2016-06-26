@@ -1,4 +1,4 @@
-#include "UDPBasicApp.h";
+#include "UDPBasicApp.h"
 
 #include "IPvXAddressResolver.h"
 #include "ILifecycle.h"

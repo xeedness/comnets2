@@ -1,4 +1,7 @@
+package ex7;
+
 import inet.applications.udpapp.UDPBasicApp;
+
 simple VoIPApp extends UDPBasicApp
 {
  	parameters:

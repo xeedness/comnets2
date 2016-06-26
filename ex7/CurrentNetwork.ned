@@ -15,7 +15,7 @@
 // along with this program; if not, write to the Free Software
 // Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
 //
-
+package ex7;
 
 import inet.util.ThruputMeteringChannel;
 import inet.util.NetAnimTrace;
@@ -28,9 +28,9 @@ network CurrentNetwork
 {
     parameters:
         double per = default(0);
-        int num_bb = 2;
-        int num_access_per_bb = 2;
-        int num_user_per_access = 2;
+        int num_bb = default(2);
+        int num_access_per_bb = default(2);
+        int num_user_per_access = default(2);
         
         int num_access = num_access_per_bb * num_bb;
         int num_users = num_user_per_access * num_access;
@@ -41,12 +41,12 @@ network CurrentNetwork
 
         
 
-        @display("bgb=576,407");
+//        @display("bgb=576,407");
     types:
         channel conn_internet_gw extends ThruputMeteringChannel
         {
-            datarate = 100Mbps;
-            delay = 10ms;
+            datarate = num_bb*10Mbps;
+            delay = 0ms;
         }
         channel conn_gw_bb extends ThruputMeteringChannel
         {
@@ -67,39 +67,39 @@ network CurrentNetwork
 
     submodules:
         internet: StandardHost {
-            @display("p=502,44");
+//            @display("p=502,44");
             gates:
                 pppg[1];
         }
         gateway: Router {
-            @display("p=294,33");
+//            @display("p=294,33");
             gates:
                 pppg[1+num_bb];
         }
         backbone[num_bb]: Router {
-            @display("p=396,110");
+//            @display("p=396,110");
             gates:
                 // 1 conn to gateway, 5 to access
                 pppg[1 + num_access_per_bb];
         }
         accesspoint[num_access]: Router {
-            @display("p=203,96");
+//            @display("p=203,96");
             gates:
                 // 1 conn to backbone, 25 to users
                 pppg[1 + num_user_per_access];
         }
         user[num_users]: StandardHost {
             parameters:
-                @display("p=53,23;i=device/pc3");
+//                @display("p=53,23;i=device/pc3");
             gates:
                 pppg[1];
         }
         configurator: FlatNetworkConfigurator {
             parameters:
-                @display("p=404,339");
+//                @display("p=404,339");
         }
         netAnimTrace: NetAnimTrace {
-            @display("p=502,346");
+//            @display("p=502,346");
         }
     connections:
         // connect gateway to internet

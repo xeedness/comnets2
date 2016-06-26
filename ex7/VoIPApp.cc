@@ -1,3 +1,4 @@
+#include <omnetpp.h>
 #include "VoIPApp.h"
 
 Define_Module(VoIPApp);
