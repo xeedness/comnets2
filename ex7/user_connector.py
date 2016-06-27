@@ -20,6 +20,9 @@ print("Arguments:", args.num_bb, args.num_access_per_bb, args.num_user_per_acces
 num_access_total = args.num_access_per_bb * args.num_bb
 users_per_backbone = args.num_access_per_bb * args.num_user_per_access
 total_users = args.num_bb * users_per_backbone
+
+num_bb = args.num_bb
+num_access_per_bb = args.num_access_per_bb
 num_user_per_access = args.num_user_per_access
 
 if args.num_bb <= 0 or args.num_access_per_bb <= 0:
@@ -106,50 +109,69 @@ def create_connection_file_voip():
 		available_users.remove(users[0])
 		available_users.remove(users[1])
 
-		'''
-			# create connections that use a backbone router
-			str_con_file += "# connections that use use a backbone router\n"
-			for c in range (0, 11):
-				# pick a router
-				router_no = random.randint(0, num_bb-1)
+	# create connections that use a backbone router
+	str_con_file += "# connections that use use a backbone router\n"
+	for c in range (0, 11):
+		# pick a backbone
+		bb_no = random.randint(0, num_bb-1)
 
-				# pick 2 different access points connected to backbone
-				access_nos = random.sample(range(0, num_access_per_bb), 2)
-		'''
+		# pick 2 different access points connected to backbone
+		access_nos = random.sample(range(0, num_access_per_bb), 2)
 
-		# create connections that use only an access router
-		str_con_file += "# connections that use only an access router\n"
+		# connect 2 users
+		users = []
+		for i in range (0,2):
+			user_found = False
 
-		for c in range (0, 16):
-			# pick a router
-			router_no = random.randint(0, num_access_total-1)
+			while (not user_found):
+				# pick a user (number is local to the access points)
+				user_no = random.randint(0, num_user_per_access-1)
+				# locate user's position in whole tree
+				user_pos = ((5*bb_no + access_nos[i]) * num_user_per_access) + user_no
+				if (user_pos in available_users):
+					users.append(user_pos)
+					# remove user from available pool
+					available_users.remove(user_pos)
+					user_found = True
 
-			# connect 2 users at router_no
-			users = []
-			for i in range (0,2):
-				user_found = False
+		# connect them
+		str_con_file += str_connection.format(users[0], users[1])
+		str_con_file += str_connection.format(users[1], users[0])
+		str_con_file += "\n"
 
-				while (not user_found):
-					# pick a user (number is local to the access points)
-					user_no = random.randint(0, num_user_per_access-1)
-					# locate user's position in whole tree
-					user_pos = (router_no * num_user_per_access) + user_no
-					if (user_pos in available_users):
-						users.append(user_pos)
-						# remove user from available pool
-						available_users.remove(user_pos)
-						user_found = True
+		# TODO: if there are no connections left for this router, move on
 
-			# connect them
-			str_con_file += str_connection.format(users[0], users[1])
-			str_con_file += str_connection.format(users[1], users[0])
-			str_con_file += "\n"
 
-			print(users)
+	# create connections that use only an access router
+	str_con_file += "# connections that use only an access router\n"
 
-			# TODO: if there are no connections left for this router, move on
+	for c in range (0, 16):
+		# pick a router
+		access_no = random.randint(0, num_access_total-1)
 
-	print("The connection file looks like this:\n\n" + str_con_file)
+		# connect 2 users at access_no
+		users = []
+		for i in range (0,2):
+			user_found = False
+
+			while (not user_found):
+				# pick a user (number is local to the access points)
+				user_no = random.randint(0, num_user_per_access-1)
+				# locate user's position in whole tree
+				user_pos = (access_no * num_user_per_access) + user_no
+				if (user_pos in available_users):
+					users.append(user_pos)
+					# remove user from available pool
+					available_users.remove(user_pos)
+					user_found = True
+
+		# connect them
+		str_con_file += str_connection.format(users[0], users[1])
+		str_con_file += str_connection.format(users[1], users[0])
+		str_con_file += "\n"
+
+
+	#print("The connection file looks like this:\n\n" + str_con_file)
 
 	return str_con_file
 
