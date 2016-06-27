@@ -45,7 +45,6 @@ void VoIPApp::sendPacket()
     sprintf(msgName, "UDPBasicAppData-%d", numSent);
     cPacket *payload = new cPacket(msgName);
     payload->setByteLength(par("messageLength").longValue());
-    payload->setSentFrom(this, 0, simTime());
     IPvXAddress destAddr = chooseDestAddr();
 
     emit(sentPkSignal, payload);
