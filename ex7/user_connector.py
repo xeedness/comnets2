@@ -78,7 +78,7 @@ def create_connection_file_voip():
 	[1], local connections are more likely (i.e. more connections go just via
 	access router and less go all the way up through the internet). Thus, we're
 	creating around 1/2 of the connections as local to the access point, 1/3
-	of all connections only go up to the bac bones and 1/6 of all connections
+	of all connections only go up to the back bones and 1/6 of all connections
 	are routed all the way up to the gateway.
 
 	[1] Structure and tie strengths in mobile communication networks
