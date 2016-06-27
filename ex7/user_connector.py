@@ -55,6 +55,33 @@ def create_connection_file():
 	return str_con_file
 
 def create_connection_file_voip():
+	'''
+	Based on the network structure we were given, we’re assuming the network
+	we have is an internal company network. Thus, we can assume that all calls
+	happen within work hours, so during 8 hours of a day. Let’s say all users
+	spend 50 minutes on the phone on average, and each call takes 10 minutes.
+	For the sake of simplicity, we’ll entertain the very naive notion that
+	those calls are equally distributed across the day and that they’re
+	slotted into 10 minute time slots.
+	This leads us to (625*5)/2 = 1562.5 connections a day spread over 48 time
+	slots. Thus, during each time slot, 1562.5/48 + 32.55 calls take place at
+	the same time.
+
+	To summarize:
+	active users at the time of the simulation: 66
+	=> active calls at the time of the simulation: 33
+
+	Now we need to distribute these calls across the network. according to
+	[1], local connections are more likely (i.e. more connections go just via
+	access router and less go all the way up through the internet). Thus, we're
+	creating around 1/2 of the connections as local to the access point, 1/3
+	of all connections only go up to the bac bones and 1/6 of all connections
+	are routed all the way up to the gateway.
+
+	[1] Structure and tie strengths in mobile communication networks
+	https://www.hks.harvard.edu/davidlazer/files/papers/Lazer_PNAS_2007.pdf
+	'''
+
 	str_con_file = "# This file includes regular voip user connections for omnet++/exercise7\n"
 	# just make sure we always get the same connections
 	random.seed(23)
