@@ -56,4 +56,5 @@ void VoIPApp::sendPacket()
 void VoIPApp::finish() {
     UDPBasicApp::finish();
     recordScalar("lateRatio", (float)numDiscarded/numReceived);
+    recordScalar("discarded packets", numDiscarded);
 }
