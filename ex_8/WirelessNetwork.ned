@@ -7,12 +7,21 @@ import inet.nodes.wireless.AccessPoint;
 import inet.nodes.ethernet.EtherSwitch;
 
 import inet.networklayer.autorouting.ipv4.IPv4NetworkConfigurator;
-
+import inet.util.ThruputMeteringChannel;
 import inet.world.radio.ChannelControl;
 
 network WirelessNetwork_Switch
 {
     parameters:
+
+    types:
+        channel conn_ap_switch extends ThruputMeteringChannel
+        {
+            // pick random datarate to make it work
+            datarate = 10Mbps;
+            delay = 0ms;
+        }
+
     submodules:
         Station_A: WirelessHost {
             @display("r=,,#707070;p=123,135");
@@ -43,6 +52,6 @@ network WirelessNetwork_Switch
                 @display("p=50,50");
         }
     connections:
-        AccessPoint.ethg[0] <--> {  delay = 100ms; } <--> Switch.ethg[0];
-        Switch.ethg[1] <--> {  delay = 100ms; } <--> Station_B.ethg[0];
+        AccessPoint.ethg[0] <--> conn_ap_switch <--> Switch.ethg[0];
+        Switch.ethg[1] <--> conn_ap_switch <--> Station_B.ethg[0];
 }
