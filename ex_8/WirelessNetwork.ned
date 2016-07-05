@@ -8,6 +8,8 @@ import inet.nodes.ethernet.EtherSwitch;
 
 import inet.networklayer.autorouting.ipv4.IPv4NetworkConfigurator;
 
+import inet.world.radio.ChannelControl;
+
 network WirelessNetwork_Switch
 {
     parameters:
@@ -34,6 +36,11 @@ network WirelessNetwork_Switch
         configurator: IPv4NetworkConfigurator {
             parameters:
                 @display("p=404,339");
+        }
+        // set up wireless channel
+        channelControl: ChannelControl {
+            parameters:
+                @display("p=50,50");
         }
     connections:
         AccessPoint.ethg[0] <--> {  delay = 100ms; } <--> Switch.ethg[0];
