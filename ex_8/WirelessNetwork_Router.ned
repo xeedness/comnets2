@@ -2,20 +2,20 @@ package ex_8;
 
 import inet.nodes.inet.WirelessHost;
 import inet.nodes.inet.StandardHost;
+import inet.nodes.inet.Router;
 
 import inet.nodes.wireless.AccessPoint;
-import inet.nodes.ethernet.EtherSwitch;
 
 import inet.networklayer.autorouting.ipv4.IPv4NetworkConfigurator;
 import inet.util.ThruputMeteringChannel;
 import inet.world.radio.ChannelControl;
 
-network WirelessNetwork_Switch
+network WirelessNetwork_Router
 {
     parameters:
 
     types:
-        channel conn_ap_switch extends ThruputMeteringChannel
+        channel conn_ap_router extends ThruputMeteringChannel
         {
             // pick random datarate to make it work
             datarate = 10Mbps;
@@ -36,7 +36,7 @@ network WirelessNetwork_Switch
             gates:
                 ethg[1];
         }
-        Switch: EtherSwitch {
+        Router: Router {
             @display("p=221,228;i=device/switch");
             gates:
                 ethg[2];
@@ -52,6 +52,6 @@ network WirelessNetwork_Switch
                 @display("p=50,50");
         }
     connections:
-        AccessPoint.ethg[0] <--> conn_ap_switch <--> Switch.ethg[0];
-        Switch.ethg[1] <--> conn_ap_switch <--> Station_B.ethg[0];
+        AccessPoint.ethg[0] <--> conn_ap_router <--> Router.ethg[0];
+        Router.ethg[1] <--> conn_ap_router <--> Station_B.ethg[0];
 }
