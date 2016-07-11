@@ -29,7 +29,7 @@ network WirelessNetwork_Router
         Station_B: StandardHost {
             @display("r=,,#707070;p=327,213");
             gates:
-                ethg[1];
+                pppg[1];
         }
         AccessPoint: AccessPoint {
             @display("p=100,200;r=,,#707070");
@@ -37,9 +37,10 @@ network WirelessNetwork_Router
                 ethg[1];
         }
         Router: Router {
-            @display("p=221,228;i=device/switch");
+            @display("p=221,228;i=device/router");
             gates:
-                ethg[2];
+                ethg[1];
+                pppg[1];
         }
         // set up IP addresses, routing tables etc
         configurator: IPv4NetworkConfigurator {
@@ -53,5 +54,5 @@ network WirelessNetwork_Router
         }
     connections:
         AccessPoint.ethg[0] <--> conn_ap_router <--> Router.ethg[0];
-        Router.ethg[1] <--> conn_ap_router <--> Station_B.ethg[0];
+        Router.pppg[0] <--> conn_ap_router <--> Station_B.pppg[0];
 }
