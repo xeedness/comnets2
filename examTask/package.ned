@@ -1,0 +1,3 @@
+package examTask;
+
+@license(LGPL);
