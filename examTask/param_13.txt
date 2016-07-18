@@ -1,0 +1,65 @@
+# Parametersheet 13
+
+- CCTV camera stream:
+  - activated for one team member
+  - deactivated for the other team member
+
+These are some parameter hints for the ini-file which should be set. You have to add
+some more, according to the task description.
+
+[General]
+network = 
+repeat = 
+sim-time-limit = 
+
+# some can be enabled if desired, but
+# this produces a lot of data
+**.thruputMeter.**.vector-recording = true	
+# disable all others
+**.vector-recording = false
+
+# throughputmeter: Best is to undo the code change recommended in exercise 6
+**.maxInterval = 1s	# interval for the throughputmeters
+**.batchSize = 10000 # batch size for the throughputmeters
+
+**.constraintAreaMinX = 0m
+**.constraintAreaMinY = 0m
+**.constraintAreaMinZ = 0m
+**.constraintAreaMaxX = 600m
+**.constraintAreaMaxY = 400m
+**.constraintAreaMaxZ = 0m
+
+**.channelNumber = 0
+**.mobilityType = 
+**.mobility.initFromDisplayString = false
+**.[name of access point].mobility.initialX = 25
+**.[name of access point].mobility.initialY = 25
+**.[name of access point].mobility.initialZ = 0m
+**.[names of mobile stations].mobility.initialX =
+**.[names of mobile stations].mobility.initialY =
+**.[names of mobile stations].mobility.initialZ = 0m
+
+# Some tcp settings
+**.tcpType = "TCP"
+**.tcp.tcpAlgorithmClass = 
+**.tcp.windowScalingSupport = true
+**.tcpApp[*].dataTransferMode = "object"
+**.tcp.mss = 
+**.tcp.advertisedWindow = # do not use this.mss here but directly give a number
+
+# Routing
+**.networkConfiguratorModule = ""
+
+# NIC settings
+**.mac.address = "auto"
+**.mac.maxQueueSize = 14
+**.mac.rtsThresholdBytes = 3000B
+**.wlan[*].mac.retryLimit = 7
+**.wlan[*].mac.cwMinData = 7
+**.wlan[*].mac.cwMinMulticast = 31
+**.opMode = "g"
+**.mgmt.frameCapacity = 100
+
+# Group specific parameters
+**.[name of web browsing laptop].tcpApp[0].replyLength = # from trace file trace_13.txt
+**.[name of web browsing laptop].tcpApp[0].idleInterval = exponential(20s)
