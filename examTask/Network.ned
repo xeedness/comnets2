@@ -17,8 +17,9 @@ import inet.world.radio.ChannelControl;
 network Network
 {
     parameters:
-
         @display("bgb=600,397");
+        // TODO pick sensible value
+		int num_laptops = 5;
     types:
         channel fastEthernet extends ThruputMeteringChannel
         {
@@ -53,6 +54,9 @@ network Network
         }
         FTPLaptop: WirelessHost {
             @display("r=,,#707070;p=68,332");
+        }
+        BrowsingLaptop[num_laptops]: WirelessHost {
+            @display("r=,,#707070;p=86,158");
         }
 		// TODO: different icon
         CCTVCamera: StandardHost {
