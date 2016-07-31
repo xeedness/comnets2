@@ -47,7 +47,7 @@ network ExamTaskNetwork
             delay = 30ms;
         }
 
-    submodules:
+	submodules:
         // TODO: how do I model the browsing laptops? (bzw their distribution)
         ConferenceLaptop: WirelessHost {
             @display("r=,,#707070;p=35,276");
