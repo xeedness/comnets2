@@ -14,7 +14,7 @@ import inet.world.radio.ChannelControl;
 // TODO: correct wifi, ethernet version?
 // TODO: vdsl und fats ethernet komplett gleiche bedingungen?
 
-network Network
+network ExamTaskNetwork
 {
     parameters:
         @display("bgb=600,397");
