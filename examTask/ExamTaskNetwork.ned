@@ -7,7 +7,7 @@ import inet.nodes.inet.Router;
 import inet.nodes.wireless.AccessPoint;
 import inet.nodes.ethernet.EtherSwitch;
 
-import inet.networklayer.autorouting.ipv4.IPv4NetworkConfigurator;
+import inet.networklayer.autorouting.ipv4.FlatNetworkConfigurator;
 import inet.util.ThruputMeteringChannel;
 import inet.world.radio.ChannelControl;
 
@@ -74,8 +74,8 @@ network ExamTaskNetwork
             gates:
                 ethg[1];
         }
-        AccessPoint: AccessPoint {
-            @display("p=133,244;r=,,#707070");
+        RemoteAccessPoint: AccessPoint {
+            @display("r=,,#707070");
             gates:
                 ethg[1];
         }
@@ -97,7 +97,7 @@ network ExamTaskNetwork
                 ethg[1];
         }
         // set up IP addresses, routing tables etc
-        configurator: IPv4NetworkConfigurator {
+        configurator: FlatNetworkConfigurator {
             parameters:
                 @display("p=174,50");
         }
@@ -107,7 +107,7 @@ network ExamTaskNetwork
                 @display("p=50,50");
         }
     connections:
-        AccessPoint.ethg[0] <--> fastEthernet <--> RemoteRouter.ethg[0];
+        RemoteAccessPoint.ethg[0] <--> fastEthernet <--> RemoteRouter.ethg[0];
         CCTVCamera.ethg[0] <--> fastEthernet <--> RemoteRouter.ethg[1];
         RemoteRouter.pppg[0] <--> pppLink <--> MainRouter.pppg[0];
         Internet.ethg[0] <--> vdslInternetLink <--> MainRouter.ethg[0];
