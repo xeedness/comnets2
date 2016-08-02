@@ -33,7 +33,6 @@ network ExamTaskNetwork
         }
         channel dfnLink extends ThruputMeteringChannel
         {
-            // TODO: find correct datarate! (I just picked one at random to make it compile for now..)
             datarate = 100Mbps;
             delay = 5ms;
         }
