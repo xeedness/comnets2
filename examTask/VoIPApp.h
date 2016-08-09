@@ -11,8 +11,8 @@ private:
     static simsignal_t packetDelaySignal;
 public:
     void initialize(int stage);
-	void processPacket(cPacket *pk) override;
-	void sendPacket() override;
-	void finish() override;
+	void processPacket(cPacket *pk);
+	void sendPacket();
+	void finish();
 };
 
