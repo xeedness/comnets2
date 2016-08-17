@@ -1,11 +1,13 @@
-function [ fits, ratio ] = poissonChi2Test( samples, alpha )
+function [ fits, ratio ] = poissonChi2Test( samples, binSize,alpha )
     
     dof = 1;
     
     
     %generate histogram with widths
-    [sampleHist, sampleWidths] = hist(samples,[0:1:max(samples)+1])
-
+    tst = [0:1:max(samples)+1];
+    h = histogram(samples,100)
+    sampleHist = h.Values;
+    sampleWidths = h.BinEdges;
     %bar(sampleHist)
     %hold on;   
 
@@ -13,7 +15,7 @@ function [ fits, ratio ] = poissonChi2Test( samples, alpha )
     maxN = length(sampleHist);
     %adjust buckets
     while n <= maxN-1
-       if(sampleHist(n) < 5)
+       if(sampleHist(n) <= binSize)
            sampleHist(n+1) = sampleHist(n+1) + sampleHist(n);
            sampleHist(n) = [];
            sampleWidths(n) = [];
@@ -27,7 +29,7 @@ function [ fits, ratio ] = poissonChi2Test( samples, alpha )
     n = length(sampleHist)
 
     while n >= 2
-       if(sampleHist(n) < 5)
+       if(sampleHist(n) <= binSize)
            sampleHist(n-1) = sampleHist(n-1) + sampleHist(n);
            sampleWidths(n-1) = sampleWidths(n);
            sampleHist(n) = [];
@@ -39,54 +41,70 @@ function [ fits, ratio ] = poissonChi2Test( samples, alpha )
 
 
     %fprintf('Adjusted Histogram:\n');
-    sampleHist
-    sampleWidths
+    sampleHist;
+    sampleWidths;
     bar(sampleHist);
     %hold on;
 
     %generate expected values
-    lambdasample = 0;
-    for n=1:length(samples)
-       lambdasample = lambdasample + samples(n);
-    end
-
-    lambdasample = lambdasample/length(samples);
-
-
-    P = 0
-    for n = 1:length(sampleWidths)
-        if(n == 1)
-            P(n) = poisscdf(sampleWidths(n),lambdasample);
-        else
-            P(n) = poisscdf(sampleWidths(n),lambdasample) - poisscdf(sampleWidths(n-1),lambdasample);
+    %{
+        lambdasample = 0;
+        for n=1:length(samples)
+           lambdasample = lambdasample + samples(n);
         end
-    end
 
-    NP = P.*length(samples)
-    bar(P);
+        lambdasample = lambdasample/length(samples);
 
-    chi2query = 0;
-    for n = 1:length(P)
-        sub = sampleHist(n)-NP(n);
-        chi2query = (sub*sub) / NP(n);
-    end
 
-    chi2level = chi2inv(1-alpha, length(sampleHist)-dof-1);
-    chi2ratio = chi2query/chi2level;
-    fprintf('Chi2Sum: %.02f\n',chi2query);
-    fprintf('Chi2Level: %.02f\n', chi2level);
-    fprintf('Chi2Ratio: %.05f\n', chi2ratio);
+        P = 0
+        for n = 1:length(sampleWidths)
+            if(n == 1)
+                P(n) = poisscdf(sampleWidths(n),lambdasample);
+            else
+                P(n) = poisscdf(sampleWidths(n),lambdasample) - poisscdf(sampleWidths(n-1),lambdasample);
+            end
+        end
 
-    pdist = fitdist(samples', 'Poisson');
+        NP = P.*length(samples)
+        bar(P);
+
+        chi2query = 0;
+        for n = 1:length(P)
+            sub = sampleHist(n)-NP(n);
+            chi2query = (sub*sub) / NP(n);
+        end
+
+        chi2level = chi2inv(1-alpha, length(sampleHist)-dof-1);
+        chi2ratio = chi2query/chi2level;
+        fprintf('Chi2Sum: %.02f\n',chi2query);
+        fprintf('Chi2Level: %.02f\n', chi2level);
+        fprintf('Chi2Ratio: %.05f\n', chi2ratio);
+    %}
+    
+    
+    
+    
+
+    pExponential = fitdist(samples, 'Exponential');
+    pPoisson = fitdist(samples, 'Poisson');
     %sampleWidths(1) = []
     %sampleWidths(length(sampleWidths)) = []
     %for n = 1:length(sampleWidths)-1
     %   sampleWidths(n) = sampleWidths(n+1);
     %end
-    sampleWidths(length(sampleWidths)) = sampleWidths(length(sampleWidths))+10000 
-    [h, p, stats] = chi2gof(samples', 'Edges', sampleWidths, 'CDF', pdist, 'Alpha', alpha)
-    fits = chi2query <= chi2level;
-    ratio = chi2ratio;
+    %sampleWidths(1) = [];
+    [hExp, pExp, statsExp] = chi2gof(samples, 'Edges', sampleWidths, 'CDF', pExponential, 'Alpha', alpha)
+    [hPois, pPois, statsPois] = chi2gof(samples, 'Edges', sampleWidths, 'CDF', pPoisson, 'Alpha', alpha)
+    %[hExp, pExp, statsExp] = chi2gof(samples, 'Edges', sampleWidths, 'CDF', pExponential, 'Alpha', alpha);
+    
+    hPois
+    %hExp
+    
+    pPois
+    %pExp
+    
+    %fits = chi2query <= chi2level;
+    %ratio = chi2ratio;
 
 end
 
