@@ -43,7 +43,7 @@ function [ fits, ratio ] = poissonChi2Test( samples, binSize,alpha )
     %fprintf('Adjusted Histogram:\n');
     sampleHist;
     sampleWidths;
-    bar(sampleHist);
+    %bar(sampleHist, sampleWidths);
     %hold on;
 
     %generate expected values
@@ -87,6 +87,12 @@ function [ fits, ratio ] = poissonChi2Test( samples, binSize,alpha )
 
     pExponential = fitdist(samples, 'Exponential');
     pPoisson = fitdist(samples, 'Poisson');
+    x = 0:500:max(samples);
+    y = exppdf(x, pExponential.mu);
+    %y = poisspdf(x, 1/pPoisson.lambda);
+    plot(x,y,'+')
+    
+    
     %sampleWidths(1) = []
     %sampleWidths(length(sampleWidths)) = []
     %for n = 1:length(sampleWidths)-1
