@@ -19,7 +19,7 @@ network ExamTaskNetwork
     parameters:
         @display("bgb=600,397");
         // TODO pick sensible value
-		int num_laptops = 5;
+		int num_laptops = default(5);
     types:
         channel fastEthernet extends ThruputMeteringChannel
         {
