@@ -14,7 +14,7 @@ import inet.world.radio.ChannelControl;
 // TODO: correct wifi, ethernet version?
 // TODO: vdsl und fats ethernet komplett gleiche bedingungen?
 
-network ExamTaskNetwork
+network ExamTaskNetwork_no_CCTV
 {
     parameters:
         @display("bgb=600,397");
@@ -35,10 +35,6 @@ network ExamTaskNetwork
             datarate = 100Mbps;
             delay = 5ms;
         }
-        channel vdslLink extends ThruputMeteringChannel
-        {
-            datarate = 100Mbps;
-        }
         channel vdslInternetLink extends ThruputMeteringChannel
         {
             datarate = 100Mbps;
@@ -55,18 +51,8 @@ network ExamTaskNetwork
         BrowsingLaptop[num_laptops]: WirelessHost {
             @display("r=,,#707070;p=86,158");
         }
-        CCTVCamera: StandardHost {
-            @display("r=,,#707070;p=231,332");
-            gates:
-                ethg[1];
-        }
         ProfessorsLaptop: StandardHost {
             @display("r=,,#707070;p=404,148;i=device/laptop");
-            gates:
-                ethg[1];
-        }
-        CCTVMonitoring: StandardHost {
-            @display("r=,,#707070;p=417,341");
             gates:
                 ethg[1];
         }
@@ -78,13 +64,13 @@ network ExamTaskNetwork
         RemoteRouter: Router {
             @display("p=240,249;i=device/router");
             gates:
-                ethg[2];
+                ethg[1];
                 pppg[1];
         }
         MainRouter: Router {
             @display("p=417,249;i=device/router");
             gates:
-                ethg[3];
+                ethg[2];
                 pppg[1];
         }
         Internet: StandardHost {
@@ -104,9 +90,7 @@ network ExamTaskNetwork
         }
     connections:
         RemoteAccessPoint.ethg[0] <--> fastEthernet <--> RemoteRouter.ethg[0];
-        CCTVCamera.ethg[0] <--> fastEthernet <--> RemoteRouter.ethg[1];
         RemoteRouter.pppg[0] <--> pppLink <--> MainRouter.pppg[0];
         Internet.ethg[0] <--> vdslInternetLink <--> MainRouter.ethg[0];
         ProfessorsLaptop.ethg[0] <--> dfnLink <--> MainRouter.ethg[1];
-        CCTVMonitoring.ethg[0] <--> vdslLink <--> MainRouter.ethg[2];
 }
