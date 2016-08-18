@@ -15,7 +15,7 @@ fclose(fileID);
 
 
 x = result';
-poissonChi2Test( x, 8, 0.039);
+poissonChi2Test( x, 15, 0.039);
 %SEM = std(x)/sqrt(length(x));               % Standard Error
 %ts = tinv([0.05  0.95],length(x)-1);      % T-Score
 %CI = mean(x) + ts*SEM;% Confidence Intervals
