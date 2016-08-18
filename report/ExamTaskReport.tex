@@ -30,6 +30,8 @@ BCOR5mm, % Binding correction
 
 \input{structure.tex} % Include the structure.tex file which specified the document structure and layout
 
+\usepackage{amsmath}
+
 \hyphenation{Fortran hy-phen-ation} % Specify custom hyphenation points in words with dashes where you would like hyphenation to occur, or alternatively, don't put any dashes in a word to stop hyphenation altogether
 
 %----------------------------------------------------------------------------------------
@@ -87,11 +89,44 @@ TODO!
 
 In order to conduct a meaningful simulation, a few configurations and calculations had to be made. In the following, these calculations, their results and the resulting network setup will be described.
 
+\subsection{Traffic modeling}
+TODO: Chi square stuff
+
+\subsection{Network behavior}
+In the following, the network behavior in terms of traffic and bandwidth utilization will be approximated roughly.
+This helps set up the simulation network as described in \ref{sec:sim_plan} and enables the estimation of the maximum number of web browsing laptops (also needed for the simulation).
+
+\subsubsection{CCTV bit rate}
+When sending packets of 10 kB of CCTV data every 40 ms, a bit rate of 2 megabits per second is generated:
+
+\begin{align*}
+\text{<number of packets per second >} &\cdot \text{<packet size>} = \text{<bit rate>}\\
+\frac{1000ms}{40ms} &\cdot 10kB \cdot 8 = 2Mbps
+\end{align*}
+
+\subsubsection{Video conference bit rate}
+The professor's RTP over UDP video conference generates a bit rate of 0,56 megabits per second. In each direction, a bit rate of 0,28 Mbps is achieved:
+
+\begin{align*}
+\text{<number of packets per second >} &\cdot \text{<packet size>} = \text{<bit rate>}\\
+\frac{1000ms}{40ms} &\cdot 1400B \cdot 8 = 0,28 Mbps
+\end{align*}
+
+Where the 1400B packet size are 1388 B payload + 12 B minimal RTP header. Note that since the connection is bidirectional, the above bit rate doubles.
+
+\subsubsection{FTP upload bit rate}
+TODO
+
+
+Therefore, a total $2\text{Mbps} + 2 \cdot 0,56 \text{Mbps} + \text{TODO: FTP} = 2,56 \text{TODO: update value} \text{Mbps}$ of bandwidth are used constantly.
+
+
 %----------------------------------------------------------------------------------------
 %	METHODS
 %----------------------------------------------------------------------------------------
 
 \section{Simulation Plan}
+\label{sec:sim_plan}
 
 TODO: einzelne Abschnitte \& Idee dahinter beschreiben
 
