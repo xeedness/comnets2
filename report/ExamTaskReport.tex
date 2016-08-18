@@ -31,6 +31,7 @@ BCOR5mm, % Binding correction
 \input{structure.tex} % Include the structure.tex file which specified the document structure and layout
 
 \usepackage{amsmath}
+\usepackage{wrapfig}
 
 \hyphenation{Fortran hy-phen-ation} % Specify custom hyphenation points in words with dashes where you would like hyphenation to occur, or alternatively, don't put any dashes in a word to stop hyphenation altogether
 
@@ -90,11 +91,28 @@ TODO!
 In order to conduct a meaningful simulation, a few configurations and calculations had to be made. In the following, these calculations, their results and the resulting network setup will be described.
 
 \subsection{Traffic modeling}
-TODO: Chi square stuff
+%TODO: Chi square stuff
+
+To model the size of the HTTP responses, the given trace file was analyzed in order to find a probability distribution that represents their data well.
+
+\begin{wrapfigure}{r}{0.6\textwidth}
+  \begin{center}
+    \includegraphics[width=0.58\textwidth]{Figures/trace_plot.png}
+  \end{center}
+  \caption{Frequency of packet sizes found in the trace file}
+  \vspace{-0pt}
+  \label{fig:first_plot}
+\end{wrapfigure}
+
+After plotting the frequency of packet sizes found in the trace file (see Fig. \ref{fig:first_plot}), it was assumed that either a Poisson- or an exponential distribution could be a suitable theoretical distribution. The overall mean of the trace data is 671539.
+%TODO: mention bin sizes?
+Using Pearson's $\chi^2$ goodness of fit test, it was determined that, when using an exponential distribution with mean 671539, the null hypothesis can be rejected with a 95\% confidence level. This suggests that the exponential distribution is suitable to generate HTTP response sizes during the simulation.
+
+%TODO: say why poisson doesn't fit?
 
 \subsection{Network behavior}
 In the following, the network behavior in terms of traffic and bandwidth utilization will be approximated roughly.
-This helps set up the simulation network as described in \ref{sec:sim_plan} and enables the estimation of the maximum number of web browsing laptops (also needed for the simulation).
+This helps set up the simulation network as described in section \ref{sec:sim_plan} and enables the estimation of the maximum number of web browsing laptops (also needed for the simulation).
 
 \subsubsection{CCTV bit rate}
 When sending packets of 10 kB of CCTV data every 40 ms, a bit rate of 2 megabits per second is generated:
