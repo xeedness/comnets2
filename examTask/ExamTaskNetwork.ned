@@ -25,7 +25,6 @@ network ExamTaskNetwork
         {
             datarate = 100Mbps;
         }
-        // TODO: do I have to mae this wireless somehow?
         channel pppLink extends ThruputMeteringChannel
         {
             datarate = 12Mbps;
@@ -47,7 +46,6 @@ network ExamTaskNetwork
         }
 
 	submodules:
-        // TODO: how do I model the browsing laptops? (bzw their distribution)
         ConferenceLaptop: WirelessHost {
             @display("r=,,#707070;p=35,276");
         }
@@ -57,7 +55,6 @@ network ExamTaskNetwork
         BrowsingLaptop[num_laptops]: WirelessHost {
             @display("r=,,#707070;p=86,158");
         }
-		// TODO: different icon
         CCTVCamera: StandardHost {
             @display("r=,,#707070;p=231,332");
             gates:
