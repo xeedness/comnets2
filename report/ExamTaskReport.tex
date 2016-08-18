@@ -105,14 +105,14 @@ When sending packets of 10 kB of CCTV data every 40 ms, a bit rate of 2 megabits
 \end{align*}
 
 \subsubsection{Video conference bit rate}
-The professor's RTP over UDP video conference generates a bit rate of 0,56 megabits per second. In each direction, a bit rate of 0,28 Mbps is achieved:
+The professor's bidirectional RTP over UDP video conference generates a bit rate of 0,56 megabits per second. In each direction, a bit rate of 0,28 Mbps is achieved:
 
 \begin{align*}
 \text{<number of packets per second >} &\cdot \text{<packet size>} = \text{<bit rate>}\\
 \frac{1000ms}{40ms} &\cdot 1400B \cdot 8 = 0,28 Mbps
 \end{align*}
 
-Where the 1400B packet size are 1388 B payload + 12 B minimal RTP header. Note that since the connection is bidirectional, the above bit rate doubles.
+Where the 1400B packet size are 1388 B payload + 12 B minimal RTP header.
 
 \subsubsection{FTP upload bit rate}
 TODO
