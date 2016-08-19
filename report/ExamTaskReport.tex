@@ -105,8 +105,14 @@ To model the size of the HTTP responses, the given trace file was analyzed in or
 \end{wrapfigure}
 
 After plotting the frequency of packet sizes found in the trace file (see Fig. \ref{fig:first_plot}), it was assumed that either a Poisson- or an exponential distribution could be a suitable theoretical distribution. The overall mean of the trace data is 671539.
-%TODO: mention bin sizes?
-Using Pearson's $\chi^2$ goodness of fit test, it was determined that, when using an exponential distribution with mean 671539, the null hypothesis can be rejected with a 95\% confidence level. This suggests that the exponential distribution is suitable to generate HTTP response sizes during the simulation.
+Using Pearson's $\chi^2$ goodness of fit test, it was determined that, when using an exponential distribution with mean 671539, the null hypothesis can be rejected with a 95\% confidence level:
+
+% TODO: zahlen (interval number, interval size) genauer begründen?
+First, the sample data was divided into 100 intervals, where intervals with $\leq 15$ values were merged with their neighboring interval until the resulting interval contained at more than 15 values.
+
+% TODO: add actual chi square value calc
+
+This suggests that the exponential distribution is suitable to generate HTTP response sizes during the simulation.
 
 %TODO: say why poisson doesn't fit?
 
