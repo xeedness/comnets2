@@ -95,14 +95,11 @@ In order to conduct a meaningful simulation, a few configurations and calculatio
 
 To model the size of the HTTP responses, the given trace file was analyzed in order to find a probability distribution that represents their data well.
 
-\begin{wrapfigure}{r}{0.6\textwidth}
-  \begin{center}
-    \includegraphics[width=0.58\textwidth]{Figures/trace_plot.png}
-  \end{center}
-  \caption{Frequency of packet sizes found in the trace file}
-  \vspace{-0pt}
-  \label{fig:first_plot}
-\end{wrapfigure}
+\begin{figure}[!ht]
+  \centering
+  \includegraphics[width=0.7\textwidth]{Figures/trace_plot.png}
+  \caption{Frequency of packet sizes found in the trace file} \label{fig:first_plot}
+\end{figure}
 
 After plotting the frequency of packet sizes found in the trace file (see Fig. \ref{fig:first_plot}), it was assumed that either a Poisson- or an exponential distribution could be a suitable theoretical distribution. The overall mean of the trace data is 671539.
 Using Pearson's $\chi^2$ goodness of fit test, it was determined that, when using an exponential distribution with mean 671539, the null hypothesis can be rejected with a 95\% confidence level:
