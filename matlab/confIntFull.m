@@ -7,7 +7,7 @@ alpha = 0.05;
 %Prepend folder for result set
 imageDirectory = 'images/trial1/';
 %The amount of clients
-x = [1,5,10,20,40,60,80];
+x = [1,5, 10,20,40,60,80];
 
 
 % fileBase contains the path to result data file up to the run number
