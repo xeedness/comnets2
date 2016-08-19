@@ -138,11 +138,10 @@ The professor's bidirectional RTP over UDP video conference generates a bit rate
 
 Where the 1400B packet size are 1388 B payload + 12 B minimal RTP header.
 
+Therefore, a total $2\text{Mbps} + 2 \cdot 0,56 \text{Mbps} = 2,56 \text{Mbps}$ of bandwidth are used constantly.
+
 \subsubsection{FTP upload bit rate}
-TODO
-
-
-Therefore, a total $2\text{Mbps} + 2 \cdot 0,56 \text{Mbps} + \text{TODO: FTP} = 2,56 \text{TODO: update value} \text{Mbps}$ of bandwidth are used constantly.
+Since the FTP file transfer is a bulk upload rather than a continuous data stream, its bandwidth usage is not constant. Using TCP's congestion avoidance algorithms, the TCP connection taking care of the transfer will attempt to use as much of the available bandwidth as possible (until collisions occur). Therefore, the FTP traffic is not part of the network's baseline traffic.
 
 
 %----------------------------------------------------------------------------------------
