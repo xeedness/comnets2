@@ -16,6 +16,7 @@ fileStartNr = 0;
 % fileEndNr denotes the last run number
 fileEndNr = 134;
 
+% calculate browser throughput stats
 searchArray = {'tcpApp[0]', 'rcvdPk:sum(packetBytes)';
     'tcpApp[0]','sentPk:sum(packetBytes)'}
 module = 'BrowsingLaptop'
@@ -24,15 +25,20 @@ module = 'BrowsingLaptop'
 throughputRcvdBrowserSingle = result(:,1) ./ simtime;
 throughputSendBrowserSingle = result(:,2) ./ simtime;
 
+% calculate session length stats
+searchArray = {'BrowsingLaptop','tcpApp[0]', 'numActiveSessions:timeavg'};
+[ SessionLength ] = extractDataMulti(fileBase, fileStartNr, fileEndNr, searchArray);
+
 %queueAvgWaitRemote = result2(:,1);
 %queueAvgWaitMain = result2(:,2);
-modResults = [throughputRcvdBrowserSingle throughputSendBrowserSingle];
+modResults = [throughputRcvdBrowserSingle throughputSendBrowserSingle SessionLength];
 
 % calculate confidence intervals
-[mean, e] = confIntervals( modResults, repititions, alpha);
+[mean, e] = confIntervals( modResults, repititions, alpha)
 
 resultArray = {'Browser', 'rcvd throughput single', 'bytes/s';
-                'Browser', 'send throughput single', 'bytes/s'}
+                'Browser', 'send throughput single', 'bytes/s';
+                'Browser', 'average session duration', 'seconds?'}
             
 %plot each row of mean and confidence intervals
 % A row corresponds to the row in the search array
