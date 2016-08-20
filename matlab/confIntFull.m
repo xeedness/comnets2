@@ -1,48 +1,48 @@
 % This script calculates the confidence intervals for the lateRatios of the
 % voip/video streams of the profesors and conference laptops and plots them
 
-simtime = 500;
-repititions = 10;
+simtime = 1000;
+repititions = 15;
 alpha = 0.05;
 %Prepend folder for result set
-imageDirectory = 'images/trial1/';
+imageDirectory = 'images/finalnocctv/';
 %The amount of clients
-x = [1,5, 10,20,40,60,80];
+x = [1,5,10,15,20,30,40,50,60];
 
 
 % fileBase contains the path to result data file up to the run number
-fileBase = '../results/trial1-cctv-160818/ExamTaskNetwork-'
+fileBase = '../results/final1-nocctv-160820/ExamTaskNetwork_no_CCTV-'
 % fileStartNr denotes the first run number
 fileStartNr = 0;
 % fileEndNr denotes the last run number
-fileEndNr = 69;
+fileEndNr = 134;
 % the search array contains the modulename and parameter name to look at
 % the data is extracted for each row
-searchArray = {'ExamTaskNetwork.ProfessorsLaptop.udpApp[0]','"packets sent"';
-    'ExamTaskNetwork.ProfessorsLaptop.udpApp[0]','"packets received"';
-    'ExamTaskNetwork.ProfessorsLaptop.udpApp[0]','"discarded packets"';
-    'ExamTaskNetwork.ConferenceLaptop.udpApp[0]','"packets sent"';
-    'ExamTaskNetwork.ConferenceLaptop.udpApp[0]','"packets received"';
-    'ExamTaskNetwork.ConferenceLaptop.udpApp[0]','"discarded packets"';
-    'ExamTaskNetwork.RemoteRouter.ppp[0].queue','dropPk:count';
-    'ExamTaskNetwork.RemoteRouter.ppp[0].queue','rcvdPk:count';
-    'ExamTaskNetwork.RemoteRouter.ppp[0].queue','queueLength:timeavg';
-    'ExamTaskNetwork.MainRouter.ppp[0].queue','dropPk:count';
-    'ExamTaskNetwork.MainRouter.ppp[0].queue','rcvdPk:count';
-    'ExamTaskNetwork.MainRouter.ppp[0].queue','queueLength:timeavg';
-    'ExamTaskNetwork.RemoteAccessPoint.wlan[0].mgmt','dropPkByQueue:count';
-    'ExamTaskNetwork.RemoteAccessPoint.wlan[0].mac','rcvdPkFromHL:count';
-    'ExamTaskNetwork.Internet.eth[0].mac', 'txPk:sum(packetBytes)';
-    'ExamTaskNetwork.ProfessorsLaptop.eth[0].mac','txPk:sum(packetBytes)'}
+searchArray = {'ProfessorsLaptop.udpApp[0]','"packets sent"';
+    'ProfessorsLaptop.udpApp[0]','"packets received"';
+    'ProfessorsLaptop.udpApp[0]','"discarded packets"';
+    'ConferenceLaptop.udpApp[0]','"packets sent"';
+    'ConferenceLaptop.udpApp[0]','"packets received"';
+    'ConferenceLaptop.udpApp[0]','"discarded packets"';
+    'RemoteRouter.ppp[0].queue','dropPk:count';
+    'RemoteRouter.ppp[0].queue','rcvdPk:count';
+    'RemoteRouter.ppp[0].queue','queueLength:timeavg';
+    'MainRouter.ppp[0].queue','dropPk:count';
+    'MainRouter.ppp[0].queue','rcvdPk:count';
+    'MainRouter.ppp[0].queue','queueLength:timeavg';
+    'RemoteAccessPoint.wlan[0].mgmt','dropPkByQueue:count';
+    'RemoteAccessPoint.wlan[0].mac','rcvdPkFromHL:count';
+    'Internet.eth[0].mac', 'txPk:sum(packetBytes)';
+    'ProfessorsLaptop.eth[0].mac','txPk:sum(packetBytes)'}
 
 
 [ result ] = extractDataSca( fileBase, fileStartNr, fileEndNr, searchArray );
-searchArray2 = {'ExamTaskNetwork.MainRouter.ppp[0].queue','queueingTime:histogram', 'mean';
-    'ExamTaskNetwork.RemoteRouter.ppp[0].queue','queueingTime:histogram', 'mean'}
+searchArray2 = {'MainRouter.ppp[0].queue','queueingTime:histogram', 'mean';
+    'RemoteRouter.ppp[0].queue','queueingTime:histogram', 'mean'}
 %[ result2 ] = extractDataHist( fileBase, fileStartNr, fileEndNr, searchArray2 );
 
-searchArray3 = {'ExamTaskNetwork.BrowsingLaptop','tcpApp[0]', 'rcvdPk:sum(packetBytes)';
-    'ExamTaskNetwork.BrowsingLaptop','tcpApp[0]','sentPk:sum(packetBytes)'}
+searchArray3 = {'BrowsingLaptop','tcpApp[0]', 'rcvdPk:sum(packetBytes)';
+    'BrowsingLaptop','tcpApp[0]','sentPk:sum(packetBytes)'}
 [ result3 ] = extractDataMulti( fileBase, fileStartNr, fileEndNr, searchArray3);
 lossRatiosProf = (result(:,4) - (result(:,2)-result(:,3))) ./(result(:,4));
 lossRatiosConf = (result(:,1) - (result(:,5)-result(:,6))) ./(result(:,1));
@@ -71,9 +71,6 @@ throughputSendBrowser = result3(:,2) ./ simtime;
 %queueAvgWaitMain = result2(:,2);
 modResults = [lossRatiosProf lossRatiosConf dropRatioRemote dropRatioMain avgQueueLengthRemote avgQueueLengthMain dropRatioRAP dropRatioRAP_Main shareConfTraffic throughputSendBrowser throughputRcvdBrowser];
 
-
-repititions = 10;
-alpha = 0.05;
 % calculate confidence intervals
 [mean, e] = confIntervals( modResults, repititions, alpha);
 

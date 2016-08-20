@@ -8,7 +8,9 @@ function [ result ] = extractDataSca( fileBase, fileStartNr, fileEndNr, searchAr
 %   The result contains the extracted values for each row in the search
 %   array
     result = [];
+    fprintf('Starting Single Value Extraction.');
     for fileIt=fileStartNr:fileEndNr
+        fprintf('Progress: %1.02f\n', (fileIt-fileStartNr)/(fileEndNr-fileStartNr));
         file = strcat(fileBase,num2str(fileIt),'.sca');
         
 
