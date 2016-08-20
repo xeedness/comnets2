@@ -86,6 +86,22 @@ TODO!
 %	INTRODUCTION
 %----------------------------------------------------------------------------------------
 
+\section{Network Implementation}
+To analyze the desired network setup, simulations were conducted. The following section discusses the implementation of the simulation and its configuration.
+
+% TODO: übersichtsbild? ist egtl schon auf dem Aufgabenzettel aber war als beispiel
+% in den dos & donts...
+
+\subsection{Applications}
+TODO: Apps auf den modulen bescheiben
+
+\subsection{Configuration Details}
+
+TODO: are there any outstanding configs the customer might need to know? (-> RemoteRouter Queue Size!)
+
+The size of the file uploaded using FTP is assumed to be endless, that is: the file upload continues over the course of the entire simulation, no matter the simulation time.
+
+
 \section{Prerequisites and Network Setup}
 
 In order to conduct a meaningful simulation, a few configurations and calculations had to be made. In the following, these calculations, their results and the resulting network setup will be described.
@@ -141,13 +157,12 @@ The professor's bidirectional RTP over UDP video conference generates a bit rate
 \frac{1000ms}{40ms} &\cdot 1400B \cdot 8 = 0,28 Mbps
 \end{align*}
 
-Where the 1400B packet size are 1388 B payload + 12 B minimal RTP header.
+Where the 1400B packet size are 1388 B payload + 12 B minimal RTP header.\\
 
-Therefore, a total $2\text{Mbps} + 2 \cdot 0,56 \text{Mbps} = 2,56 \text{Mbps}$ of bandwidth are used constantly.
+In conclusion, a total $2\text{Mbps} + 2 \cdot 0,56 \text{Mbps} = 2,56 \text{Mbps}$ of bandwidth are used constantly.
 
 \subsubsection{FTP upload bit rate}
 Since the FTP file transfer is a bulk upload rather than a continuous data stream, its bandwidth usage is not constant. Using TCP's congestion avoidance algorithms, the TCP connection taking care of the transfer will attempt to use as much of the available bandwidth as possible (until collisions occur). Therefore, the FTP traffic is not part of the network's baseline traffic.
-
 
 %----------------------------------------------------------------------------------------
 %	METHODS
@@ -171,10 +186,14 @@ TODO: answer (for with/without CCTV, I guess):\\
 • Which further changes would you suggest to improve the QoS for the video call?\\
 
 \subsection{Network with CCTV}
+
+
 \subsection{Network without CCTV}
 
 \section{Recommended Changes To The Network}
 TODO: are there any things we'd recommend to be changed based on our simulations?
+
+- mehr APs *auf unterschiedlichen channeln!* (da das WLAN medium sonst überlastet ist und zum bottleneck wird) -> ein AP pro 20 clients
 
 \section{Conclusion}
 TODO
