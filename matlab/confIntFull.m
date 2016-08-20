@@ -5,13 +5,13 @@ simtime = 1000;
 repititions = 15;
 alpha = 0.05;
 %Prepend folder for result set
-imageDirectory = 'images/finalnocctv/';
+imageDirectory = 'images/finalcctv/';
 %The amount of clients
 x = [1,5,10,15,20,30,40,50,60];
 
 
 % fileBase contains the path to result data file up to the run number
-fileBase = '../results/final1-nocctv-160820/ExamTaskNetwork_no_CCTV-'
+fileBase = '../results/final1-cctv160820/ExamTaskNetwork-'
 % fileStartNr denotes the first run number
 fileStartNr = 0;
 % fileEndNr denotes the last run number
@@ -33,7 +33,12 @@ searchArray = {'ProfessorsLaptop.udpApp[0]','"packets sent"';
     'RemoteAccessPoint.wlan[0].mgmt','dropPkByQueue:count';
     'RemoteAccessPoint.wlan[0].mac','rcvdPkFromHL:count';
     'Internet.eth[0].mac', 'txPk:sum(packetBytes)';
-    'ProfessorsLaptop.eth[0].mac','txPk:sum(packetBytes)'}
+    'ProfessorsLaptop.eth[0].mac','txPk:sum(packetBytes)';
+    'RemoteAccessPoint.wlan[0].mac','sent and received bits';
+    'RemoteAccessPoint.wlan[0].mac','number of collisions';
+    'FTPLaptop.tcpApp[0]', 'bytesSent';
+    'MainRouter.ppp[0].inputHook[0]', 'avg throughput (bit/s)'
+    'MainRouter.ppp[0].outputHook[0]', 'avg throughput (bit/s)';}
 
 
 [ result ] = extractDataSca( fileBase, fileStartNr, fileEndNr, searchArray );
@@ -41,9 +46,6 @@ searchArray2 = {'MainRouter.ppp[0].queue','queueingTime:histogram', 'mean';
     'RemoteRouter.ppp[0].queue','queueingTime:histogram', 'mean'}
 %[ result2 ] = extractDataHist( fileBase, fileStartNr, fileEndNr, searchArray2 );
 
-searchArray3 = {'BrowsingLaptop','tcpApp[0]', 'rcvdPk:sum(packetBytes)';
-    'BrowsingLaptop','tcpApp[0]','sentPk:sum(packetBytes)'}
-[ result3 ] = extractDataMulti( fileBase, fileStartNr, fileEndNr, searchArray3);
 lossRatiosProf = (result(:,4) - (result(:,2)-result(:,3))) ./(result(:,4));
 lossRatiosConf = (result(:,1) - (result(:,5)-result(:,6))) ./(result(:,1));
 lossRatiosProf = lossRatiosProf .* 100;
@@ -64,12 +66,33 @@ dropRatioRAP_Main = dropRatioRAP_Main .* 100;
 shareConfTraffic = result(:,16) ./ result(:,15);
 shareConfTraffic = shareConfTraffic .* 100;
 
+throughputRAP = result(:,17) ./ (simtime*1000*1000);
+collisionsRAP = result(:,18);
 
-throughputRcvdBrowser = result3(:,1) ./ simtime;
-throughputSendBrowser = result3(:,2) ./ simtime;
+throughputFTP = (result(:,19).*8) ./ (simtime*1000*1000);
+
+throughputMRIn = result(:,20) ./ (1000*1000);
+throughputMROut = result(:,21) ./ (1000*1000);
+
+throughputCombinedMR = throughputMRIn+throughputMROut;
+
 %queueAvgWaitRemote = result2(:,1);
 %queueAvgWaitMain = result2(:,2);
-modResults = [lossRatiosProf lossRatiosConf dropRatioRemote dropRatioMain avgQueueLengthRemote avgQueueLengthMain dropRatioRAP dropRatioRAP_Main shareConfTraffic throughputSendBrowser throughputRcvdBrowser];
+modResults = [lossRatiosProf'
+              lossRatiosConf'
+              dropRatioRemote'
+              dropRatioMain'
+              avgQueueLengthRemote'
+              avgQueueLengthMain'
+              dropRatioRAP'
+              dropRatioRAP_Main'
+              shareConfTraffic'
+              throughputRAP'
+              collisionsRAP'
+              throughputFTP'
+              throughputMRIn'
+              throughputMROut'
+              throughputCombinedMR']';
 
 % calculate confidence intervals
 [mean, e] = confIntervals( modResults, repititions, alpha);
@@ -84,8 +107,12 @@ resultArray = {'ProfessorsLaptop','packet loss ratio','%';
                 'RAP', 'drop ratio hl','%';
                 'RAP + Main', 'drop ratio','%';
                 'ConferenceLaptop', 'traffic share','bytes/s';
-                'Browser', 'send throughput all','bytes/s';
-                'Browser', 'rcvd throughput all','bytes/s'}
+                'RAP', 'Throughput', 'Mbps';
+                'RAP', '# of collisions', ' ';
+                'FTPLaptop','Throughput', 'Mbps';
+                'MainRouter', 'Throughput In', 'Mbps';
+                'MainRouter', 'Throughput Out', 'Mbps';
+                'MainRouter', 'Throughput Combined', 'Mbps'};
             
 %plot each row of mean and confidence intervals
 % A row corresponds to the row in the search array
