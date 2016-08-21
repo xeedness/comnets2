@@ -171,6 +171,31 @@ Since the FTP file transfer is a bulk upload rather than a continuous data strea
 \section{Simulation Plan}
 \label{sec:sim_plan}
 
+The overall goal of the simulation is to evaluate how the previously described applications perform and what the bottlenecks of the network are. For thorough evaluation we identified potentially changing parts of the network. These parts are the variables we can modify between different simulation runs.
+The first part to look at is the amount of webbrowsing clients. We expect a decreasing performance with the amount of clients rising.
+The second part is the CCTV. To determine the influence of the CCTV on the network performance, we either include or exclude the CCTV from the simulation.
+
+We determined the maximum amount of clients by looking at the influence of the clients on the network. A maximum number of 60 clients is sufficient to estimate the overall system behavior. We found that it is not expected, that the behavior of the system changes significantly at a higher amount of clients, so we are able to extrapolate several network properties from the simulation results. If you look at the scenario itself, an amount of 60 clients is a reasonable amount of students to be present in a 400m^{2} area and surfing at the same time, if the lecture requires web research.
+To be able to extrapolate properly, we need to determine the incrementation of the amount of clients aswell. To receive a well formed graph, we should work with a low increment, when the network behavior changes significantly. At low numbers, the traffic share is higher, therefore we need a low increment aswell. At higher numbers we can increase it. The resulting numbers of clients we simulated are:
+\begin{align*}
+n \in \{1,5,10,15,20,30,40,50,60\}
+\end{align*}
+To find a suitable duration of the simulation, we need to examine the behavior of the system over time. We identified the browsing clients as the only application, whose behavior is depending on time. The mean time between http requests is 20 seconds and the mean request length is 671539 bytes. If we want to include 0.95% of the resulting values, we need to calculate the following boundaries:
+\begin{align*}
+\frac{ln(0.05)}{-1/671539} \approx 2 \[MB\]
+\end{align*}
+\begin{align*}
+\frac{ln(0.05)}{-1/20} \approx 60 \[s\]
+\end{align*}
+Our simulation showed, that the throughput for 60 clients goes down to 10000 bps. The expected time from simulation start to the end of the first request is therefore: 
+\begin{align*}
+\frac{2 MB}{10000 bps} + 60 s = 26 s
+\end{align*}
+To allow more of these maximum requests, we set the maximum simulation time to 1000 seconds.
+
+TODO: Repititions
+
+
 TODO: einzelne Abschnitte \& Idee dahinter beschreiben
 
 \subsection{Network with CCTV}
