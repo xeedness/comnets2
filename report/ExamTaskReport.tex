@@ -244,7 +244,7 @@ To be able to extrapolate properly, we need to determine the incrementation of t
 \begin{align*}
 N \in \{1,5,10,15,20,30,40,50,60\}
 \end{align*}
-To find a suitable duration of the simulation, we need to examine the behavior over time. We identified the browsing clients as the only application, whose behavior is depending on time. The mean time between HTTP requests is 20 seconds and it is exponentially distributed. The mean reply length is 671539 bytes and it is exponentially distributed as well. To get good results, we should include a high range of possible values in the simulation time. To calculate a reasonable expected highest value to take into account, we used the CDF of the exponential distribution:
+To find a suitable duration of the simulation, we need to examine the behavior over time. We identified the browsing clients as the only application, whose behavior is depending on time. The mean time between HTTP requests is 20 seconds and it is exponentially distributed. The mean reply length is 671539 bytes and it is exponentially distributed as well. To get good results, we should include a high range of possible values in the simulation time. To calculate a reasonable expected highest value to take into account, we used the cumulative distribution function(CDF) of the exponential distribution:
 \begin{align*}
 y = 1-e^{-{\frac{1}{\mu}x}}
 \end{align*}
@@ -296,7 +296,7 @@ The FTP Upload is modeled as a continous TCP stream to the internet. It runs for
 \end{align*}
 
 \subsubsection{CCTV}
-The CCTV is used to monitor abnormal behavior at the remote campus. There are two characteristics, which can be considered. At first the delay of stream increases the reaction time of the staff. If the information arrives at the monitor one second late, it does not influence the reaction time of the staff in a significant way. Therefore it is neglectable. 
+The CCTV is used to monitor abnormal behavior at the remote campus. There are two characteristics, which can be considered. At first the delay of stream increases the reaction time of the staff. If the information arrives at the monitor one second late, it does not influence the reaction time of the staff in a significant way. Therefore it is neglectable.
 As of the conference the average packet loss rate influences the quality of the video stream. If the packet loss rate is higher than 5\% the video stream is considered not to be recognizable anymore. Therefore the packet loss rate should not exceed 5\%.
 
 TODO: Ist der Stream ab 5\% wirklich nicht mehr zu gebrauchen?
@@ -304,7 +304,7 @@ TODO: Ist der Stream ab 5\% wirklich nicht mehr zu gebrauchen?
 Besides looking at the performance characteristics of the application, it is advisable to look at potential bottlenecks. We identified the wireless network at the remote campus and the radio link between the remote campus and the main campus as potential bottlenecks. The theoretical maximum bandwidth of 56 Mbps of the wireless network and a 12 Mbps bandwidth of the radio link are much smaller than the bandwidths of the remaining links. Thus it is not necessary to evaluate those.
 
 \subsubsection{Radio Link}
-To evaluate the radio link we need to consider two different characteristics. It is useful to determine how much bandwidth of the link is unused. Therefore we need to measure the average throughput. To receive even more information, we can look at the throughputs in each direction of the link. So we can identify the potential application, which is causing the traffic. 
+To evaluate the radio link we need to consider two different characteristics. It is useful to determine how much bandwidth of the link is unused. Therefore we need to measure the average throughput. To receive even more information, we can look at the throughputs in each direction of the link. So we can identify the potential application, which is causing the traffic.
 In case the link is indeed a bottleneck, it is necessary to collect data about the packet drop rate. When the link is overloaded, the packets will be hold in a queue. When this queue is full. Incoming packets are dropped. We can use this drop rate to determine, if the link is a bottleneck.
 Since our applications require a sufficient packet delay, it is also useful to record the average queueing delay, to evaluate the influence of the link on the streaming delays.
 All of these measurements can be done at the remote router and main router to distinct between traffic directions.
