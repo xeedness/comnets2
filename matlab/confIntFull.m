@@ -1,21 +1,25 @@
 % This script calculates the confidence intervals for the lateRatios of the
 % voip/video streams of the profesors and conference laptops and plots them
 
-simtime = 1000;
-repititions = 15;
+simtime = 100;
+%repititions = 15;
+repititions = 1;
 alpha = 0.05;
 %Prepend folder for result set
-imageDirectory = 'images/finalcctv/';
+imageDirectory = 'images/tst/';
 %The amount of clients
-x = [1,5,10,15,20,30,40,50,60];
+%x = [1,5,10,15,20,30,40,50,60];
+x = [1,5,10];
 
 
 % fileBase contains the path to result data file up to the run number
-fileBase = '../results/final2-cctv-160821/ExamTaskNetwork-'
+%fileBase = '../results/final2-cctv-160821/ExamTaskNetwork-'
+fileBase = '../examTask/results/ExamTaskNetwork-'
 % fileStartNr denotes the first run number
 fileStartNr = 0;
 % fileEndNr denotes the last run number
-fileEndNr = 134;
+%fileEndNr = 134;
+fileEndNr = 2;
 % the search array contains the modulename and parameter name to look at
 % the data is extracted for each row
 searchArray = {'ProfessorsLaptop.udpApp[0]','"packets sent"';
