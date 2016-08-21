@@ -36,7 +36,7 @@ searchArray = {'ProfessorsLaptop.udpApp[0]','"packets sent"';
     'ProfessorsLaptop.eth[0].mac','txPk:sum(packetBytes)';
     'RemoteAccessPoint.wlan[0].mac','sent and received bits';
     'RemoteAccessPoint.wlan[0].mac','number of collisions';
-    'FTPLaptop.tcpApp[0]', 'bytesSent';
+    'Internet.tcpApp[1]', 'rcvdPk:sum(packetBytes)';
     'MainRouter.ppp[0].inputHook[0]', 'avg throughput (bit/s)'
     'MainRouter.ppp[0].outputHook[0]', 'avg throughput (bit/s)';}
 
