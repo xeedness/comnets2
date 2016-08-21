@@ -1,0 +1,3472 @@
+version 2
+run ExamTaskNetwork-26-20160820-17:15:34-2355
+attr configname ExamTaskNetwork
+attr datetime 20160820-17:15:34
+attr experiment ExamTaskNetwork
+attr inifile omnetpp.ini
+attr iterationvars "$simtime=1000, $0=5"
+attr iterationvars2 "$simtime=1000, $0=5, $repetition=11"
+attr measurement "$simtime=1000, $0=5"
+attr network ExamTaskNetwork
+attr processid 2355
+attr repetition 11
+attr replication #11
+attr resultdir results
+attr runnumber 26
+attr seedset 26
+attr simtime 1000
+
+scalar . 	simtime 	1000
+scalar ExamTaskNetwork.ConferenceLaptop.networkLayer.arp 	initiatedARPResolution:count 	9
+attr title  "ARP initiated resolutions, count"
+scalar ExamTaskNetwork.ConferenceLaptop.networkLayer.arp 	sentReply:count 	6
+attr title  "ARP replies sent, count"
+scalar ExamTaskNetwork.ConferenceLaptop.networkLayer.arp 	sentReq:count 	10
+attr title  "ARP request sent, count"
+scalar ExamTaskNetwork.ConferenceLaptop.networkLayer.arp 	failedARPResolution:count 	0
+attr title  "ARP failed resolutions, count"
+scalar ExamTaskNetwork.ConferenceLaptop.networkLayer.arp 	completedARPResolution:count 	29
+attr title  "ARP completed resolutions, count"
+scalar ExamTaskNetwork.ConferenceLaptop.lo0.lo 	rcvdPkFromHL:count 	0
+attr interpolationmode  none
+attr source  packetReceivedFromUpper
+attr title  "packets received from higher layer, count"
+scalar ExamTaskNetwork.ConferenceLaptop.lo0.lo 	rcvdPkFromHL:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  packetReceivedFromUpper
+attr title  "packets received from higher layer, sum(packetBytes)"
+scalar ExamTaskNetwork.ConferenceLaptop.lo0.lo 	passedUpPk:count 	0
+attr interpolationmode  none
+attr source  packetSentToUpper
+attr title  "packets passed to higher layer, count"
+scalar ExamTaskNetwork.ConferenceLaptop.lo0.lo 	passedUpPk:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  packetSentToUpper
+attr title  "packets passed to higher layer, sum(packetBytes)"
+scalar ExamTaskNetwork.ConferenceLaptop.lo0.lo 	droppedPkBitError:count 	0
+attr interpolationmode  none
+attr source  dropPkBitError
+attr title  "packets dropped/bit error, count"
+scalar ExamTaskNetwork.ConferenceLaptop.lo0.lo 	droppedPkBitError:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  dropPkBitError
+attr title  "packets dropped/bit error, sum(packetBytes)"
+scalar ExamTaskNetwork.ConferenceLaptop.wlan[0].agent 	dropConfirm:count 	0
+attr title  "dropped confirms, count"
+scalar ExamTaskNetwork.ConferenceLaptop.wlan[0].agent 	acceptConfirm:count 	36
+attr title  "accepted confirms, count"
+scalar ExamTaskNetwork.ConferenceLaptop.wlan[0].agent 	sentRequest:count 	36
+attr title  "sent requests, count"
+scalar ExamTaskNetwork.ConferenceLaptop.wlan[0].mgmt 	dropPkByQueue:count 	0
+attr interpolationmode  none
+attr source  dropPkByQueue
+attr title  "packets dropped by queue, count"
+scalar ExamTaskNetwork.ConferenceLaptop.wlan[0].mgmt 	dropPkByQueue:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  dropPkByQueue
+attr title  "packets dropped by queue, sum(packetBytes)"
+scalar ExamTaskNetwork.ConferenceLaptop.wlan[0].mgmt 	dataQueueLen:max 	24
+attr interpolationmode  sample-hold
+attr title  "data queue length, max"
+scalar ExamTaskNetwork.ConferenceLaptop.wlan[0].mgmt 	dataQueueLen:timeavg 	0.0017492613546514
+attr interpolationmode  sample-hold
+attr title  "data queue length, timeavg"
+scalar ExamTaskNetwork.ConferenceLaptop.wlan[0].mac 	"number of received packets" 	24836
+scalar ExamTaskNetwork.ConferenceLaptop.wlan[0].mac 	"number of collisions" 	33260
+scalar ExamTaskNetwork.ConferenceLaptop.wlan[0].mac 	"number of internal collisions" 	0
+scalar ExamTaskNetwork.ConferenceLaptop.wlan[0].mac 	"number of retry for AC 0" 	6052
+scalar ExamTaskNetwork.ConferenceLaptop.wlan[0].mac 	"sent and received bits" 	292259552
+scalar ExamTaskNetwork.ConferenceLaptop.wlan[0].mac 	"sent packet within AC 0" 	24902
+scalar ExamTaskNetwork.ConferenceLaptop.wlan[0].mac 	"sent in TXOP " 	0
+scalar ExamTaskNetwork.ConferenceLaptop.wlan[0].mac 	"sentWithoutRetry AC 0" 	20387
+scalar ExamTaskNetwork.ConferenceLaptop.wlan[0].mac 	"numGivenUp AC 0" 	0
+scalar ExamTaskNetwork.ConferenceLaptop.wlan[0].mac 	"numDropped AC 0" 	0
+scalar ExamTaskNetwork.ConferenceLaptop.wlan[0].mac 	rcvdPkFromHL:count 	24914
+attr interpolationmode  none
+attr source  packetReceivedFromUpper
+attr title  "packets received from higher layer, count"
+scalar ExamTaskNetwork.ConferenceLaptop.wlan[0].mac 	rcvdPkFromHL:sum(packetBytes) 	36532444
+attr interpolationmode  none
+attr source  packetReceivedFromUpper
+attr title  "packets received from higher layer, sum(packetBytes)"
+scalar ExamTaskNetwork.ConferenceLaptop.wlan[0].mac 	passedUpPk:count 	34312
+attr interpolationmode  none
+attr source  packetSentToUpper
+attr title  "packets passed to higher layer, count"
+scalar ExamTaskNetwork.ConferenceLaptop.wlan[0].mac 	passedUpPk:sum(packetBytes) 	37175492
+attr interpolationmode  none
+attr source  packetSentToUpper
+attr title  "packets passed to higher layer, sum(packetBytes)"
+scalar ExamTaskNetwork.ConferenceLaptop.wlan[0].mac 	rcvdPkFromLL:count 	3202161
+attr interpolationmode  none
+attr source  packetReceivedFromLower
+attr title  "packets received from lower layer, count"
+scalar ExamTaskNetwork.ConferenceLaptop.wlan[0].mac 	rcvdPkFromLL:sum(packetBytes) 	1316386401
+attr interpolationmode  none
+attr source  packetReceivedFromLower
+attr title  "packets received from lower layer, sum(packetBytes)"
+scalar ExamTaskNetwork.ConferenceLaptop.wlan[0].mac 	sentDownPk:count 	55802
+attr interpolationmode  none
+attr source  packetSentToLower
+attr title  "packets sent to lower layer, count"
+scalar ExamTaskNetwork.ConferenceLaptop.wlan[0].mac 	sentDownPk:sum(packetBytes) 	45745150
+attr interpolationmode  none
+attr source  packetSentToLower
+attr title  "packets sent to lower layer, sum(packetBytes)"
+scalar ExamTaskNetwork.ConferenceLaptop.wlan[0].radio 	lossRate:min 	0
+attr interpolationmode  backward-sample-hold
+attr title  "packet loss rate, min"
+scalar ExamTaskNetwork.ConferenceLaptop.wlan[0].radio 	lossRate:max 	0.14
+attr interpolationmode  backward-sample-hold
+attr title  "packet loss rate, max"
+scalar ExamTaskNetwork.ConferenceLaptop.wlan[0].radio 	lossRate:timeavg 	0.0097098199988122
+attr interpolationmode  backward-sample-hold
+attr title  "packet loss rate, timeavg"
+statistic ExamTaskNetwork.ConferenceLaptop.wlan[0].radio 	channelNo:histogram
+field count 1
+field mean 0
+field stddev -nan
+field sum 0
+field sqrsum 0
+field min 0
+field max 0
+attr interpolationmode  sample-hold
+attr title  "channel no, histogram"
+bin	-INF	0
+bin	-0.5	0
+bin	-0.46666666666667	0
+bin	-0.43333333333333	0
+bin	-0.4	0
+bin	-0.36666666666667	0
+bin	-0.33333333333333	0
+bin	-0.3	0
+bin	-0.26666666666667	0
+bin	-0.23333333333333	0
+bin	-0.2	0
+bin	-0.16666666666667	0
+bin	-0.13333333333333	0
+bin	-0.1	0
+bin	-0.066666666666667	0
+bin	-0.033333333333333	0
+bin	0	1
+bin	0.033333333333333	0
+bin	0.066666666666667	0
+bin	0.1	0
+bin	0.13333333333333	0
+bin	0.16666666666667	0
+bin	0.2	0
+bin	0.23333333333333	0
+bin	0.26666666666667	0
+bin	0.3	0
+bin	0.33333333333333	0
+bin	0.36666666666667	0
+bin	0.4	0
+bin	0.43333333333333	0
+bin	0.46666666666667	0
+bin	0.5	0
+scalar ExamTaskNetwork.ConferenceLaptop.wlan[0].radio 	radioState:count 	6523310
+attr interpolationmode  sample-hold
+attr title  "radio state (enum), count"
+scalar ExamTaskNetwork.ConferenceLaptop.wlan[0].radio 	bitrate:min 	54000000
+attr interpolationmode  sample-hold
+attr title  "tx bitrate, min"
+attr unit  bps
+scalar ExamTaskNetwork.ConferenceLaptop.wlan[0].radio 	bitrate:max 	54000000
+attr interpolationmode  sample-hold
+attr title  "tx bitrate, max"
+attr unit  bps
+scalar ExamTaskNetwork.ConferenceLaptop.wlan[0].radio 	bitrate:timeavg 	54000000
+attr interpolationmode  sample-hold
+attr title  "tx bitrate, timeavg"
+attr unit  bps
+scalar ExamTaskNetwork.ConferenceLaptop.udpApp[0] 	"packets sent" 	24963
+scalar ExamTaskNetwork.ConferenceLaptop.udpApp[0] 	"packets received" 	24672
+scalar ExamTaskNetwork.ConferenceLaptop.udpApp[0] 	lateRatio 	0.00020265889179427
+scalar ExamTaskNetwork.ConferenceLaptop.udpApp[0] 	"discarded packets" 	5
+statistic ExamTaskNetwork.ConferenceLaptop.udpApp[0] 	endToEndDelay:stats
+field count 24672
+field mean 0.023575496342941
+field stddev 0.013351852702775
+field sum 581.65464577304
+field sqrsum 18.110944760865
+field min 0.016439408382
+field max 0.105594228641
+attr source  VoIPPacketDelay
+attr title  "VoIP Packet End-to-End Delay, stats"
+attr unit  s
+scalar ExamTaskNetwork.ConferenceLaptop.udpApp[0] 	sentPk:count 	24963
+attr interpolationmode  none
+attr source  sentPk
+attr title  "packets sent, count"
+scalar ExamTaskNetwork.ConferenceLaptop.udpApp[0] 	sentPk:sum(packetBytes) 	34948200
+attr interpolationmode  none
+attr source  sentPk
+attr title  "packets sent, sum(packetBytes)"
+scalar ExamTaskNetwork.ConferenceLaptop.udpApp[0] 	rcvdPk:count 	24672
+attr interpolationmode  none
+attr source  rcvdPk
+attr title  "packets received, count"
+scalar ExamTaskNetwork.ConferenceLaptop.udpApp[0] 	rcvdPk:sum(packetBytes) 	34540800
+attr interpolationmode  none
+attr source  rcvdPk
+attr title  "packets received, sum(packetBytes)"
+statistic ExamTaskNetwork.ConferenceLaptop.udpApp[0] 	rcvdPkLifetime:stats
+field count 24672
+field mean 0.023575496342941
+field stddev 0.013351852702775
+field sum 581.65464577304
+field sqrsum 18.110944760865
+field min 0.016439408382
+field max 0.105594228641
+attr interpolationmode  none
+attr source  messageAge(rcvdPk)
+attr title  "received packet lifetime, stats"
+attr unit  s
+scalar ExamTaskNetwork.ConferenceLaptop.udp 	droppedPkBadChecksum:count 	0
+attr interpolationmode  none
+attr title  "packets dropped (checksum error), count"
+scalar ExamTaskNetwork.ConferenceLaptop.udp 	droppedPkWrongPort:count 	0
+attr interpolationmode  none
+attr title  "packets dropped (wrong port), count"
+scalar ExamTaskNetwork.ConferenceLaptop.udp 	passedUpPk:count 	24672
+attr interpolationmode  none
+attr title  "packets passed up, count"
+scalar ExamTaskNetwork.ConferenceLaptop.udp 	sentPk:count 	24963
+attr interpolationmode  none
+attr source  sentPk
+attr title  "packets sent, count"
+scalar ExamTaskNetwork.ConferenceLaptop.udp 	sentPk:sum(packetBytes) 	35147904
+attr interpolationmode  none
+attr source  sentPk
+attr title  "packets sent, sum(packetBytes)"
+scalar ExamTaskNetwork.ConferenceLaptop.udp 	rcvdPk:count 	24672
+attr interpolationmode  none
+attr source  rcvdPk
+attr title  "packets received, count"
+scalar ExamTaskNetwork.ConferenceLaptop.udp 	rcvdPk:sum(packetBytes) 	34738176
+attr interpolationmode  none
+attr source  rcvdPk
+attr title  "packets received, sum(packetBytes)"
+scalar ExamTaskNetwork.FTPLaptop.networkLayer.arp 	initiatedARPResolution:count 	9
+attr title  "ARP initiated resolutions, count"
+scalar ExamTaskNetwork.FTPLaptop.networkLayer.arp 	sentReply:count 	8
+attr title  "ARP replies sent, count"
+scalar ExamTaskNetwork.FTPLaptop.networkLayer.arp 	sentReq:count 	9
+attr title  "ARP request sent, count"
+scalar ExamTaskNetwork.FTPLaptop.networkLayer.arp 	failedARPResolution:count 	0
+attr title  "ARP failed resolutions, count"
+scalar ExamTaskNetwork.FTPLaptop.networkLayer.arp 	completedARPResolution:count 	30
+attr title  "ARP completed resolutions, count"
+scalar ExamTaskNetwork.FTPLaptop.lo0.lo 	rcvdPkFromHL:count 	0
+attr interpolationmode  none
+attr source  packetReceivedFromUpper
+attr title  "packets received from higher layer, count"
+scalar ExamTaskNetwork.FTPLaptop.lo0.lo 	rcvdPkFromHL:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  packetReceivedFromUpper
+attr title  "packets received from higher layer, sum(packetBytes)"
+scalar ExamTaskNetwork.FTPLaptop.lo0.lo 	passedUpPk:count 	0
+attr interpolationmode  none
+attr source  packetSentToUpper
+attr title  "packets passed to higher layer, count"
+scalar ExamTaskNetwork.FTPLaptop.lo0.lo 	passedUpPk:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  packetSentToUpper
+attr title  "packets passed to higher layer, sum(packetBytes)"
+scalar ExamTaskNetwork.FTPLaptop.lo0.lo 	droppedPkBitError:count 	0
+attr interpolationmode  none
+attr source  dropPkBitError
+attr title  "packets dropped/bit error, count"
+scalar ExamTaskNetwork.FTPLaptop.lo0.lo 	droppedPkBitError:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  dropPkBitError
+attr title  "packets dropped/bit error, sum(packetBytes)"
+scalar ExamTaskNetwork.FTPLaptop.wlan[0].agent 	dropConfirm:count 	0
+attr title  "dropped confirms, count"
+scalar ExamTaskNetwork.FTPLaptop.wlan[0].agent 	acceptConfirm:count 	36
+attr title  "accepted confirms, count"
+scalar ExamTaskNetwork.FTPLaptop.wlan[0].agent 	sentRequest:count 	36
+attr title  "sent requests, count"
+scalar ExamTaskNetwork.FTPLaptop.wlan[0].mgmt 	dropPkByQueue:count 	668
+attr interpolationmode  none
+attr source  dropPkByQueue
+attr title  "packets dropped by queue, count"
+scalar ExamTaskNetwork.FTPLaptop.wlan[0].mgmt 	dropPkByQueue:sum(packetBytes) 	1034064
+attr interpolationmode  none
+attr source  dropPkByQueue
+attr title  "packets dropped by queue, sum(packetBytes)"
+scalar ExamTaskNetwork.FTPLaptop.wlan[0].mgmt 	dataQueueLen:max 	50
+attr interpolationmode  sample-hold
+attr title  "data queue length, max"
+scalar ExamTaskNetwork.FTPLaptop.wlan[0].mgmt 	dataQueueLen:timeavg 	3.127492944379
+attr interpolationmode  sample-hold
+attr title  "data queue length, timeavg"
+scalar ExamTaskNetwork.FTPLaptop.wlan[0].mac 	"number of received packets" 	634301
+scalar ExamTaskNetwork.FTPLaptop.wlan[0].mac 	"number of collisions" 	2431
+scalar ExamTaskNetwork.FTPLaptop.wlan[0].mac 	"number of internal collisions" 	0
+scalar ExamTaskNetwork.FTPLaptop.wlan[0].mac 	"number of retry for AC 0" 	66503
+scalar ExamTaskNetwork.FTPLaptop.wlan[0].mac 	"sent and received bits" 	7940806088
+scalar ExamTaskNetwork.FTPLaptop.wlan[0].mac 	"sent packet within AC 0" 	641369
+scalar ExamTaskNetwork.FTPLaptop.wlan[0].mac 	"sent in TXOP " 	0
+scalar ExamTaskNetwork.FTPLaptop.wlan[0].mac 	"sentWithoutRetry AC 0" 	584548
+scalar ExamTaskNetwork.FTPLaptop.wlan[0].mac 	"numGivenUp AC 0" 	0
+scalar ExamTaskNetwork.FTPLaptop.wlan[0].mac 	"numDropped AC 0" 	0
+scalar ExamTaskNetwork.FTPLaptop.wlan[0].mac 	rcvdPkFromHL:count 	641383
+attr interpolationmode  none
+attr source  packetReceivedFromUpper
+attr title  "packets received from higher layer, count"
+scalar ExamTaskNetwork.FTPLaptop.wlan[0].mac 	rcvdPkFromHL:sum(packetBytes) 	992603857
+attr interpolationmode  none
+attr source  packetReceivedFromUpper
+attr title  "packets received from higher layer, sum(packetBytes)"
+scalar ExamTaskNetwork.FTPLaptop.wlan[0].mac 	passedUpPk:count 	643779
+attr interpolationmode  none
+attr source  packetSentToUpper
+attr title  "packets passed to higher layer, count"
+scalar ExamTaskNetwork.FTPLaptop.wlan[0].mac 	passedUpPk:sum(packetBytes) 	52748750
+attr interpolationmode  none
+attr source  packetSentToUpper
+attr title  "packets passed to higher layer, sum(packetBytes)"
+scalar ExamTaskNetwork.FTPLaptop.wlan[0].mac 	rcvdPkFromLL:count 	1915777
+attr interpolationmode  none
+attr source  packetReceivedFromLower
+attr title  "packets received from lower layer, count"
+scalar ExamTaskNetwork.FTPLaptop.wlan[0].mac 	rcvdPkFromLL:sum(packetBytes) 	295176732
+attr interpolationmode  none
+attr source  packetReceivedFromLower
+attr title  "packets received from lower layer, sum(packetBytes)"
+scalar ExamTaskNetwork.FTPLaptop.wlan[0].mac 	sentDownPk:count 	1342186
+attr interpolationmode  none
+attr source  packetSentToLower
+attr title  "packets sent to lower layer, count"
+scalar ExamTaskNetwork.FTPLaptop.wlan[0].mac 	sentDownPk:sum(packetBytes) 	1104392975
+attr interpolationmode  none
+attr source  packetSentToLower
+attr title  "packets sent to lower layer, sum(packetBytes)"
+scalar ExamTaskNetwork.FTPLaptop.wlan[0].radio 	lossRate:min 	0
+attr interpolationmode  backward-sample-hold
+attr title  "packet loss rate, min"
+scalar ExamTaskNetwork.FTPLaptop.wlan[0].radio 	lossRate:max 	0.1
+attr interpolationmode  backward-sample-hold
+attr title  "packet loss rate, max"
+scalar ExamTaskNetwork.FTPLaptop.wlan[0].radio 	lossRate:timeavg 	0.0012224397702562
+attr interpolationmode  backward-sample-hold
+attr title  "packet loss rate, timeavg"
+statistic ExamTaskNetwork.FTPLaptop.wlan[0].radio 	channelNo:histogram
+field count 1
+field mean 0
+field stddev -nan
+field sum 0
+field sqrsum 0
+field min 0
+field max 0
+attr interpolationmode  sample-hold
+attr title  "channel no, histogram"
+bin	-INF	0
+bin	-0.5	0
+bin	-0.46666666666667	0
+bin	-0.43333333333333	0
+bin	-0.4	0
+bin	-0.36666666666667	0
+bin	-0.33333333333333	0
+bin	-0.3	0
+bin	-0.26666666666667	0
+bin	-0.23333333333333	0
+bin	-0.2	0
+bin	-0.16666666666667	0
+bin	-0.13333333333333	0
+bin	-0.1	0
+bin	-0.066666666666667	0
+bin	-0.033333333333333	0
+bin	0	1
+bin	0.033333333333333	0
+bin	0.066666666666667	0
+bin	0.1	0
+bin	0.13333333333333	0
+bin	0.16666666666667	0
+bin	0.2	0
+bin	0.23333333333333	0
+bin	0.26666666666667	0
+bin	0.3	0
+bin	0.33333333333333	0
+bin	0.36666666666667	0
+bin	0.4	0
+bin	0.43333333333333	0
+bin	0.46666666666667	0
+bin	0.5	0
+scalar ExamTaskNetwork.FTPLaptop.wlan[0].radio 	radioState:count 	6551796
+attr interpolationmode  sample-hold
+attr title  "radio state (enum), count"
+scalar ExamTaskNetwork.FTPLaptop.wlan[0].radio 	bitrate:min 	54000000
+attr interpolationmode  sample-hold
+attr title  "tx bitrate, min"
+attr unit  bps
+scalar ExamTaskNetwork.FTPLaptop.wlan[0].radio 	bitrate:max 	54000000
+attr interpolationmode  sample-hold
+attr title  "tx bitrate, max"
+attr unit  bps
+scalar ExamTaskNetwork.FTPLaptop.wlan[0].radio 	bitrate:timeavg 	54000000
+attr interpolationmode  sample-hold
+attr title  "tx bitrate, timeavg"
+attr unit  bps
+scalar ExamTaskNetwork.FTPLaptop.tcpApp[0] 	bytesRcvd 	0
+scalar ExamTaskNetwork.FTPLaptop.tcpApp[0] 	bytesSent 	1778384896
+scalar ExamTaskNetwork.FTPLaptop.tcpApp[0] 	sentPk:count 	1
+attr interpolationmode  none
+attr source  sentPk
+attr title  "packets sent, count"
+scalar ExamTaskNetwork.FTPLaptop.tcpApp[0] 	sentPk:sum(packetBytes) 	1778384896
+attr interpolationmode  none
+attr source  sentPk
+attr title  "packets sent, sum(packetBytes)"
+scalar ExamTaskNetwork.FTPLaptop.tcpApp[0] 	rcvdPk:count 	0
+attr interpolationmode  none
+attr source  rcvdPk
+attr title  "packets received, count"
+scalar ExamTaskNetwork.FTPLaptop.tcpApp[0] 	rcvdPk:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  rcvdPk
+attr title  "packets received, sum(packetBytes)"
+statistic ExamTaskNetwork.FTPLaptop.tcpApp[0] 	endToEndDelay:histogram
+field count 0
+field mean -nan
+field stddev -nan
+field sum 0
+field sqrsum 0
+field min -nan
+field max -nan
+attr interpolationmode  none
+attr source  messageAge(rcvdPk)
+attr title  "end-to-end delay, histogram"
+attr unit  s
+bin	-INF	0
+bin	-0.5	0
+bin	-0.46666666666667	0
+bin	-0.43333333333333	0
+bin	-0.4	0
+bin	-0.36666666666667	0
+bin	-0.33333333333333	0
+bin	-0.3	0
+bin	-0.26666666666667	0
+bin	-0.23333333333333	0
+bin	-0.2	0
+bin	-0.16666666666667	0
+bin	-0.13333333333333	0
+bin	-0.1	0
+bin	-0.066666666666667	0
+bin	-0.033333333333333	0
+bin	0	0
+bin	0.033333333333333	0
+bin	0.066666666666667	0
+bin	0.1	0
+bin	0.13333333333333	0
+bin	0.16666666666667	0
+bin	0.2	0
+bin	0.23333333333333	0
+bin	0.26666666666667	0
+bin	0.3	0
+bin	0.33333333333333	0
+bin	0.36666666666667	0
+bin	0.4	0
+bin	0.43333333333333	0
+bin	0.46666666666667	0
+bin	0.5	0
+scalar ExamTaskNetwork.BrowsingLaptop[0].networkLayer.arp 	initiatedARPResolution:count 	8
+attr title  "ARP initiated resolutions, count"
+scalar ExamTaskNetwork.BrowsingLaptop[0].networkLayer.arp 	sentReply:count 	2
+attr title  "ARP replies sent, count"
+scalar ExamTaskNetwork.BrowsingLaptop[0].networkLayer.arp 	sentReq:count 	8
+attr title  "ARP request sent, count"
+scalar ExamTaskNetwork.BrowsingLaptop[0].networkLayer.arp 	failedARPResolution:count 	0
+attr title  "ARP failed resolutions, count"
+scalar ExamTaskNetwork.BrowsingLaptop[0].networkLayer.arp 	completedARPResolution:count 	25
+attr title  "ARP completed resolutions, count"
+scalar ExamTaskNetwork.BrowsingLaptop[0].lo0.lo 	rcvdPkFromHL:count 	0
+attr interpolationmode  none
+attr source  packetReceivedFromUpper
+attr title  "packets received from higher layer, count"
+scalar ExamTaskNetwork.BrowsingLaptop[0].lo0.lo 	rcvdPkFromHL:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  packetReceivedFromUpper
+attr title  "packets received from higher layer, sum(packetBytes)"
+scalar ExamTaskNetwork.BrowsingLaptop[0].lo0.lo 	passedUpPk:count 	0
+attr interpolationmode  none
+attr source  packetSentToUpper
+attr title  "packets passed to higher layer, count"
+scalar ExamTaskNetwork.BrowsingLaptop[0].lo0.lo 	passedUpPk:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  packetSentToUpper
+attr title  "packets passed to higher layer, sum(packetBytes)"
+scalar ExamTaskNetwork.BrowsingLaptop[0].lo0.lo 	droppedPkBitError:count 	0
+attr interpolationmode  none
+attr source  dropPkBitError
+attr title  "packets dropped/bit error, count"
+scalar ExamTaskNetwork.BrowsingLaptop[0].lo0.lo 	droppedPkBitError:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  dropPkBitError
+attr title  "packets dropped/bit error, sum(packetBytes)"
+scalar ExamTaskNetwork.BrowsingLaptop[0].wlan[0].agent 	dropConfirm:count 	0
+attr title  "dropped confirms, count"
+scalar ExamTaskNetwork.BrowsingLaptop[0].wlan[0].agent 	acceptConfirm:count 	36
+attr title  "accepted confirms, count"
+scalar ExamTaskNetwork.BrowsingLaptop[0].wlan[0].agent 	sentRequest:count 	36
+attr title  "sent requests, count"
+scalar ExamTaskNetwork.BrowsingLaptop[0].wlan[0].mgmt 	dropPkByQueue:count 	0
+attr interpolationmode  none
+attr source  dropPkByQueue
+attr title  "packets dropped by queue, count"
+scalar ExamTaskNetwork.BrowsingLaptop[0].wlan[0].mgmt 	dropPkByQueue:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  dropPkByQueue
+attr title  "packets dropped by queue, sum(packetBytes)"
+scalar ExamTaskNetwork.BrowsingLaptop[0].wlan[0].mgmt 	dataQueueLen:max 	5
+attr interpolationmode  sample-hold
+attr title  "data queue length, max"
+scalar ExamTaskNetwork.BrowsingLaptop[0].wlan[0].mgmt 	dataQueueLen:timeavg 	2.3779807383969e-05
+attr interpolationmode  sample-hold
+attr title  "data queue length, timeavg"
+scalar ExamTaskNetwork.BrowsingLaptop[0].wlan[0].mac 	"number of received packets" 	46126
+scalar ExamTaskNetwork.BrowsingLaptop[0].wlan[0].mac 	"number of collisions" 	38132
+scalar ExamTaskNetwork.BrowsingLaptop[0].wlan[0].mac 	"number of internal collisions" 	0
+scalar ExamTaskNetwork.BrowsingLaptop[0].wlan[0].mac 	"number of retry for AC 0" 	87
+scalar ExamTaskNetwork.BrowsingLaptop[0].wlan[0].mac 	"sent and received bits" 	17360960
+scalar ExamTaskNetwork.BrowsingLaptop[0].wlan[0].mac 	"sent packet within AC 0" 	22380
+scalar ExamTaskNetwork.BrowsingLaptop[0].wlan[0].mac 	"sent in TXOP " 	0
+scalar ExamTaskNetwork.BrowsingLaptop[0].wlan[0].mac 	"sentWithoutRetry AC 0" 	22317
+scalar ExamTaskNetwork.BrowsingLaptop[0].wlan[0].mac 	"numGivenUp AC 0" 	0
+scalar ExamTaskNetwork.BrowsingLaptop[0].wlan[0].mac 	"numDropped AC 0" 	0
+scalar ExamTaskNetwork.BrowsingLaptop[0].wlan[0].mac 	rcvdPkFromHL:count 	22392
+attr interpolationmode  none
+attr source  packetReceivedFromUpper
+attr title  "packets received from higher layer, count"
+scalar ExamTaskNetwork.BrowsingLaptop[0].wlan[0].mac 	rcvdPkFromHL:sum(packetBytes) 	2170120
+attr interpolationmode  none
+attr source  packetReceivedFromUpper
+attr title  "packets received from higher layer, sum(packetBytes)"
+scalar ExamTaskNetwork.BrowsingLaptop[0].wlan[0].mac 	passedUpPk:count 	55604
+attr interpolationmode  none
+attr source  packetSentToUpper
+attr title  "packets passed to higher layer, count"
+scalar ExamTaskNetwork.BrowsingLaptop[0].wlan[0].mac 	passedUpPk:sum(packetBytes) 	38811356
+attr interpolationmode  none
+attr source  packetSentToUpper
+attr title  "packets passed to higher layer, sum(packetBytes)"
+scalar ExamTaskNetwork.BrowsingLaptop[0].wlan[0].mac 	rcvdPkFromLL:count 	3189358
+attr interpolationmode  none
+attr source  packetReceivedFromLower
+attr title  "packets received from lower layer, count"
+scalar ExamTaskNetwork.BrowsingLaptop[0].wlan[0].mac 	rcvdPkFromLL:sum(packetBytes) 	1356927079
+attr interpolationmode  none
+attr source  packetReceivedFromLower
+attr title  "packets received from lower layer, sum(packetBytes)"
+scalar ExamTaskNetwork.BrowsingLaptop[0].wlan[0].mac 	sentDownPk:count 	68605
+attr interpolationmode  none
+attr source  packetSentToLower
+attr title  "packets sent to lower layer, count"
+scalar ExamTaskNetwork.BrowsingLaptop[0].wlan[0].mac 	sentDownPk:sum(packetBytes) 	2876952
+attr interpolationmode  none
+attr source  packetSentToLower
+attr title  "packets sent to lower layer, sum(packetBytes)"
+scalar ExamTaskNetwork.BrowsingLaptop[0].wlan[0].radio 	lossRate:min 	0
+attr interpolationmode  backward-sample-hold
+attr title  "packet loss rate, min"
+scalar ExamTaskNetwork.BrowsingLaptop[0].wlan[0].radio 	lossRate:max 	0.14
+attr interpolationmode  backward-sample-hold
+attr title  "packet loss rate, max"
+scalar ExamTaskNetwork.BrowsingLaptop[0].wlan[0].radio 	lossRate:timeavg 	0.011162174678282
+attr interpolationmode  backward-sample-hold
+attr title  "packet loss rate, timeavg"
+statistic ExamTaskNetwork.BrowsingLaptop[0].wlan[0].radio 	channelNo:histogram
+field count 1
+field mean 0
+field stddev -nan
+field sum 0
+field sqrsum 0
+field min 0
+field max 0
+attr interpolationmode  sample-hold
+attr title  "channel no, histogram"
+bin	-INF	0
+bin	-0.5	0
+bin	-0.46666666666667	0
+bin	-0.43333333333333	0
+bin	-0.4	0
+bin	-0.36666666666667	0
+bin	-0.33333333333333	0
+bin	-0.3	0
+bin	-0.26666666666667	0
+bin	-0.23333333333333	0
+bin	-0.2	0
+bin	-0.16666666666667	0
+bin	-0.13333333333333	0
+bin	-0.1	0
+bin	-0.066666666666667	0
+bin	-0.033333333333333	0
+bin	0	1
+bin	0.033333333333333	0
+bin	0.066666666666667	0
+bin	0.1	0
+bin	0.13333333333333	0
+bin	0.16666666666667	0
+bin	0.2	0
+bin	0.23333333333333	0
+bin	0.26666666666667	0
+bin	0.3	0
+bin	0.33333333333333	0
+bin	0.36666666666667	0
+bin	0.4	0
+bin	0.43333333333333	0
+bin	0.46666666666667	0
+bin	0.5	0
+scalar ExamTaskNetwork.BrowsingLaptop[0].wlan[0].radio 	radioState:count 	6516029
+attr interpolationmode  sample-hold
+attr title  "radio state (enum), count"
+scalar ExamTaskNetwork.BrowsingLaptop[0].wlan[0].radio 	bitrate:min 	54000000
+attr interpolationmode  sample-hold
+attr title  "tx bitrate, min"
+attr unit  bps
+scalar ExamTaskNetwork.BrowsingLaptop[0].wlan[0].radio 	bitrate:max 	54000000
+attr interpolationmode  sample-hold
+attr title  "tx bitrate, max"
+attr unit  bps
+scalar ExamTaskNetwork.BrowsingLaptop[0].wlan[0].radio 	bitrate:timeavg 	54000000
+attr interpolationmode  sample-hold
+attr title  "tx bitrate, timeavg"
+attr unit  bps
+scalar ExamTaskNetwork.BrowsingLaptop[0].tcpApp[0] 	numActiveSessions:max 	1
+attr interpolationmode  sample-hold
+attr source  sum(connect)
+attr title  "number of active sessions, max"
+scalar ExamTaskNetwork.BrowsingLaptop[0].tcpApp[0] 	numActiveSessions:timeavg 	0.38895718998519
+attr interpolationmode  sample-hold
+attr source  sum(connect)
+attr title  "number of active sessions, timeavg"
+scalar ExamTaskNetwork.BrowsingLaptop[0].tcpApp[0] 	numSessions:last 	41
+attr source  sum(connect+1)/2
+attr title  "total number of sessions, last"
+scalar ExamTaskNetwork.BrowsingLaptop[0].tcpApp[0] 	sentPk:count 	41
+attr interpolationmode  none
+attr source  sentPk
+attr title  "packets sent, count"
+scalar ExamTaskNetwork.BrowsingLaptop[0].tcpApp[0] 	sentPk:sum(packetBytes) 	335872
+attr interpolationmode  none
+attr source  sentPk
+attr title  "packets sent, sum(packetBytes)"
+scalar ExamTaskNetwork.BrowsingLaptop[0].tcpApp[0] 	rcvdPk:count 	41
+attr interpolationmode  none
+attr source  rcvdPk
+attr title  "packets received, count"
+scalar ExamTaskNetwork.BrowsingLaptop[0].tcpApp[0] 	rcvdPk:sum(packetBytes) 	29950039
+attr interpolationmode  none
+attr source  rcvdPk
+attr title  "packets received, sum(packetBytes)"
+statistic ExamTaskNetwork.BrowsingLaptop[0].tcpApp[0] 	endToEndDelay:histogram
+field count 41
+field mean 9.2915054917471
+field stddev 7.5481764643533
+field sum 380.95172516163
+field sqrsum 5818.6137639105
+field min 0.467289512634
+field max 33.923052445042
+attr interpolationmode  none
+attr source  messageAge(rcvdPk)
+attr title  "end-to-end delay, histogram"
+attr unit  s
+bin	-INF	0
+bin	-16.26059195357	0
+bin	-14.030207758076	0
+bin	-11.799823562582	0
+bin	-9.5694393670884	0
+bin	-7.3390551715945	0
+bin	-5.1086709761007	0
+bin	-2.8782867806068	0
+bin	-0.64790258511294	4
+bin	1.5824816103809	6
+bin	3.8128658058748	8
+bin	6.0432500013687	2
+bin	8.2736341968625	7
+bin	10.504018392356	6
+bin	12.73440258785	3
+bin	14.964786783344	0
+bin	17.195170978838	2
+bin	19.425555174332	0
+bin	21.655939369826	0
+bin	23.88632356532	1
+bin	26.116707760813	0
+bin	28.347091956307	0
+bin	30.577476151801	1
+bin	32.807860347295	1
+bin	35.038244542789	0
+bin	37.268628738283	0
+bin	39.499012933777	0
+bin	41.729397129271	0
+bin	43.959781324764	0
+bin	46.190165520258	0
+bin	48.420549715752	0
+bin	50.650933911246	0
+scalar ExamTaskNetwork.BrowsingLaptop[1].networkLayer.arp 	initiatedARPResolution:count 	8
+attr title  "ARP initiated resolutions, count"
+scalar ExamTaskNetwork.BrowsingLaptop[1].networkLayer.arp 	sentReply:count 	2
+attr title  "ARP replies sent, count"
+scalar ExamTaskNetwork.BrowsingLaptop[1].networkLayer.arp 	sentReq:count 	8
+attr title  "ARP request sent, count"
+scalar ExamTaskNetwork.BrowsingLaptop[1].networkLayer.arp 	failedARPResolution:count 	0
+attr title  "ARP failed resolutions, count"
+scalar ExamTaskNetwork.BrowsingLaptop[1].networkLayer.arp 	completedARPResolution:count 	30
+attr title  "ARP completed resolutions, count"
+scalar ExamTaskNetwork.BrowsingLaptop[1].lo0.lo 	rcvdPkFromHL:count 	0
+attr interpolationmode  none
+attr source  packetReceivedFromUpper
+attr title  "packets received from higher layer, count"
+scalar ExamTaskNetwork.BrowsingLaptop[1].lo0.lo 	rcvdPkFromHL:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  packetReceivedFromUpper
+attr title  "packets received from higher layer, sum(packetBytes)"
+scalar ExamTaskNetwork.BrowsingLaptop[1].lo0.lo 	passedUpPk:count 	0
+attr interpolationmode  none
+attr source  packetSentToUpper
+attr title  "packets passed to higher layer, count"
+scalar ExamTaskNetwork.BrowsingLaptop[1].lo0.lo 	passedUpPk:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  packetSentToUpper
+attr title  "packets passed to higher layer, sum(packetBytes)"
+scalar ExamTaskNetwork.BrowsingLaptop[1].lo0.lo 	droppedPkBitError:count 	0
+attr interpolationmode  none
+attr source  dropPkBitError
+attr title  "packets dropped/bit error, count"
+scalar ExamTaskNetwork.BrowsingLaptop[1].lo0.lo 	droppedPkBitError:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  dropPkBitError
+attr title  "packets dropped/bit error, sum(packetBytes)"
+scalar ExamTaskNetwork.BrowsingLaptop[1].wlan[0].agent 	dropConfirm:count 	0
+attr title  "dropped confirms, count"
+scalar ExamTaskNetwork.BrowsingLaptop[1].wlan[0].agent 	acceptConfirm:count 	36
+attr title  "accepted confirms, count"
+scalar ExamTaskNetwork.BrowsingLaptop[1].wlan[0].agent 	sentRequest:count 	36
+attr title  "sent requests, count"
+scalar ExamTaskNetwork.BrowsingLaptop[1].wlan[0].mgmt 	dropPkByQueue:count 	401
+attr interpolationmode  none
+attr source  dropPkByQueue
+attr title  "packets dropped by queue, count"
+scalar ExamTaskNetwork.BrowsingLaptop[1].wlan[0].mgmt 	dropPkByQueue:sum(packetBytes) 	39284
+attr interpolationmode  none
+attr source  dropPkByQueue
+attr title  "packets dropped by queue, sum(packetBytes)"
+scalar ExamTaskNetwork.BrowsingLaptop[1].wlan[0].mgmt 	dataQueueLen:max 	50
+attr interpolationmode  sample-hold
+attr title  "data queue length, max"
+scalar ExamTaskNetwork.BrowsingLaptop[1].wlan[0].mgmt 	dataQueueLen:timeavg 	0.019614068326946
+attr interpolationmode  sample-hold
+attr title  "data queue length, timeavg"
+scalar ExamTaskNetwork.BrowsingLaptop[1].wlan[0].mac 	"number of received packets" 	34521
+scalar ExamTaskNetwork.BrowsingLaptop[1].wlan[0].mac 	"number of collisions" 	38981
+scalar ExamTaskNetwork.BrowsingLaptop[1].wlan[0].mac 	"number of internal collisions" 	0
+scalar ExamTaskNetwork.BrowsingLaptop[1].wlan[0].mac 	"number of retry for AC 0" 	326
+scalar ExamTaskNetwork.BrowsingLaptop[1].wlan[0].mac 	"sent and received bits" 	13798736
+scalar ExamTaskNetwork.BrowsingLaptop[1].wlan[0].mac 	"sent packet within AC 0" 	17683
+scalar ExamTaskNetwork.BrowsingLaptop[1].wlan[0].mac 	"sent in TXOP " 	0
+scalar ExamTaskNetwork.BrowsingLaptop[1].wlan[0].mac 	"sentWithoutRetry AC 0" 	17417
+scalar ExamTaskNetwork.BrowsingLaptop[1].wlan[0].mac 	"numGivenUp AC 0" 	0
+scalar ExamTaskNetwork.BrowsingLaptop[1].wlan[0].mac 	"numDropped AC 0" 	0
+scalar ExamTaskNetwork.BrowsingLaptop[1].wlan[0].mac 	rcvdPkFromHL:count 	17695
+attr interpolationmode  none
+attr source  packetReceivedFromUpper
+attr title  "packets received from higher layer, count"
+scalar ExamTaskNetwork.BrowsingLaptop[1].wlan[0].mac 	rcvdPkFromHL:sum(packetBytes) 	1724842
+attr interpolationmode  none
+attr source  packetReceivedFromUpper
+attr title  "packets received from higher layer, sum(packetBytes)"
+scalar ExamTaskNetwork.BrowsingLaptop[1].wlan[0].mac 	passedUpPk:count 	43997
+attr interpolationmode  none
+attr source  packetSentToUpper
+attr title  "packets passed to higher layer, count"
+scalar ExamTaskNetwork.BrowsingLaptop[1].wlan[0].mac 	passedUpPk:sum(packetBytes) 	29108542
+attr interpolationmode  none
+attr source  packetSentToUpper
+attr title  "packets passed to higher layer, sum(packetBytes)"
+scalar ExamTaskNetwork.BrowsingLaptop[1].wlan[0].mac 	rcvdPkFromLL:count 	3205421
+attr interpolationmode  none
+attr source  packetReceivedFromLower
+attr title  "packets received from lower layer, count"
+scalar ExamTaskNetwork.BrowsingLaptop[1].wlan[0].mac 	rcvdPkFromLL:sum(packetBytes) 	1357375921
+attr interpolationmode  none
+attr source  packetReceivedFromLower
+attr title  "packets received from lower layer, sum(packetBytes)"
+scalar ExamTaskNetwork.BrowsingLaptop[1].wlan[0].mac 	sentDownPk:count 	52542
+attr interpolationmode  none
+attr source  packetSentToLower
+attr title  "packets sent to lower layer, count"
+scalar ExamTaskNetwork.BrowsingLaptop[1].wlan[0].mac 	sentDownPk:sum(packetBytes) 	2298646
+attr interpolationmode  none
+attr source  packetSentToLower
+attr title  "packets sent to lower layer, sum(packetBytes)"
+scalar ExamTaskNetwork.BrowsingLaptop[1].wlan[0].radio 	lossRate:min 	0
+attr interpolationmode  backward-sample-hold
+attr title  "packet loss rate, min"
+scalar ExamTaskNetwork.BrowsingLaptop[1].wlan[0].radio 	lossRate:max 	0.14
+attr interpolationmode  backward-sample-hold
+attr title  "packet loss rate, max"
+scalar ExamTaskNetwork.BrowsingLaptop[1].wlan[0].radio 	lossRate:timeavg 	0.011342486434315
+attr interpolationmode  backward-sample-hold
+attr title  "packet loss rate, timeavg"
+statistic ExamTaskNetwork.BrowsingLaptop[1].wlan[0].radio 	channelNo:histogram
+field count 1
+field mean 0
+field stddev -nan
+field sum 0
+field sqrsum 0
+field min 0
+field max 0
+attr interpolationmode  sample-hold
+attr title  "channel no, histogram"
+bin	-INF	0
+bin	-0.5	0
+bin	-0.46666666666667	0
+bin	-0.43333333333333	0
+bin	-0.4	0
+bin	-0.36666666666667	0
+bin	-0.33333333333333	0
+bin	-0.3	0
+bin	-0.26666666666667	0
+bin	-0.23333333333333	0
+bin	-0.2	0
+bin	-0.16666666666667	0
+bin	-0.13333333333333	0
+bin	-0.1	0
+bin	-0.066666666666667	0
+bin	-0.033333333333333	0
+bin	0	1
+bin	0.033333333333333	0
+bin	0.066666666666667	0
+bin	0.1	0
+bin	0.13333333333333	0
+bin	0.16666666666667	0
+bin	0.2	0
+bin	0.23333333333333	0
+bin	0.26666666666667	0
+bin	0.3	0
+bin	0.33333333333333	0
+bin	0.36666666666667	0
+bin	0.4	0
+bin	0.43333333333333	0
+bin	0.46666666666667	0
+bin	0.5	0
+scalar ExamTaskNetwork.BrowsingLaptop[1].wlan[0].radio 	radioState:count 	6516318
+attr interpolationmode  sample-hold
+attr title  "radio state (enum), count"
+scalar ExamTaskNetwork.BrowsingLaptop[1].wlan[0].radio 	bitrate:min 	54000000
+attr interpolationmode  sample-hold
+attr title  "tx bitrate, min"
+attr unit  bps
+scalar ExamTaskNetwork.BrowsingLaptop[1].wlan[0].radio 	bitrate:max 	54000000
+attr interpolationmode  sample-hold
+attr title  "tx bitrate, max"
+attr unit  bps
+scalar ExamTaskNetwork.BrowsingLaptop[1].wlan[0].radio 	bitrate:timeavg 	54000000
+attr interpolationmode  sample-hold
+attr title  "tx bitrate, timeavg"
+attr unit  bps
+scalar ExamTaskNetwork.BrowsingLaptop[1].tcpApp[0] 	numActiveSessions:max 	1
+attr interpolationmode  sample-hold
+attr source  sum(connect)
+attr title  "number of active sessions, max"
+scalar ExamTaskNetwork.BrowsingLaptop[1].tcpApp[0] 	numActiveSessions:timeavg 	0.25002309715505
+attr interpolationmode  sample-hold
+attr source  sum(connect)
+attr title  "number of active sessions, timeavg"
+scalar ExamTaskNetwork.BrowsingLaptop[1].tcpApp[0] 	numSessions:last 	32
+attr source  sum(connect+1)/2
+attr title  "total number of sessions, last"
+scalar ExamTaskNetwork.BrowsingLaptop[1].tcpApp[0] 	sentPk:count 	32
+attr interpolationmode  none
+attr source  sentPk
+attr title  "packets sent, count"
+scalar ExamTaskNetwork.BrowsingLaptop[1].tcpApp[0] 	sentPk:sum(packetBytes) 	262144
+attr interpolationmode  none
+attr source  sentPk
+attr title  "packets sent, sum(packetBytes)"
+scalar ExamTaskNetwork.BrowsingLaptop[1].tcpApp[0] 	rcvdPk:count 	32
+attr interpolationmode  none
+attr source  rcvdPk
+attr title  "packets received, count"
+scalar ExamTaskNetwork.BrowsingLaptop[1].tcpApp[0] 	rcvdPk:sum(packetBytes) 	22678604
+attr interpolationmode  none
+attr source  rcvdPk
+attr title  "packets received, sum(packetBytes)"
+statistic ExamTaskNetwork.BrowsingLaptop[1].tcpApp[0] 	endToEndDelay:histogram
+field count 32
+field mean 7.5030081054438
+field stddev 5.511416200087
+field sum 240.0962593742
+field sqrsum 2743.0911446194
+field min 0.710403393092
+field max 26.491629987763
+attr interpolationmode  none
+attr source  messageAge(rcvdPk)
+attr title  "end-to-end delay, histogram"
+attr unit  s
+bin	-INF	0
+bin	-12.180209904243	0
+bin	-10.461461464599	0
+bin	-8.742713024954	0
+bin	-7.0239645853093	0
+bin	-5.3052161456646	0
+bin	-3.5864677060198	0
+bin	-1.8677192663751	0
+bin	-0.14897082673036	3
+bin	1.5697776129144	3
+bin	3.2885260525591	6
+bin	5.0072744922038	5
+bin	6.7260229318486	4
+bin	8.4447713714933	4
+bin	10.163519811138	2
+bin	11.882268250783	2
+bin	13.601016690427	0
+bin	15.319765130072	1
+bin	17.038513569717	1
+bin	18.757262009362	0
+bin	20.476010449006	0
+bin	22.194758888651	0
+bin	23.913507328296	0
+bin	25.632255767941	1
+bin	27.351004207585	0
+bin	29.06975264723	0
+bin	30.788501086875	0
+bin	32.50724952652	0
+bin	34.225997966164	0
+bin	35.944746405809	0
+bin	37.663494845454	0
+bin	39.382243285098	0
+scalar ExamTaskNetwork.BrowsingLaptop[2].networkLayer.arp 	initiatedARPResolution:count 	8
+attr title  "ARP initiated resolutions, count"
+scalar ExamTaskNetwork.BrowsingLaptop[2].networkLayer.arp 	sentReply:count 	0
+attr title  "ARP replies sent, count"
+scalar ExamTaskNetwork.BrowsingLaptop[2].networkLayer.arp 	sentReq:count 	8
+attr title  "ARP request sent, count"
+scalar ExamTaskNetwork.BrowsingLaptop[2].networkLayer.arp 	failedARPResolution:count 	0
+attr title  "ARP failed resolutions, count"
+scalar ExamTaskNetwork.BrowsingLaptop[2].networkLayer.arp 	completedARPResolution:count 	8
+attr title  "ARP completed resolutions, count"
+scalar ExamTaskNetwork.BrowsingLaptop[2].lo0.lo 	rcvdPkFromHL:count 	0
+attr interpolationmode  none
+attr source  packetReceivedFromUpper
+attr title  "packets received from higher layer, count"
+scalar ExamTaskNetwork.BrowsingLaptop[2].lo0.lo 	rcvdPkFromHL:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  packetReceivedFromUpper
+attr title  "packets received from higher layer, sum(packetBytes)"
+scalar ExamTaskNetwork.BrowsingLaptop[2].lo0.lo 	passedUpPk:count 	0
+attr interpolationmode  none
+attr source  packetSentToUpper
+attr title  "packets passed to higher layer, count"
+scalar ExamTaskNetwork.BrowsingLaptop[2].lo0.lo 	passedUpPk:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  packetSentToUpper
+attr title  "packets passed to higher layer, sum(packetBytes)"
+scalar ExamTaskNetwork.BrowsingLaptop[2].lo0.lo 	droppedPkBitError:count 	0
+attr interpolationmode  none
+attr source  dropPkBitError
+attr title  "packets dropped/bit error, count"
+scalar ExamTaskNetwork.BrowsingLaptop[2].lo0.lo 	droppedPkBitError:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  dropPkBitError
+attr title  "packets dropped/bit error, sum(packetBytes)"
+scalar ExamTaskNetwork.BrowsingLaptop[2].wlan[0].agent 	dropConfirm:count 	0
+attr title  "dropped confirms, count"
+scalar ExamTaskNetwork.BrowsingLaptop[2].wlan[0].agent 	acceptConfirm:count 	36
+attr title  "accepted confirms, count"
+scalar ExamTaskNetwork.BrowsingLaptop[2].wlan[0].agent 	sentRequest:count 	36
+attr title  "sent requests, count"
+scalar ExamTaskNetwork.BrowsingLaptop[2].wlan[0].mgmt 	dropPkByQueue:count 	0
+attr interpolationmode  none
+attr source  dropPkByQueue
+attr title  "packets dropped by queue, count"
+scalar ExamTaskNetwork.BrowsingLaptop[2].wlan[0].mgmt 	dropPkByQueue:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  dropPkByQueue
+attr title  "packets dropped by queue, sum(packetBytes)"
+scalar ExamTaskNetwork.BrowsingLaptop[2].wlan[0].mgmt 	dataQueueLen:max 	0
+attr interpolationmode  sample-hold
+attr title  "data queue length, max"
+scalar ExamTaskNetwork.BrowsingLaptop[2].wlan[0].mgmt 	dataQueueLen:timeavg 	0
+attr interpolationmode  sample-hold
+attr title  "data queue length, timeavg"
+scalar ExamTaskNetwork.BrowsingLaptop[2].wlan[0].mac 	"number of received packets" 	36165
+scalar ExamTaskNetwork.BrowsingLaptop[2].wlan[0].mac 	"number of collisions" 	39217
+scalar ExamTaskNetwork.BrowsingLaptop[2].wlan[0].mac 	"number of internal collisions" 	0
+scalar ExamTaskNetwork.BrowsingLaptop[2].wlan[0].mac 	"number of retry for AC 0" 	76
+scalar ExamTaskNetwork.BrowsingLaptop[2].wlan[0].mac 	"sent and received bits" 	13770128
+scalar ExamTaskNetwork.BrowsingLaptop[2].wlan[0].mac 	"sent packet within AC 0" 	17888
+scalar ExamTaskNetwork.BrowsingLaptop[2].wlan[0].mac 	"sent in TXOP " 	0
+scalar ExamTaskNetwork.BrowsingLaptop[2].wlan[0].mac 	"sentWithoutRetry AC 0" 	17828
+scalar ExamTaskNetwork.BrowsingLaptop[2].wlan[0].mac 	"numGivenUp AC 0" 	0
+scalar ExamTaskNetwork.BrowsingLaptop[2].wlan[0].mac 	"numDropped AC 0" 	0
+scalar ExamTaskNetwork.BrowsingLaptop[2].wlan[0].mac 	rcvdPkFromHL:count 	17900
+attr interpolationmode  none
+attr source  packetReceivedFromUpper
+attr title  "packets received from higher layer, count"
+scalar ExamTaskNetwork.BrowsingLaptop[2].wlan[0].mac 	rcvdPkFromHL:sum(packetBytes) 	1721266
+attr interpolationmode  none
+attr source  packetReceivedFromUpper
+attr title  "packets received from higher layer, sum(packetBytes)"
+scalar ExamTaskNetwork.BrowsingLaptop[2].wlan[0].mac 	passedUpPk:count 	45641
+attr interpolationmode  none
+attr source  packetSentToUpper
+attr title  "packets passed to higher layer, count"
+scalar ExamTaskNetwork.BrowsingLaptop[2].wlan[0].mac 	passedUpPk:sum(packetBytes) 	30209399
+attr interpolationmode  none
+attr source  packetSentToUpper
+attr title  "packets passed to higher layer, sum(packetBytes)"
+scalar ExamTaskNetwork.BrowsingLaptop[2].wlan[0].mac 	rcvdPkFromLL:count 	3203822
+attr interpolationmode  none
+attr source  packetReceivedFromLower
+attr title  "packets received from lower layer, count"
+scalar ExamTaskNetwork.BrowsingLaptop[2].wlan[0].mac 	rcvdPkFromLL:sum(packetBytes) 	1357461572
+attr interpolationmode  none
+attr source  packetReceivedFromLower
+attr title  "packets received from lower layer, sum(packetBytes)"
+scalar ExamTaskNetwork.BrowsingLaptop[2].wlan[0].mac 	sentDownPk:count 	54141
+attr interpolationmode  none
+attr source  packetSentToLower
+attr title  "packets sent to lower layer, count"
+scalar ExamTaskNetwork.BrowsingLaptop[2].wlan[0].mac 	sentDownPk:sum(packetBytes) 	2272414
+attr interpolationmode  none
+attr source  packetSentToLower
+attr title  "packets sent to lower layer, sum(packetBytes)"
+scalar ExamTaskNetwork.BrowsingLaptop[2].wlan[0].radio 	lossRate:min 	0
+attr interpolationmode  backward-sample-hold
+attr title  "packet loss rate, min"
+scalar ExamTaskNetwork.BrowsingLaptop[2].wlan[0].radio 	lossRate:max 	0.14
+attr interpolationmode  backward-sample-hold
+attr title  "packet loss rate, max"
+scalar ExamTaskNetwork.BrowsingLaptop[2].wlan[0].radio 	lossRate:timeavg 	0.011441027729921
+attr interpolationmode  backward-sample-hold
+attr title  "packet loss rate, timeavg"
+statistic ExamTaskNetwork.BrowsingLaptop[2].wlan[0].radio 	channelNo:histogram
+field count 1
+field mean 0
+field stddev -nan
+field sum 0
+field sqrsum 0
+field min 0
+field max 0
+attr interpolationmode  sample-hold
+attr title  "channel no, histogram"
+bin	-INF	0
+bin	-0.5	0
+bin	-0.46666666666667	0
+bin	-0.43333333333333	0
+bin	-0.4	0
+bin	-0.36666666666667	0
+bin	-0.33333333333333	0
+bin	-0.3	0
+bin	-0.26666666666667	0
+bin	-0.23333333333333	0
+bin	-0.2	0
+bin	-0.16666666666667	0
+bin	-0.13333333333333	0
+bin	-0.1	0
+bin	-0.066666666666667	0
+bin	-0.033333333333333	0
+bin	0	1
+bin	0.033333333333333	0
+bin	0.066666666666667	0
+bin	0.1	0
+bin	0.13333333333333	0
+bin	0.16666666666667	0
+bin	0.2	0
+bin	0.23333333333333	0
+bin	0.26666666666667	0
+bin	0.3	0
+bin	0.33333333333333	0
+bin	0.36666666666667	0
+bin	0.4	0
+bin	0.43333333333333	0
+bin	0.46666666666667	0
+bin	0.5	0
+scalar ExamTaskNetwork.BrowsingLaptop[2].wlan[0].radio 	radioState:count 	6516019
+attr interpolationmode  sample-hold
+attr title  "radio state (enum), count"
+scalar ExamTaskNetwork.BrowsingLaptop[2].wlan[0].radio 	bitrate:min 	54000000
+attr interpolationmode  sample-hold
+attr title  "tx bitrate, min"
+attr unit  bps
+scalar ExamTaskNetwork.BrowsingLaptop[2].wlan[0].radio 	bitrate:max 	54000000
+attr interpolationmode  sample-hold
+attr title  "tx bitrate, max"
+attr unit  bps
+scalar ExamTaskNetwork.BrowsingLaptop[2].wlan[0].radio 	bitrate:timeavg 	54000000
+attr interpolationmode  sample-hold
+attr title  "tx bitrate, timeavg"
+attr unit  bps
+scalar ExamTaskNetwork.BrowsingLaptop[2].tcpApp[0] 	numActiveSessions:max 	1
+attr interpolationmode  sample-hold
+attr source  sum(connect)
+attr title  "number of active sessions, max"
+scalar ExamTaskNetwork.BrowsingLaptop[2].tcpApp[0] 	numActiveSessions:timeavg 	0.23549181588033
+attr interpolationmode  sample-hold
+attr source  sum(connect)
+attr title  "number of active sessions, timeavg"
+scalar ExamTaskNetwork.BrowsingLaptop[2].tcpApp[0] 	numSessions:last 	31
+attr source  sum(connect+1)/2
+attr title  "total number of sessions, last"
+scalar ExamTaskNetwork.BrowsingLaptop[2].tcpApp[0] 	sentPk:count 	31
+attr interpolationmode  none
+attr source  sentPk
+attr title  "packets sent, count"
+scalar ExamTaskNetwork.BrowsingLaptop[2].tcpApp[0] 	sentPk:sum(packetBytes) 	253952
+attr interpolationmode  none
+attr source  sentPk
+attr title  "packets sent, sum(packetBytes)"
+scalar ExamTaskNetwork.BrowsingLaptop[2].tcpApp[0] 	rcvdPk:count 	31
+attr interpolationmode  none
+attr source  rcvdPk
+attr title  "packets received, count"
+scalar ExamTaskNetwork.BrowsingLaptop[2].tcpApp[0] 	rcvdPk:sum(packetBytes) 	25237655
+attr interpolationmode  none
+attr source  rcvdPk
+attr title  "packets received, sum(packetBytes)"
+statistic ExamTaskNetwork.BrowsingLaptop[2].tcpApp[0] 	endToEndDelay:histogram
+field count 31
+field mean 7.3780414791906
+field stddev 5.5726186165353
+field sum 228.71928585491
+field sqrsum 2619.122725489
+field min 0.495626224461
+field max 24.303478369185
+attr interpolationmode  none
+attr source  messageAge(rcvdPk)
+attr title  "end-to-end delay, histogram"
+attr unit  s
+bin	-INF	0
+bin	-11.408299847901	0
+bin	-9.8211097049194	0
+bin	-8.2339195619378	0
+bin	-6.6467294189562	0
+bin	-5.0595392759746	0
+bin	-3.472349132993	0
+bin	-1.8851589900114	0
+bin	-0.2979688470298	6
+bin	1.2892212959518	1
+bin	2.8764114389334	3
+bin	4.463601581915	5
+bin	6.0507917248966	1
+bin	7.6379818678782	4
+bin	9.2251720108598	3
+bin	10.812362153841	4
+bin	12.399552296823	1
+bin	13.986742439805	0
+bin	15.573932582786	2
+bin	17.161122725768	0
+bin	18.748312868749	0
+bin	20.335503011731	0
+bin	21.922693154713	0
+bin	23.509883297694	1
+bin	25.097073440676	0
+bin	26.684263583657	0
+bin	28.271453726639	0
+bin	29.858643869621	0
+bin	31.445834012602	0
+bin	33.033024155584	0
+bin	34.620214298565	0
+bin	36.207404441547	0
+scalar ExamTaskNetwork.BrowsingLaptop[3].networkLayer.arp 	initiatedARPResolution:count 	8
+attr title  "ARP initiated resolutions, count"
+scalar ExamTaskNetwork.BrowsingLaptop[3].networkLayer.arp 	sentReply:count 	2
+attr title  "ARP replies sent, count"
+scalar ExamTaskNetwork.BrowsingLaptop[3].networkLayer.arp 	sentReq:count 	8
+attr title  "ARP request sent, count"
+scalar ExamTaskNetwork.BrowsingLaptop[3].networkLayer.arp 	failedARPResolution:count 	0
+attr title  "ARP failed resolutions, count"
+scalar ExamTaskNetwork.BrowsingLaptop[3].networkLayer.arp 	completedARPResolution:count 	20
+attr title  "ARP completed resolutions, count"
+scalar ExamTaskNetwork.BrowsingLaptop[3].lo0.lo 	rcvdPkFromHL:count 	0
+attr interpolationmode  none
+attr source  packetReceivedFromUpper
+attr title  "packets received from higher layer, count"
+scalar ExamTaskNetwork.BrowsingLaptop[3].lo0.lo 	rcvdPkFromHL:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  packetReceivedFromUpper
+attr title  "packets received from higher layer, sum(packetBytes)"
+scalar ExamTaskNetwork.BrowsingLaptop[3].lo0.lo 	passedUpPk:count 	0
+attr interpolationmode  none
+attr source  packetSentToUpper
+attr title  "packets passed to higher layer, count"
+scalar ExamTaskNetwork.BrowsingLaptop[3].lo0.lo 	passedUpPk:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  packetSentToUpper
+attr title  "packets passed to higher layer, sum(packetBytes)"
+scalar ExamTaskNetwork.BrowsingLaptop[3].lo0.lo 	droppedPkBitError:count 	0
+attr interpolationmode  none
+attr source  dropPkBitError
+attr title  "packets dropped/bit error, count"
+scalar ExamTaskNetwork.BrowsingLaptop[3].lo0.lo 	droppedPkBitError:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  dropPkBitError
+attr title  "packets dropped/bit error, sum(packetBytes)"
+scalar ExamTaskNetwork.BrowsingLaptop[3].wlan[0].agent 	dropConfirm:count 	0
+attr title  "dropped confirms, count"
+scalar ExamTaskNetwork.BrowsingLaptop[3].wlan[0].agent 	acceptConfirm:count 	36
+attr title  "accepted confirms, count"
+scalar ExamTaskNetwork.BrowsingLaptop[3].wlan[0].agent 	sentRequest:count 	36
+attr title  "sent requests, count"
+scalar ExamTaskNetwork.BrowsingLaptop[3].wlan[0].mgmt 	dropPkByQueue:count 	310
+attr interpolationmode  none
+attr source  dropPkByQueue
+attr title  "packets dropped by queue, count"
+scalar ExamTaskNetwork.BrowsingLaptop[3].wlan[0].mgmt 	dropPkByQueue:sum(packetBytes) 	30368
+attr interpolationmode  none
+attr source  dropPkByQueue
+attr title  "packets dropped by queue, sum(packetBytes)"
+scalar ExamTaskNetwork.BrowsingLaptop[3].wlan[0].mgmt 	dataQueueLen:max 	50
+attr interpolationmode  sample-hold
+attr title  "data queue length, max"
+scalar ExamTaskNetwork.BrowsingLaptop[3].wlan[0].mgmt 	dataQueueLen:timeavg 	0.014751321712471
+attr interpolationmode  sample-hold
+attr title  "data queue length, timeavg"
+scalar ExamTaskNetwork.BrowsingLaptop[3].wlan[0].mac 	"number of received packets" 	23907
+scalar ExamTaskNetwork.BrowsingLaptop[3].wlan[0].mac 	"number of collisions" 	37971
+scalar ExamTaskNetwork.BrowsingLaptop[3].wlan[0].mac 	"number of internal collisions" 	0
+scalar ExamTaskNetwork.BrowsingLaptop[3].wlan[0].mac 	"number of retry for AC 0" 	217
+scalar ExamTaskNetwork.BrowsingLaptop[3].wlan[0].mac 	"sent and received bits" 	9959552
+scalar ExamTaskNetwork.BrowsingLaptop[3].wlan[0].mac 	"sent packet within AC 0" 	12199
+scalar ExamTaskNetwork.BrowsingLaptop[3].wlan[0].mac 	"sent in TXOP " 	0
+scalar ExamTaskNetwork.BrowsingLaptop[3].wlan[0].mac 	"sentWithoutRetry AC 0" 	12025
+scalar ExamTaskNetwork.BrowsingLaptop[3].wlan[0].mac 	"numGivenUp AC 0" 	0
+scalar ExamTaskNetwork.BrowsingLaptop[3].wlan[0].mac 	"numDropped AC 0" 	0
+scalar ExamTaskNetwork.BrowsingLaptop[3].wlan[0].mac 	rcvdPkFromHL:count 	12211
+attr interpolationmode  none
+attr source  packetReceivedFromUpper
+attr title  "packets received from higher layer, count"
+scalar ExamTaskNetwork.BrowsingLaptop[3].wlan[0].mac 	rcvdPkFromHL:sum(packetBytes) 	1244944
+attr interpolationmode  none
+attr source  packetReceivedFromUpper
+attr title  "packets received from higher layer, sum(packetBytes)"
+scalar ExamTaskNetwork.BrowsingLaptop[3].wlan[0].mac 	passedUpPk:count 	33385
+attr interpolationmode  none
+attr source  packetSentToUpper
+attr title  "packets passed to higher layer, count"
+scalar ExamTaskNetwork.BrowsingLaptop[3].wlan[0].mac 	passedUpPk:sum(packetBytes) 	20427212
+attr interpolationmode  none
+attr source  packetSentToUpper
+attr title  "packets passed to higher layer, sum(packetBytes)"
+scalar ExamTaskNetwork.BrowsingLaptop[3].wlan[0].mac 	rcvdPkFromLL:count 	3221628
+attr interpolationmode  none
+attr source  packetReceivedFromLower
+attr title  "packets received from lower layer, count"
+scalar ExamTaskNetwork.BrowsingLaptop[3].wlan[0].mac 	rcvdPkFromLL:sum(packetBytes) 	1358141627
+attr interpolationmode  none
+attr source  packetReceivedFromLower
+attr title  "packets received from lower layer, sum(packetBytes)"
+scalar ExamTaskNetwork.BrowsingLaptop[3].wlan[0].mac 	sentDownPk:count 	36335
+attr interpolationmode  none
+attr source  packetSentToLower
+attr title  "packets sent to lower layer, count"
+scalar ExamTaskNetwork.BrowsingLaptop[3].wlan[0].mac 	sentDownPk:sum(packetBytes) 	1640508
+attr interpolationmode  none
+attr source  packetSentToLower
+attr title  "packets sent to lower layer, sum(packetBytes)"
+scalar ExamTaskNetwork.BrowsingLaptop[3].wlan[0].radio 	lossRate:min 	0
+attr interpolationmode  backward-sample-hold
+attr title  "packet loss rate, min"
+scalar ExamTaskNetwork.BrowsingLaptop[3].wlan[0].radio 	lossRate:max 	0.14
+attr interpolationmode  backward-sample-hold
+attr title  "packet loss rate, max"
+scalar ExamTaskNetwork.BrowsingLaptop[3].wlan[0].radio 	lossRate:timeavg 	0.010967320414606
+attr interpolationmode  backward-sample-hold
+attr title  "packet loss rate, timeavg"
+statistic ExamTaskNetwork.BrowsingLaptop[3].wlan[0].radio 	channelNo:histogram
+field count 1
+field mean 0
+field stddev -nan
+field sum 0
+field sqrsum 0
+field min 0
+field max 0
+attr interpolationmode  sample-hold
+attr title  "channel no, histogram"
+bin	-INF	0
+bin	-0.5	0
+bin	-0.46666666666667	0
+bin	-0.43333333333333	0
+bin	-0.4	0
+bin	-0.36666666666667	0
+bin	-0.33333333333333	0
+bin	-0.3	0
+bin	-0.26666666666667	0
+bin	-0.23333333333333	0
+bin	-0.2	0
+bin	-0.16666666666667	0
+bin	-0.13333333333333	0
+bin	-0.1	0
+bin	-0.066666666666667	0
+bin	-0.033333333333333	0
+bin	0	1
+bin	0.033333333333333	0
+bin	0.066666666666667	0
+bin	0.1	0
+bin	0.13333333333333	0
+bin	0.16666666666667	0
+bin	0.2	0
+bin	0.23333333333333	0
+bin	0.26666666666667	0
+bin	0.3	0
+bin	0.33333333333333	0
+bin	0.36666666666667	0
+bin	0.4	0
+bin	0.43333333333333	0
+bin	0.46666666666667	0
+bin	0.5	0
+scalar ExamTaskNetwork.BrowsingLaptop[3].wlan[0].radio 	radioState:count 	6516198
+attr interpolationmode  sample-hold
+attr title  "radio state (enum), count"
+scalar ExamTaskNetwork.BrowsingLaptop[3].wlan[0].radio 	bitrate:min 	54000000
+attr interpolationmode  sample-hold
+attr title  "tx bitrate, min"
+attr unit  bps
+scalar ExamTaskNetwork.BrowsingLaptop[3].wlan[0].radio 	bitrate:max 	54000000
+attr interpolationmode  sample-hold
+attr title  "tx bitrate, max"
+attr unit  bps
+scalar ExamTaskNetwork.BrowsingLaptop[3].wlan[0].radio 	bitrate:timeavg 	54000000
+attr interpolationmode  sample-hold
+attr title  "tx bitrate, timeavg"
+attr unit  bps
+scalar ExamTaskNetwork.BrowsingLaptop[3].tcpApp[0] 	numActiveSessions:max 	1
+attr interpolationmode  sample-hold
+attr source  sum(connect)
+attr title  "number of active sessions, max"
+scalar ExamTaskNetwork.BrowsingLaptop[3].tcpApp[0] 	numActiveSessions:timeavg 	0.18582474023249
+attr interpolationmode  sample-hold
+attr source  sum(connect)
+attr title  "number of active sessions, timeavg"
+scalar ExamTaskNetwork.BrowsingLaptop[3].tcpApp[0] 	numSessions:last 	29
+attr source  sum(connect+1)/2
+attr title  "total number of sessions, last"
+scalar ExamTaskNetwork.BrowsingLaptop[3].tcpApp[0] 	sentPk:count 	29
+attr interpolationmode  none
+attr source  sentPk
+attr title  "packets sent, count"
+scalar ExamTaskNetwork.BrowsingLaptop[3].tcpApp[0] 	sentPk:sum(packetBytes) 	237568
+attr interpolationmode  none
+attr source  sentPk
+attr title  "packets sent, sum(packetBytes)"
+scalar ExamTaskNetwork.BrowsingLaptop[3].tcpApp[0] 	rcvdPk:count 	29
+attr interpolationmode  none
+attr source  rcvdPk
+attr title  "packets received, count"
+scalar ExamTaskNetwork.BrowsingLaptop[3].tcpApp[0] 	rcvdPk:sum(packetBytes) 	15598926
+attr interpolationmode  none
+attr source  rcvdPk
+attr title  "packets received, sum(packetBytes)"
+statistic ExamTaskNetwork.BrowsingLaptop[3].tcpApp[0] 	endToEndDelay:histogram
+field count 29
+field mean 6.2857106498687
+field stddev 4.2808294848885
+field sum 182.28560884619
+field sqrsum 1658.9086230457
+field min 0.556702190943
+field max 16.400758203311
+attr interpolationmode  none
+attr source  messageAge(rcvdPk)
+attr title  "end-to-end delay, histogram"
+attr unit  s
+bin	-INF	0
+bin	-7.365325815241	0
+bin	-6.3090554144165	0
+bin	-5.2527850135919	0
+bin	-4.1965146127674	0
+bin	-3.1402442119429	0
+bin	-2.0839738111183	0
+bin	-1.0277034102938	0
+bin	0.028566990530734	4
+bin	1.0848373913553	0
+bin	2.1411077921798	2
+bin	3.1973781930043	5
+bin	4.2536485938289	5
+bin	5.3099189946534	0
+bin	6.3661893954779	4
+bin	7.4224597963025	2
+bin	8.478730197127	2
+bin	9.5350005979515	0
+bin	10.591270998776	2
+bin	11.647541399601	0
+bin	12.703811800425	0
+bin	13.76008220125	1
+bin	14.816352602074	1
+bin	15.872623002899	1
+bin	16.928893403723	0
+bin	17.985163804548	0
+bin	19.041434205372	0
+bin	20.097704606197	0
+bin	21.153975007021	0
+bin	22.210245407846	0
+bin	23.26651580867	0
+bin	24.322786209495	0
+scalar ExamTaskNetwork.BrowsingLaptop[4].networkLayer.arp 	initiatedARPResolution:count 	8
+attr title  "ARP initiated resolutions, count"
+scalar ExamTaskNetwork.BrowsingLaptop[4].networkLayer.arp 	sentReply:count 	2
+attr title  "ARP replies sent, count"
+scalar ExamTaskNetwork.BrowsingLaptop[4].networkLayer.arp 	sentReq:count 	8
+attr title  "ARP request sent, count"
+scalar ExamTaskNetwork.BrowsingLaptop[4].networkLayer.arp 	failedARPResolution:count 	0
+attr title  "ARP failed resolutions, count"
+scalar ExamTaskNetwork.BrowsingLaptop[4].networkLayer.arp 	completedARPResolution:count 	24
+attr title  "ARP completed resolutions, count"
+scalar ExamTaskNetwork.BrowsingLaptop[4].lo0.lo 	rcvdPkFromHL:count 	0
+attr interpolationmode  none
+attr source  packetReceivedFromUpper
+attr title  "packets received from higher layer, count"
+scalar ExamTaskNetwork.BrowsingLaptop[4].lo0.lo 	rcvdPkFromHL:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  packetReceivedFromUpper
+attr title  "packets received from higher layer, sum(packetBytes)"
+scalar ExamTaskNetwork.BrowsingLaptop[4].lo0.lo 	passedUpPk:count 	0
+attr interpolationmode  none
+attr source  packetSentToUpper
+attr title  "packets passed to higher layer, count"
+scalar ExamTaskNetwork.BrowsingLaptop[4].lo0.lo 	passedUpPk:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  packetSentToUpper
+attr title  "packets passed to higher layer, sum(packetBytes)"
+scalar ExamTaskNetwork.BrowsingLaptop[4].lo0.lo 	droppedPkBitError:count 	0
+attr interpolationmode  none
+attr source  dropPkBitError
+attr title  "packets dropped/bit error, count"
+scalar ExamTaskNetwork.BrowsingLaptop[4].lo0.lo 	droppedPkBitError:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  dropPkBitError
+attr title  "packets dropped/bit error, sum(packetBytes)"
+scalar ExamTaskNetwork.BrowsingLaptop[4].wlan[0].agent 	dropConfirm:count 	0
+attr title  "dropped confirms, count"
+scalar ExamTaskNetwork.BrowsingLaptop[4].wlan[0].agent 	acceptConfirm:count 	36
+attr title  "accepted confirms, count"
+scalar ExamTaskNetwork.BrowsingLaptop[4].wlan[0].agent 	sentRequest:count 	36
+attr title  "sent requests, count"
+scalar ExamTaskNetwork.BrowsingLaptop[4].wlan[0].mgmt 	dropPkByQueue:count 	0
+attr interpolationmode  none
+attr source  dropPkByQueue
+attr title  "packets dropped by queue, count"
+scalar ExamTaskNetwork.BrowsingLaptop[4].wlan[0].mgmt 	dropPkByQueue:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  dropPkByQueue
+attr title  "packets dropped by queue, sum(packetBytes)"
+scalar ExamTaskNetwork.BrowsingLaptop[4].wlan[0].mgmt 	dataQueueLen:max 	0
+attr interpolationmode  sample-hold
+attr title  "data queue length, max"
+scalar ExamTaskNetwork.BrowsingLaptop[4].wlan[0].mgmt 	dataQueueLen:timeavg 	0
+attr interpolationmode  sample-hold
+attr title  "data queue length, timeavg"
+scalar ExamTaskNetwork.BrowsingLaptop[4].wlan[0].mac 	"number of received packets" 	35623
+scalar ExamTaskNetwork.BrowsingLaptop[4].wlan[0].mac 	"number of collisions" 	38252
+scalar ExamTaskNetwork.BrowsingLaptop[4].wlan[0].mac 	"number of internal collisions" 	0
+scalar ExamTaskNetwork.BrowsingLaptop[4].wlan[0].mac 	"number of retry for AC 0" 	73
+scalar ExamTaskNetwork.BrowsingLaptop[4].wlan[0].mac 	"sent and received bits" 	13550192
+scalar ExamTaskNetwork.BrowsingLaptop[4].wlan[0].mac 	"sent packet within AC 0" 	17271
+scalar ExamTaskNetwork.BrowsingLaptop[4].wlan[0].mac 	"sent in TXOP " 	0
+scalar ExamTaskNetwork.BrowsingLaptop[4].wlan[0].mac 	"sentWithoutRetry AC 0" 	17216
+scalar ExamTaskNetwork.BrowsingLaptop[4].wlan[0].mac 	"numGivenUp AC 0" 	0
+scalar ExamTaskNetwork.BrowsingLaptop[4].wlan[0].mac 	"numDropped AC 0" 	0
+scalar ExamTaskNetwork.BrowsingLaptop[4].wlan[0].mac 	rcvdPkFromHL:count 	17283
+attr interpolationmode  none
+attr source  packetReceivedFromUpper
+attr title  "packets received from higher layer, count"
+scalar ExamTaskNetwork.BrowsingLaptop[4].wlan[0].mac 	rcvdPkFromHL:sum(packetBytes) 	1693774
+attr interpolationmode  none
+attr source  packetReceivedFromUpper
+attr title  "packets received from higher layer, sum(packetBytes)"
+scalar ExamTaskNetwork.BrowsingLaptop[4].wlan[0].mac 	passedUpPk:count 	45099
+attr interpolationmode  none
+attr source  packetSentToUpper
+attr title  "packets passed to higher layer, count"
+scalar ExamTaskNetwork.BrowsingLaptop[4].wlan[0].mac 	passedUpPk:sum(packetBytes) 	30194212
+attr interpolationmode  none
+attr source  packetSentToUpper
+attr title  "packets passed to higher layer, sum(packetBytes)"
+scalar ExamTaskNetwork.BrowsingLaptop[4].wlan[0].mac 	rcvdPkFromLL:count 	3204984
+attr interpolationmode  none
+attr source  packetReceivedFromLower
+attr title  "packets received from lower layer, count"
+scalar ExamTaskNetwork.BrowsingLaptop[4].wlan[0].mac 	rcvdPkFromLL:sum(packetBytes) 	1357550619
+attr interpolationmode  none
+attr source  packetReceivedFromLower
+attr title  "packets received from lower layer, sum(packetBytes)"
+scalar ExamTaskNetwork.BrowsingLaptop[4].wlan[0].mac 	sentDownPk:count 	52979
+attr interpolationmode  none
+attr source  packetSentToLower
+attr title  "packets sent to lower layer, count"
+scalar ExamTaskNetwork.BrowsingLaptop[4].wlan[0].mac 	sentDownPk:sum(packetBytes) 	2242106
+attr interpolationmode  none
+attr source  packetSentToLower
+attr title  "packets sent to lower layer, sum(packetBytes)"
+scalar ExamTaskNetwork.BrowsingLaptop[4].wlan[0].radio 	lossRate:min 	0
+attr interpolationmode  backward-sample-hold
+attr title  "packet loss rate, min"
+scalar ExamTaskNetwork.BrowsingLaptop[4].wlan[0].radio 	lossRate:max 	0.14
+attr interpolationmode  backward-sample-hold
+attr title  "packet loss rate, max"
+scalar ExamTaskNetwork.BrowsingLaptop[4].wlan[0].radio 	lossRate:timeavg 	0.011137359658622
+attr interpolationmode  backward-sample-hold
+attr title  "packet loss rate, timeavg"
+statistic ExamTaskNetwork.BrowsingLaptop[4].wlan[0].radio 	channelNo:histogram
+field count 1
+field mean 0
+field stddev -nan
+field sum 0
+field sqrsum 0
+field min 0
+field max 0
+attr interpolationmode  sample-hold
+attr title  "channel no, histogram"
+bin	-INF	0
+bin	-0.5	0
+bin	-0.46666666666667	0
+bin	-0.43333333333333	0
+bin	-0.4	0
+bin	-0.36666666666667	0
+bin	-0.33333333333333	0
+bin	-0.3	0
+bin	-0.26666666666667	0
+bin	-0.23333333333333	0
+bin	-0.2	0
+bin	-0.16666666666667	0
+bin	-0.13333333333333	0
+bin	-0.1	0
+bin	-0.066666666666667	0
+bin	-0.033333333333333	0
+bin	0	1
+bin	0.033333333333333	0
+bin	0.066666666666667	0
+bin	0.1	0
+bin	0.13333333333333	0
+bin	0.16666666666667	0
+bin	0.2	0
+bin	0.23333333333333	0
+bin	0.26666666666667	0
+bin	0.3	0
+bin	0.33333333333333	0
+bin	0.36666666666667	0
+bin	0.4	0
+bin	0.43333333333333	0
+bin	0.46666666666667	0
+bin	0.5	0
+scalar ExamTaskNetwork.BrowsingLaptop[4].wlan[0].radio 	radioState:count 	6516017
+attr interpolationmode  sample-hold
+attr title  "radio state (enum), count"
+scalar ExamTaskNetwork.BrowsingLaptop[4].wlan[0].radio 	bitrate:min 	54000000
+attr interpolationmode  sample-hold
+attr title  "tx bitrate, min"
+attr unit  bps
+scalar ExamTaskNetwork.BrowsingLaptop[4].wlan[0].radio 	bitrate:max 	54000000
+attr interpolationmode  sample-hold
+attr title  "tx bitrate, max"
+attr unit  bps
+scalar ExamTaskNetwork.BrowsingLaptop[4].wlan[0].radio 	bitrate:timeavg 	54000000
+attr interpolationmode  sample-hold
+attr title  "tx bitrate, timeavg"
+attr unit  bps
+scalar ExamTaskNetwork.BrowsingLaptop[4].tcpApp[0] 	numActiveSessions:max 	1
+attr interpolationmode  sample-hold
+attr source  sum(connect)
+attr title  "number of active sessions, max"
+scalar ExamTaskNetwork.BrowsingLaptop[4].tcpApp[0] 	numActiveSessions:timeavg 	0.30001615121168
+attr interpolationmode  sample-hold
+attr source  sum(connect)
+attr title  "number of active sessions, timeavg"
+scalar ExamTaskNetwork.BrowsingLaptop[4].tcpApp[0] 	numSessions:last 	34
+attr source  sum(connect+1)/2
+attr title  "total number of sessions, last"
+scalar ExamTaskNetwork.BrowsingLaptop[4].tcpApp[0] 	sentPk:count 	34
+attr interpolationmode  none
+attr source  sentPk
+attr title  "packets sent, count"
+scalar ExamTaskNetwork.BrowsingLaptop[4].tcpApp[0] 	sentPk:sum(packetBytes) 	278528
+attr interpolationmode  none
+attr source  sentPk
+attr title  "packets sent, sum(packetBytes)"
+scalar ExamTaskNetwork.BrowsingLaptop[4].tcpApp[0] 	rcvdPk:count 	34
+attr interpolationmode  none
+attr source  rcvdPk
+attr title  "packets received, count"
+scalar ExamTaskNetwork.BrowsingLaptop[4].tcpApp[0] 	rcvdPk:sum(packetBytes) 	22712319
+attr interpolationmode  none
+attr source  rcvdPk
+attr title  "packets received, sum(packetBytes)"
+statistic ExamTaskNetwork.BrowsingLaptop[4].tcpApp[0] 	endToEndDelay:histogram
+field count 34
+field mean 8.7026214432853
+field stddev 9.2150123369829
+field sum 295.8891290717
+field sqrsum 5377.254007729
+field min 0.484714058401
+field max 34.687814552486
+attr interpolationmode  none
+attr source  messageAge(rcvdPk)
+attr title  "end-to-end delay, histogram"
+attr unit  s
+bin	-INF	0
+bin	-16.616836188641	0
+bin	-14.336629489036	0
+bin	-12.05642278943	0
+bin	-9.7762160898245	0
+bin	-7.4960093902188	0
+bin	-5.2158026906132	0
+bin	-2.9355959910075	0
+bin	-0.65538929140183	6
+bin	1.6248174082038	7
+bin	3.9050241078095	5
+bin	6.1852308074152	3
+bin	8.4654375070208	4
+bin	10.745644206627	4
+bin	13.025850906232	1
+bin	15.306057605838	0
+bin	17.586264305443	0
+bin	19.866471005049	0
+bin	22.146677704655	0
+bin	24.42688440426	1
+bin	26.707091103866	0
+bin	28.987297803472	1
+bin	31.267504503077	1
+bin	33.547711202683	1
+bin	35.827917902289	0
+bin	38.108124601894	0
+bin	40.3883313015	0
+bin	42.668538001106	0
+bin	44.948744700711	0
+bin	47.228951400317	0
+bin	49.509158099923	0
+bin	51.789364799528	0
+scalar ExamTaskNetwork.CCTVCamera.networkLayer.arp 	initiatedARPResolution:count 	9
+attr title  "ARP initiated resolutions, count"
+scalar ExamTaskNetwork.CCTVCamera.networkLayer.arp 	sentReply:count 	0
+attr title  "ARP replies sent, count"
+scalar ExamTaskNetwork.CCTVCamera.networkLayer.arp 	sentReq:count 	9
+attr title  "ARP request sent, count"
+scalar ExamTaskNetwork.CCTVCamera.networkLayer.arp 	failedARPResolution:count 	0
+attr title  "ARP failed resolutions, count"
+scalar ExamTaskNetwork.CCTVCamera.networkLayer.arp 	completedARPResolution:count 	9
+attr title  "ARP completed resolutions, count"
+scalar ExamTaskNetwork.CCTVCamera.lo0.lo 	rcvdPkFromHL:count 	0
+attr interpolationmode  none
+attr source  packetReceivedFromUpper
+attr title  "packets received from higher layer, count"
+scalar ExamTaskNetwork.CCTVCamera.lo0.lo 	rcvdPkFromHL:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  packetReceivedFromUpper
+attr title  "packets received from higher layer, sum(packetBytes)"
+scalar ExamTaskNetwork.CCTVCamera.lo0.lo 	passedUpPk:count 	0
+attr interpolationmode  none
+attr source  packetSentToUpper
+attr title  "packets passed to higher layer, count"
+scalar ExamTaskNetwork.CCTVCamera.lo0.lo 	passedUpPk:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  packetSentToUpper
+attr title  "packets passed to higher layer, sum(packetBytes)"
+scalar ExamTaskNetwork.CCTVCamera.lo0.lo 	droppedPkBitError:count 	0
+attr interpolationmode  none
+attr source  dropPkBitError
+attr title  "packets dropped/bit error, count"
+scalar ExamTaskNetwork.CCTVCamera.lo0.lo 	droppedPkBitError:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  dropPkBitError
+attr title  "packets dropped/bit error, sum(packetBytes)"
+scalar ExamTaskNetwork.CCTVCamera.eth[0].mac 	"simulated time" 	1000.0000084959
+scalar ExamTaskNetwork.CCTVCamera.eth[0].mac 	full-duplex 	1
+scalar ExamTaskNetwork.CCTVCamera.eth[0].mac 	"frames/sec sent" 	174.79199851498
+scalar ExamTaskNetwork.CCTVCamera.eth[0].mac 	"frames/sec rcvd" 	0.08599999926935
+scalar ExamTaskNetwork.CCTVCamera.eth[0].mac 	"bits/sec sent" 	2100197.1181569
+scalar ExamTaskNetwork.CCTVCamera.eth[0].mac 	"bits/sec rcvd" 	50.191999573572
+scalar ExamTaskNetwork.CCTVCamera.eth[0].mac 	"rx channel idle (%)" 	99.999944304
+scalar ExamTaskNetwork.CCTVCamera.eth[0].mac 	"rx channel utilization (%)" 	5.5695999526811e-05
+scalar ExamTaskNetwork.CCTVCamera.eth[0].mac 	rxPkFromHL:count 	174792
+attr interpolationmode  none
+attr source  rxPkFromHL
+attr title  "packet bytes from higher layer, count"
+scalar ExamTaskNetwork.CCTVCamera.eth[0].mac 	rxPkFromHL:sum(packetBytes) 	262524642
+attr interpolationmode  none
+attr source  rxPkFromHL
+attr title  "packet bytes from higher layer, sum(packetBytes)"
+scalar ExamTaskNetwork.CCTVCamera.eth[0].mac 	rxPausePkUnits:count 	0
+attr interpolationmode  none
+attr title  "pause units received, count"
+scalar ExamTaskNetwork.CCTVCamera.eth[0].mac 	rxPausePkUnits:sum 	0
+attr interpolationmode  none
+attr title  "pause units received, sum"
+scalar ExamTaskNetwork.CCTVCamera.eth[0].mac 	txPausePkUnits:count 	0
+attr interpolationmode  none
+attr title  "pause units sent, count"
+scalar ExamTaskNetwork.CCTVCamera.eth[0].mac 	txPausePkUnits:sum 	0
+attr interpolationmode  none
+attr title  "pause units sent, sum"
+scalar ExamTaskNetwork.CCTVCamera.eth[0].mac 	txPk:count 	174792
+attr interpolationmode  none
+attr source  txPk
+attr title  "packets transmitted, count"
+scalar ExamTaskNetwork.CCTVCamera.eth[0].mac 	txPk:sum(packetBytes) 	262524642
+attr interpolationmode  none
+attr source  txPk
+attr title  "packets transmitted, sum(packetBytes)"
+scalar ExamTaskNetwork.CCTVCamera.eth[0].mac 	droppedPkNotForUs:count 	0
+attr interpolationmode  none
+attr source  dropPkNotForUs
+attr title  "packets dropped/not for us, count"
+scalar ExamTaskNetwork.CCTVCamera.eth[0].mac 	droppedPkNotForUs:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  dropPkNotForUs
+attr title  "packets dropped/not for us, sum(packetBytes)"
+scalar ExamTaskNetwork.CCTVCamera.eth[0].mac 	passedUpPk:count 	86
+attr interpolationmode  none
+attr source  packetSentToUpper
+attr title  "packets passed to higher layer, count"
+scalar ExamTaskNetwork.CCTVCamera.eth[0].mac 	passedUpPk:sum(packetBytes) 	6274
+attr interpolationmode  none
+attr source  packetSentToUpper
+attr title  "packets passed to higher layer, sum(packetBytes)"
+scalar ExamTaskNetwork.CCTVCamera.eth[0].mac 	droppedPkBitError:count 	0
+attr interpolationmode  none
+attr source  dropPkBitError
+attr title  "packets dropped/bit error, count"
+scalar ExamTaskNetwork.CCTVCamera.eth[0].mac 	droppedPkBitError:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  dropPkBitError
+attr title  "packets dropped/bit error, sum(packetBytes)"
+scalar ExamTaskNetwork.CCTVCamera.eth[0].mac 	droppedPkIfaceDown:count 	0
+attr interpolationmode  none
+attr source  dropPkIfaceDown
+attr title  "packets dropped/interface down, count"
+scalar ExamTaskNetwork.CCTVCamera.eth[0].mac 	droppedPkIfaceDown:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  dropPkIfaceDown
+attr title  "packets dropped/interface down, sum(packetBytes)"
+scalar ExamTaskNetwork.CCTVCamera.eth[0].mac 	rxPkOk:count 	86
+attr interpolationmode  none
+attr source  rxPkOk
+attr title  "packets received OK, count"
+scalar ExamTaskNetwork.CCTVCamera.eth[0].mac 	rxPkOk:sum(packetBytes) 	6274
+attr interpolationmode  none
+attr source  rxPkOk
+attr title  "packets received OK, sum(packetBytes)"
+scalar ExamTaskNetwork.CCTVCamera.eth[0].encap 	pauseSent:count 	0
+attr title  "pause sent, count"
+scalar ExamTaskNetwork.CCTVCamera.eth[0].encap 	pauseSent:sum 	0
+attr title  "pause sent, sum"
+scalar ExamTaskNetwork.CCTVCamera.eth[0].encap 	decapPk:count 	86
+attr interpolationmode  none
+attr source  decapPk
+attr title  "packets decapsulated, count"
+scalar ExamTaskNetwork.CCTVCamera.eth[0].encap 	decapPk:sum(packetBytes) 	4564
+attr interpolationmode  none
+attr source  decapPk
+attr title  "packets decapsulated, sum(packetBytes)"
+scalar ExamTaskNetwork.CCTVCamera.eth[0].encap 	encapPk:count 	174792
+attr interpolationmode  none
+attr source  encapPk
+attr title  "packets encapsulated, count"
+scalar ExamTaskNetwork.CCTVCamera.eth[0].encap 	encapPk:sum(packetBytes) 	259378224
+attr interpolationmode  none
+attr source  encapPk
+attr title  "packets encapsulated, sum(packetBytes)"
+scalar ExamTaskNetwork.CCTVCamera.udpApp[0] 	"packets sent" 	24969
+scalar ExamTaskNetwork.CCTVCamera.udpApp[0] 	"packets received" 	0
+scalar ExamTaskNetwork.CCTVCamera.udpApp[0] 	lateRatio 	-nan
+scalar ExamTaskNetwork.CCTVCamera.udpApp[0] 	"discarded packets" 	0
+statistic ExamTaskNetwork.CCTVCamera.udpApp[0] 	endToEndDelay:stats
+field count 0
+field mean -nan
+field stddev -nan
+field sum 0
+field sqrsum 0
+field min -nan
+field max -nan
+attr source  VoIPPacketDelay
+attr title  "VoIP Packet End-to-End Delay, stats"
+attr unit  s
+scalar ExamTaskNetwork.CCTVCamera.udpApp[0] 	sentPk:count 	24969
+attr interpolationmode  none
+attr source  sentPk
+attr title  "packets sent, count"
+scalar ExamTaskNetwork.CCTVCamera.udpApp[0] 	sentPk:sum(packetBytes) 	255682560
+attr interpolationmode  none
+attr source  sentPk
+attr title  "packets sent, sum(packetBytes)"
+scalar ExamTaskNetwork.CCTVCamera.udpApp[0] 	rcvdPk:count 	0
+attr interpolationmode  none
+attr source  rcvdPk
+attr title  "packets received, count"
+scalar ExamTaskNetwork.CCTVCamera.udpApp[0] 	rcvdPk:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  rcvdPk
+attr title  "packets received, sum(packetBytes)"
+statistic ExamTaskNetwork.CCTVCamera.udpApp[0] 	rcvdPkLifetime:stats
+field count 0
+field mean -nan
+field stddev -nan
+field sum 0
+field sqrsum 0
+field min -nan
+field max -nan
+attr interpolationmode  none
+attr source  messageAge(rcvdPk)
+attr title  "received packet lifetime, stats"
+attr unit  s
+scalar ExamTaskNetwork.CCTVCamera.udp 	droppedPkBadChecksum:count 	0
+attr interpolationmode  none
+attr title  "packets dropped (checksum error), count"
+scalar ExamTaskNetwork.CCTVCamera.udp 	droppedPkWrongPort:count 	0
+attr interpolationmode  none
+attr title  "packets dropped (wrong port), count"
+scalar ExamTaskNetwork.CCTVCamera.udp 	passedUpPk:count 	0
+attr interpolationmode  none
+attr title  "packets passed up, count"
+scalar ExamTaskNetwork.CCTVCamera.udp 	sentPk:count 	24969
+attr interpolationmode  none
+attr source  sentPk
+attr title  "packets sent, count"
+scalar ExamTaskNetwork.CCTVCamera.udp 	sentPk:sum(packetBytes) 	255882312
+attr interpolationmode  none
+attr source  sentPk
+attr title  "packets sent, sum(packetBytes)"
+scalar ExamTaskNetwork.CCTVCamera.udp 	rcvdPk:count 	0
+attr interpolationmode  none
+attr source  rcvdPk
+attr title  "packets received, count"
+scalar ExamTaskNetwork.CCTVCamera.udp 	rcvdPk:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  rcvdPk
+attr title  "packets received, sum(packetBytes)"
+scalar ExamTaskNetwork.ProfessorsLaptop.networkLayer.arp 	initiatedARPResolution:count 	9
+attr title  "ARP initiated resolutions, count"
+scalar ExamTaskNetwork.ProfessorsLaptop.networkLayer.arp 	sentReply:count 	8
+attr title  "ARP replies sent, count"
+scalar ExamTaskNetwork.ProfessorsLaptop.networkLayer.arp 	sentReq:count 	9
+attr title  "ARP request sent, count"
+scalar ExamTaskNetwork.ProfessorsLaptop.networkLayer.arp 	failedARPResolution:count 	0
+attr title  "ARP failed resolutions, count"
+scalar ExamTaskNetwork.ProfessorsLaptop.networkLayer.arp 	completedARPResolution:count 	17
+attr title  "ARP completed resolutions, count"
+scalar ExamTaskNetwork.ProfessorsLaptop.lo0.lo 	rcvdPkFromHL:count 	0
+attr interpolationmode  none
+attr source  packetReceivedFromUpper
+attr title  "packets received from higher layer, count"
+scalar ExamTaskNetwork.ProfessorsLaptop.lo0.lo 	rcvdPkFromHL:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  packetReceivedFromUpper
+attr title  "packets received from higher layer, sum(packetBytes)"
+scalar ExamTaskNetwork.ProfessorsLaptop.lo0.lo 	passedUpPk:count 	0
+attr interpolationmode  none
+attr source  packetSentToUpper
+attr title  "packets passed to higher layer, count"
+scalar ExamTaskNetwork.ProfessorsLaptop.lo0.lo 	passedUpPk:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  packetSentToUpper
+attr title  "packets passed to higher layer, sum(packetBytes)"
+scalar ExamTaskNetwork.ProfessorsLaptop.lo0.lo 	droppedPkBitError:count 	0
+attr interpolationmode  none
+attr source  dropPkBitError
+attr title  "packets dropped/bit error, count"
+scalar ExamTaskNetwork.ProfessorsLaptop.lo0.lo 	droppedPkBitError:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  dropPkBitError
+attr title  "packets dropped/bit error, sum(packetBytes)"
+scalar ExamTaskNetwork.ProfessorsLaptop.eth[0].mac 	"simulated time" 	1000.0000084959
+scalar ExamTaskNetwork.ProfessorsLaptop.eth[0].mac 	full-duplex 	1
+scalar ExamTaskNetwork.ProfessorsLaptop.eth[0].mac 	"frames/sec sent" 	24.979999787772
+scalar ExamTaskNetwork.ProfessorsLaptop.eth[0].mac 	"frames/sec rcvd" 	24.864999788749
+scalar ExamTaskNetwork.ProfessorsLaptop.eth[0].mac 	"bits/sec sent" 	288780.68554654
+scalar ExamTaskNetwork.ProfessorsLaptop.eth[0].mac 	"bits/sec rcvd" 	287450.36555784
+scalar ExamTaskNetwork.ProfessorsLaptop.eth[0].mac 	"rx channel idle (%)" 	99.710958274456
+scalar ExamTaskNetwork.ProfessorsLaptop.eth[0].mac 	"rx channel utilization (%)" 	0.28904172554432
+scalar ExamTaskNetwork.ProfessorsLaptop.eth[0].mac 	rxPkFromHL:count 	24980
+attr interpolationmode  none
+attr source  rxPkFromHL
+attr title  "packet bytes from higher layer, count"
+scalar ExamTaskNetwork.ProfessorsLaptop.eth[0].mac 	rxPkFromHL:sum(packetBytes) 	36097586
+attr interpolationmode  none
+attr source  rxPkFromHL
+attr title  "packet bytes from higher layer, sum(packetBytes)"
+scalar ExamTaskNetwork.ProfessorsLaptop.eth[0].mac 	rxPausePkUnits:count 	0
+attr interpolationmode  none
+attr title  "pause units received, count"
+scalar ExamTaskNetwork.ProfessorsLaptop.eth[0].mac 	rxPausePkUnits:sum 	0
+attr interpolationmode  none
+attr title  "pause units received, sum"
+scalar ExamTaskNetwork.ProfessorsLaptop.eth[0].mac 	txPausePkUnits:count 	0
+attr interpolationmode  none
+attr title  "pause units sent, count"
+scalar ExamTaskNetwork.ProfessorsLaptop.eth[0].mac 	txPausePkUnits:sum 	0
+attr interpolationmode  none
+attr title  "pause units sent, sum"
+scalar ExamTaskNetwork.ProfessorsLaptop.eth[0].mac 	txPk:count 	24980
+attr interpolationmode  none
+attr source  txPk
+attr title  "packets transmitted, count"
+scalar ExamTaskNetwork.ProfessorsLaptop.eth[0].mac 	txPk:sum(packetBytes) 	36097586
+attr interpolationmode  none
+attr source  txPk
+attr title  "packets transmitted, sum(packetBytes)"
+scalar ExamTaskNetwork.ProfessorsLaptop.eth[0].mac 	droppedPkNotForUs:count 	0
+attr interpolationmode  none
+attr source  dropPkNotForUs
+attr title  "packets dropped/not for us, count"
+scalar ExamTaskNetwork.ProfessorsLaptop.eth[0].mac 	droppedPkNotForUs:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  dropPkNotForUs
+attr title  "packets dropped/not for us, sum(packetBytes)"
+scalar ExamTaskNetwork.ProfessorsLaptop.eth[0].mac 	passedUpPk:count 	24865
+attr interpolationmode  none
+attr source  packetSentToUpper
+attr title  "packets passed to higher layer, count"
+scalar ExamTaskNetwork.ProfessorsLaptop.eth[0].mac 	passedUpPk:sum(packetBytes) 	35931296
+attr interpolationmode  none
+attr source  packetSentToUpper
+attr title  "packets passed to higher layer, sum(packetBytes)"
+scalar ExamTaskNetwork.ProfessorsLaptop.eth[0].mac 	droppedPkBitError:count 	0
+attr interpolationmode  none
+attr source  dropPkBitError
+attr title  "packets dropped/bit error, count"
+scalar ExamTaskNetwork.ProfessorsLaptop.eth[0].mac 	droppedPkBitError:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  dropPkBitError
+attr title  "packets dropped/bit error, sum(packetBytes)"
+scalar ExamTaskNetwork.ProfessorsLaptop.eth[0].mac 	droppedPkIfaceDown:count 	0
+attr interpolationmode  none
+attr source  dropPkIfaceDown
+attr title  "packets dropped/interface down, count"
+scalar ExamTaskNetwork.ProfessorsLaptop.eth[0].mac 	droppedPkIfaceDown:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  dropPkIfaceDown
+attr title  "packets dropped/interface down, sum(packetBytes)"
+scalar ExamTaskNetwork.ProfessorsLaptop.eth[0].mac 	rxPkOk:count 	24865
+attr interpolationmode  none
+attr source  rxPkOk
+attr title  "packets received OK, count"
+scalar ExamTaskNetwork.ProfessorsLaptop.eth[0].mac 	rxPkOk:sum(packetBytes) 	35931296
+attr interpolationmode  none
+attr source  rxPkOk
+attr title  "packets received OK, sum(packetBytes)"
+scalar ExamTaskNetwork.ProfessorsLaptop.eth[0].encap 	pauseSent:count 	0
+attr title  "pause sent, count"
+scalar ExamTaskNetwork.ProfessorsLaptop.eth[0].encap 	pauseSent:sum 	0
+attr title  "pause sent, sum"
+scalar ExamTaskNetwork.ProfessorsLaptop.eth[0].encap 	decapPk:count 	24865
+attr interpolationmode  none
+attr source  decapPk
+attr title  "packets decapsulated, count"
+scalar ExamTaskNetwork.ProfessorsLaptop.eth[0].encap 	decapPk:sum(packetBytes) 	35483420
+attr interpolationmode  none
+attr source  decapPk
+attr title  "packets decapsulated, sum(packetBytes)"
+scalar ExamTaskNetwork.ProfessorsLaptop.eth[0].encap 	encapPk:count 	24980
+attr interpolationmode  none
+attr source  encapPk
+attr title  "packets encapsulated, count"
+scalar ExamTaskNetwork.ProfessorsLaptop.eth[0].encap 	encapPk:sum(packetBytes) 	35647640
+attr interpolationmode  none
+attr source  encapPk
+attr title  "packets encapsulated, sum(packetBytes)"
+scalar ExamTaskNetwork.ProfessorsLaptop.udpApp[0] 	"packets sent" 	24963
+scalar ExamTaskNetwork.ProfessorsLaptop.udpApp[0] 	"packets received" 	24848
+scalar ExamTaskNetwork.ProfessorsLaptop.udpApp[0] 	lateRatio 	0.0020122344139963
+scalar ExamTaskNetwork.ProfessorsLaptop.udpApp[0] 	"discarded packets" 	50
+statistic ExamTaskNetwork.ProfessorsLaptop.udpApp[0] 	endToEndDelay:stats
+field count 24848
+field mean 0.030352114640245
+field stddev 0.024341306684726
+field sum 754.18934458081
+field sqrsum 37.613069345864
+field min 0.016462389017
+field max 1.03130906665
+attr source  VoIPPacketDelay
+attr title  "VoIP Packet End-to-End Delay, stats"
+attr unit  s
+scalar ExamTaskNetwork.ProfessorsLaptop.udpApp[0] 	sentPk:count 	24963
+attr interpolationmode  none
+attr source  sentPk
+attr title  "packets sent, count"
+scalar ExamTaskNetwork.ProfessorsLaptop.udpApp[0] 	sentPk:sum(packetBytes) 	34948200
+attr interpolationmode  none
+attr source  sentPk
+attr title  "packets sent, sum(packetBytes)"
+scalar ExamTaskNetwork.ProfessorsLaptop.udpApp[0] 	rcvdPk:count 	24848
+attr interpolationmode  none
+attr source  rcvdPk
+attr title  "packets received, count"
+scalar ExamTaskNetwork.ProfessorsLaptop.udpApp[0] 	rcvdPk:sum(packetBytes) 	34787200
+attr interpolationmode  none
+attr source  rcvdPk
+attr title  "packets received, sum(packetBytes)"
+statistic ExamTaskNetwork.ProfessorsLaptop.udpApp[0] 	rcvdPkLifetime:stats
+field count 24848
+field mean 0.030352114640245
+field stddev 0.024341306684726
+field sum 754.18934458081
+field sqrsum 37.613069345864
+field min 0.016462389017
+field max 1.03130906665
+attr interpolationmode  none
+attr source  messageAge(rcvdPk)
+attr title  "received packet lifetime, stats"
+attr unit  s
+scalar ExamTaskNetwork.ProfessorsLaptop.udp 	droppedPkBadChecksum:count 	0
+attr interpolationmode  none
+attr title  "packets dropped (checksum error), count"
+scalar ExamTaskNetwork.ProfessorsLaptop.udp 	droppedPkWrongPort:count 	0
+attr interpolationmode  none
+attr title  "packets dropped (wrong port), count"
+scalar ExamTaskNetwork.ProfessorsLaptop.udp 	passedUpPk:count 	24848
+attr interpolationmode  none
+attr title  "packets passed up, count"
+scalar ExamTaskNetwork.ProfessorsLaptop.udp 	sentPk:count 	24963
+attr interpolationmode  none
+attr source  sentPk
+attr title  "packets sent, count"
+scalar ExamTaskNetwork.ProfessorsLaptop.udp 	sentPk:sum(packetBytes) 	35147904
+attr interpolationmode  none
+attr source  sentPk
+attr title  "packets sent, sum(packetBytes)"
+scalar ExamTaskNetwork.ProfessorsLaptop.udp 	rcvdPk:count 	24848
+attr interpolationmode  none
+attr source  rcvdPk
+attr title  "packets received, count"
+scalar ExamTaskNetwork.ProfessorsLaptop.udp 	rcvdPk:sum(packetBytes) 	34985984
+attr interpolationmode  none
+attr source  rcvdPk
+attr title  "packets received, sum(packetBytes)"
+scalar ExamTaskNetwork.CCTVMonitoring.networkLayer.arp 	initiatedARPResolution:count 	7
+attr title  "ARP initiated resolutions, count"
+scalar ExamTaskNetwork.CCTVMonitoring.networkLayer.arp 	sentReply:count 	8
+attr title  "ARP replies sent, count"
+scalar ExamTaskNetwork.CCTVMonitoring.networkLayer.arp 	sentReq:count 	7
+attr title  "ARP request sent, count"
+scalar ExamTaskNetwork.CCTVMonitoring.networkLayer.arp 	failedARPResolution:count 	0
+attr title  "ARP failed resolutions, count"
+scalar ExamTaskNetwork.CCTVMonitoring.networkLayer.arp 	completedARPResolution:count 	15
+attr title  "ARP completed resolutions, count"
+scalar ExamTaskNetwork.CCTVMonitoring.lo0.lo 	rcvdPkFromHL:count 	0
+attr interpolationmode  none
+attr source  packetReceivedFromUpper
+attr title  "packets received from higher layer, count"
+scalar ExamTaskNetwork.CCTVMonitoring.lo0.lo 	rcvdPkFromHL:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  packetReceivedFromUpper
+attr title  "packets received from higher layer, sum(packetBytes)"
+scalar ExamTaskNetwork.CCTVMonitoring.lo0.lo 	passedUpPk:count 	0
+attr interpolationmode  none
+attr source  packetSentToUpper
+attr title  "packets passed to higher layer, count"
+scalar ExamTaskNetwork.CCTVMonitoring.lo0.lo 	passedUpPk:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  packetSentToUpper
+attr title  "packets passed to higher layer, sum(packetBytes)"
+scalar ExamTaskNetwork.CCTVMonitoring.lo0.lo 	droppedPkBitError:count 	0
+attr interpolationmode  none
+attr source  dropPkBitError
+attr title  "packets dropped/bit error, count"
+scalar ExamTaskNetwork.CCTVMonitoring.lo0.lo 	droppedPkBitError:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  dropPkBitError
+attr title  "packets dropped/bit error, sum(packetBytes)"
+scalar ExamTaskNetwork.CCTVMonitoring.eth[0].mac 	"simulated time" 	1000.0000084959
+scalar ExamTaskNetwork.CCTVMonitoring.eth[0].mac 	full-duplex 	1
+scalar ExamTaskNetwork.CCTVMonitoring.eth[0].mac 	"frames/sec sent" 	0.091999999218375
+scalar ExamTaskNetwork.CCTVMonitoring.eth[0].mac 	"frames/sec rcvd" 	174.67799851595
+scalar ExamTaskNetwork.CCTVMonitoring.eth[0].mac 	"bits/sec sent" 	53.263999547473
+scalar ExamTaskNetwork.CCTVMonitoring.eth[0].mac 	"bits/sec rcvd" 	2098811.9021686
+scalar ExamTaskNetwork.CCTVMonitoring.eth[0].mac 	"rx channel idle (%)" 	97.890008705926
+scalar ExamTaskNetwork.CCTVMonitoring.eth[0].mac 	"rx channel utilization (%)" 	2.1099912940737
+scalar ExamTaskNetwork.CCTVMonitoring.eth[0].mac 	rxPkFromHL:count 	92
+attr interpolationmode  none
+attr source  rxPkFromHL
+attr title  "packet bytes from higher layer, count"
+scalar ExamTaskNetwork.CCTVMonitoring.eth[0].mac 	rxPkFromHL:sum(packetBytes) 	6658
+attr interpolationmode  none
+attr source  rxPkFromHL
+attr title  "packet bytes from higher layer, sum(packetBytes)"
+scalar ExamTaskNetwork.CCTVMonitoring.eth[0].mac 	rxPausePkUnits:count 	0
+attr interpolationmode  none
+attr title  "pause units received, count"
+scalar ExamTaskNetwork.CCTVMonitoring.eth[0].mac 	rxPausePkUnits:sum 	0
+attr interpolationmode  none
+attr title  "pause units received, sum"
+scalar ExamTaskNetwork.CCTVMonitoring.eth[0].mac 	txPausePkUnits:count 	0
+attr interpolationmode  none
+attr title  "pause units sent, count"
+scalar ExamTaskNetwork.CCTVMonitoring.eth[0].mac 	txPausePkUnits:sum 	0
+attr interpolationmode  none
+attr title  "pause units sent, sum"
+scalar ExamTaskNetwork.CCTVMonitoring.eth[0].mac 	txPk:count 	92
+attr interpolationmode  none
+attr source  txPk
+attr title  "packets transmitted, count"
+scalar ExamTaskNetwork.CCTVMonitoring.eth[0].mac 	txPk:sum(packetBytes) 	6658
+attr interpolationmode  none
+attr source  txPk
+attr title  "packets transmitted, sum(packetBytes)"
+scalar ExamTaskNetwork.CCTVMonitoring.eth[0].mac 	droppedPkNotForUs:count 	0
+attr interpolationmode  none
+attr source  dropPkNotForUs
+attr title  "packets dropped/not for us, count"
+scalar ExamTaskNetwork.CCTVMonitoring.eth[0].mac 	droppedPkNotForUs:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  dropPkNotForUs
+attr title  "packets dropped/not for us, sum(packetBytes)"
+scalar ExamTaskNetwork.CCTVMonitoring.eth[0].mac 	passedUpPk:count 	174678
+attr interpolationmode  none
+attr source  packetSentToUpper
+attr title  "packets passed to higher layer, count"
+scalar ExamTaskNetwork.CCTVMonitoring.eth[0].mac 	passedUpPk:sum(packetBytes) 	262351490
+attr interpolationmode  none
+attr source  packetSentToUpper
+attr title  "packets passed to higher layer, sum(packetBytes)"
+scalar ExamTaskNetwork.CCTVMonitoring.eth[0].mac 	droppedPkBitError:count 	0
+attr interpolationmode  none
+attr source  dropPkBitError
+attr title  "packets dropped/bit error, count"
+scalar ExamTaskNetwork.CCTVMonitoring.eth[0].mac 	droppedPkBitError:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  dropPkBitError
+attr title  "packets dropped/bit error, sum(packetBytes)"
+scalar ExamTaskNetwork.CCTVMonitoring.eth[0].mac 	droppedPkIfaceDown:count 	0
+attr interpolationmode  none
+attr source  dropPkIfaceDown
+attr title  "packets dropped/interface down, count"
+scalar ExamTaskNetwork.CCTVMonitoring.eth[0].mac 	droppedPkIfaceDown:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  dropPkIfaceDown
+attr title  "packets dropped/interface down, sum(packetBytes)"
+scalar ExamTaskNetwork.CCTVMonitoring.eth[0].mac 	rxPkOk:count 	174678
+attr interpolationmode  none
+attr source  rxPkOk
+attr title  "packets received OK, count"
+scalar ExamTaskNetwork.CCTVMonitoring.eth[0].mac 	rxPkOk:sum(packetBytes) 	262351490
+attr interpolationmode  none
+attr source  rxPkOk
+attr title  "packets received OK, sum(packetBytes)"
+scalar ExamTaskNetwork.CCTVMonitoring.eth[0].encap 	pauseSent:count 	0
+attr title  "pause sent, count"
+scalar ExamTaskNetwork.CCTVMonitoring.eth[0].encap 	pauseSent:sum 	0
+attr title  "pause sent, sum"
+scalar ExamTaskNetwork.CCTVMonitoring.eth[0].encap 	decapPk:count 	174678
+attr interpolationmode  none
+attr source  decapPk
+attr title  "packets decapsulated, count"
+scalar ExamTaskNetwork.CCTVMonitoring.eth[0].encap 	decapPk:sum(packetBytes) 	259207016
+attr interpolationmode  none
+attr source  decapPk
+attr title  "packets decapsulated, sum(packetBytes)"
+scalar ExamTaskNetwork.CCTVMonitoring.eth[0].encap 	encapPk:count 	92
+attr interpolationmode  none
+attr source  encapPk
+attr title  "packets encapsulated, count"
+scalar ExamTaskNetwork.CCTVMonitoring.eth[0].encap 	encapPk:sum(packetBytes) 	4732
+attr interpolationmode  none
+attr source  encapPk
+attr title  "packets encapsulated, sum(packetBytes)"
+scalar ExamTaskNetwork.CCTVMonitoring.udpApp[0] 	"packets sent" 	0
+scalar ExamTaskNetwork.CCTVMonitoring.udpApp[0] 	"packets received" 	24886
+scalar ExamTaskNetwork.CCTVMonitoring.udpApp[0] 	lateRatio 	0
+scalar ExamTaskNetwork.CCTVMonitoring.udpApp[0] 	"discarded packets" 	0
+statistic ExamTaskNetwork.CCTVMonitoring.udpApp[0] 	endToEndDelay:stats
+field count 24886
+field mean 0.026308985542006
+field stddev 0.012587204493583
+field sum 654.72541419835
+field sqrsum 21.167884042759
+field min 0.017193199996
+field max 0.062095465856
+attr source  VoIPPacketDelay
+attr title  "VoIP Packet End-to-End Delay, stats"
+attr unit  s
+scalar ExamTaskNetwork.CCTVMonitoring.udpApp[0] 	sentPk:count 	0
+attr interpolationmode  none
+attr source  sentPk
+attr title  "packets sent, count"
+scalar ExamTaskNetwork.CCTVMonitoring.udpApp[0] 	sentPk:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  sentPk
+attr title  "packets sent, sum(packetBytes)"
+scalar ExamTaskNetwork.CCTVMonitoring.udpApp[0] 	rcvdPk:count 	24886
+attr interpolationmode  none
+attr source  rcvdPk
+attr title  "packets received, count"
+scalar ExamTaskNetwork.CCTVMonitoring.udpApp[0] 	rcvdPk:sum(packetBytes) 	254832640
+attr interpolationmode  none
+attr source  rcvdPk
+attr title  "packets received, sum(packetBytes)"
+statistic ExamTaskNetwork.CCTVMonitoring.udpApp[0] 	rcvdPkLifetime:stats
+field count 24886
+field mean 0.026308985542006
+field stddev 0.012587204493583
+field sum 654.72541419835
+field sqrsum 21.167884042759
+field min 0.017193199996
+field max 0.062095465856
+attr interpolationmode  none
+attr source  messageAge(rcvdPk)
+attr title  "received packet lifetime, stats"
+attr unit  s
+scalar ExamTaskNetwork.CCTVMonitoring.udp 	droppedPkBadChecksum:count 	0
+attr interpolationmode  none
+attr title  "packets dropped (checksum error), count"
+scalar ExamTaskNetwork.CCTVMonitoring.udp 	droppedPkWrongPort:count 	0
+attr interpolationmode  none
+attr title  "packets dropped (wrong port), count"
+scalar ExamTaskNetwork.CCTVMonitoring.udp 	passedUpPk:count 	24886
+attr interpolationmode  none
+attr title  "packets passed up, count"
+scalar ExamTaskNetwork.CCTVMonitoring.udp 	sentPk:count 	0
+attr interpolationmode  none
+attr source  sentPk
+attr title  "packets sent, count"
+scalar ExamTaskNetwork.CCTVMonitoring.udp 	sentPk:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  sentPk
+attr title  "packets sent, sum(packetBytes)"
+scalar ExamTaskNetwork.CCTVMonitoring.udp 	rcvdPk:count 	24886
+attr interpolationmode  none
+attr source  rcvdPk
+attr title  "packets received, count"
+scalar ExamTaskNetwork.CCTVMonitoring.udp 	rcvdPk:sum(packetBytes) 	255031728
+attr interpolationmode  none
+attr source  rcvdPk
+attr title  "packets received, sum(packetBytes)"
+scalar ExamTaskNetwork.RemoteAccessPoint.relayUnit 	"number of received BPDUs from STP module" 	0
+scalar ExamTaskNetwork.RemoteAccessPoint.relayUnit 	"number of received frames from network (including BPDUs)" 	1603009
+scalar ExamTaskNetwork.RemoteAccessPoint.relayUnit 	"number of dropped frames (including BPDUs)" 	0
+scalar ExamTaskNetwork.RemoteAccessPoint.relayUnit 	"number of delivered BPDUs to the STP module" 	0
+scalar ExamTaskNetwork.RemoteAccessPoint.relayUnit 	"number of dispatched BPDU frames to the network" 	0
+scalar ExamTaskNetwork.RemoteAccessPoint.relayUnit 	"number of dispatched non-BDPU frames to the network" 	1603009
+scalar ExamTaskNetwork.RemoteAccessPoint.wlan[0].mgmt 	dropPkByQueue:count 	14341
+attr interpolationmode  none
+attr source  dropPkByQueue
+attr title  "packets dropped by queue, count"
+scalar ExamTaskNetwork.RemoteAccessPoint.wlan[0].mgmt 	dropPkByQueue:sum(packetBytes) 	3975769
+attr interpolationmode  none
+attr source  dropPkByQueue
+attr title  "packets dropped by queue, sum(packetBytes)"
+scalar ExamTaskNetwork.RemoteAccessPoint.wlan[0].mgmt 	dataQueueLen:max 	50
+attr interpolationmode  sample-hold
+attr title  "data queue length, max"
+scalar ExamTaskNetwork.RemoteAccessPoint.wlan[0].mgmt 	dataQueueLen:timeavg 	6.5987981768342
+attr interpolationmode  sample-hold
+attr title  "data queue length, timeavg"
+scalar ExamTaskNetwork.RemoteAccessPoint.wlan[0].mac 	"number of received packets" 	753693
+scalar ExamTaskNetwork.RemoteAccessPoint.wlan[0].mac 	"number of collisions" 	2715
+scalar ExamTaskNetwork.RemoteAccessPoint.wlan[0].mac 	"number of internal collisions" 	0
+scalar ExamTaskNetwork.RemoteAccessPoint.wlan[0].mac 	"number of retry for AC 0" 	66795
+scalar ExamTaskNetwork.RemoteAccessPoint.wlan[0].mac 	"sent and received bits" 	1874379096
+scalar ExamTaskNetwork.RemoteAccessPoint.wlan[0].mac 	"sent packet within AC 0" 	835479
+scalar ExamTaskNetwork.RemoteAccessPoint.wlan[0].mac 	"sent in TXOP " 	0
+scalar ExamTaskNetwork.RemoteAccessPoint.wlan[0].mac 	"sentWithoutRetry AC 0" 	769799
+scalar ExamTaskNetwork.RemoteAccessPoint.wlan[0].mac 	"numGivenUp AC 0" 	0
+scalar ExamTaskNetwork.RemoteAccessPoint.wlan[0].mac 	"numDropped AC 0" 	0
+scalar ExamTaskNetwork.RemoteAccessPoint.wlan[0].mac 	rcvdPkFromHL:count 	845563
+attr interpolationmode  none
+attr source  packetReceivedFromUpper
+attr title  "packets received from higher layer, count"
+scalar ExamTaskNetwork.RemoteAccessPoint.wlan[0].mac 	rcvdPkFromHL:sum(packetBytes) 	234297469
+attr interpolationmode  none
+attr source  packetReceivedFromUpper
+attr title  "packets received from higher layer, sum(packetBytes)"
+scalar ExamTaskNetwork.RemoteAccessPoint.wlan[0].mac 	passedUpPk:count 	753720
+attr interpolationmode  none
+attr source  packetSentToUpper
+attr title  "packets passed to higher layer, count"
+scalar ExamTaskNetwork.RemoteAccessPoint.wlan[0].mac 	passedUpPk:sum(packetBytes) 	1037687419
+attr interpolationmode  none
+attr source  packetSentToUpper
+attr title  "packets passed to higher layer, sum(packetBytes)"
+scalar ExamTaskNetwork.RemoteAccessPoint.wlan[0].mac 	rcvdPkFromLL:count 	1591914
+attr interpolationmode  none
+attr source  packetReceivedFromLower
+attr title  "packets received from lower layer, count"
+scalar ExamTaskNetwork.RemoteAccessPoint.wlan[0].mac 	rcvdPkFromLL:sum(packetBytes) 	1053392167
+attr interpolationmode  none
+attr source  packetReceivedFromLower
+attr title  "packets received from lower layer, sum(packetBytes)"
+scalar ExamTaskNetwork.RemoteAccessPoint.wlan[0].mac 	sentDownPk:count 	1666050
+attr interpolationmode  none
+attr source  packetSentToLower
+attr title  "packets sent to lower layer, count"
+scalar ExamTaskNetwork.RemoteAccessPoint.wlan[0].mac 	sentDownPk:sum(packetBytes) 	263695969
+attr interpolationmode  none
+attr source  packetSentToLower
+attr title  "packets sent to lower layer, sum(packetBytes)"
+scalar ExamTaskNetwork.RemoteAccessPoint.wlan[0].radio 	lossRate:min 	0
+attr interpolationmode  backward-sample-hold
+attr title  "packet loss rate, min"
+scalar ExamTaskNetwork.RemoteAccessPoint.wlan[0].radio 	lossRate:max 	0.08
+attr interpolationmode  backward-sample-hold
+attr title  "packet loss rate, max"
+scalar ExamTaskNetwork.RemoteAccessPoint.wlan[0].radio 	lossRate:timeavg 	0.0019784591049614
+attr interpolationmode  backward-sample-hold
+attr title  "packet loss rate, timeavg"
+statistic ExamTaskNetwork.RemoteAccessPoint.wlan[0].radio 	channelNo:histogram
+field count 1
+field mean 0
+field stddev -nan
+field sum 0
+field sqrsum 0
+field min 0
+field max 0
+attr interpolationmode  sample-hold
+attr title  "channel no, histogram"
+bin	-INF	0
+bin	-0.5	0
+bin	-0.46666666666667	0
+bin	-0.43333333333333	0
+bin	-0.4	0
+bin	-0.36666666666667	0
+bin	-0.33333333333333	0
+bin	-0.3	0
+bin	-0.26666666666667	0
+bin	-0.23333333333333	0
+bin	-0.2	0
+bin	-0.16666666666667	0
+bin	-0.13333333333333	0
+bin	-0.1	0
+bin	-0.066666666666667	0
+bin	-0.033333333333333	0
+bin	0	1
+bin	0.033333333333333	0
+bin	0.066666666666667	0
+bin	0.1	0
+bin	0.13333333333333	0
+bin	0.16666666666667	0
+bin	0.2	0
+bin	0.23333333333333	0
+bin	0.26666666666667	0
+bin	0.3	0
+bin	0.33333333333333	0
+bin	0.36666666666667	0
+bin	0.4	0
+bin	0.43333333333333	0
+bin	0.46666666666667	0
+bin	0.5	0
+scalar ExamTaskNetwork.RemoteAccessPoint.wlan[0].radio 	radioState:count 	6606596
+attr interpolationmode  sample-hold
+attr title  "radio state (enum), count"
+scalar ExamTaskNetwork.RemoteAccessPoint.wlan[0].radio 	bitrate:min 	54000000
+attr interpolationmode  sample-hold
+attr title  "tx bitrate, min"
+attr unit  bps
+scalar ExamTaskNetwork.RemoteAccessPoint.wlan[0].radio 	bitrate:max 	54000000
+attr interpolationmode  sample-hold
+attr title  "tx bitrate, max"
+attr unit  bps
+scalar ExamTaskNetwork.RemoteAccessPoint.wlan[0].radio 	bitrate:timeavg 	54000000
+attr interpolationmode  sample-hold
+attr title  "tx bitrate, timeavg"
+attr unit  bps
+scalar ExamTaskNetwork.RemoteAccessPoint.eth[0].mac 	"simulated time" 	1000.0000084959
+scalar ExamTaskNetwork.RemoteAccessPoint.eth[0].mac 	full-duplex 	1
+scalar ExamTaskNetwork.RemoteAccessPoint.eth[0].mac 	"frames/sec sent" 	753.43999359883
+scalar ExamTaskNetwork.RemoteAccessPoint.eth[0].mac 	"frames/sec rcvd" 	849.56799278213
+scalar ExamTaskNetwork.RemoteAccessPoint.eth[0].mac 	"bits/sec sent" 	8064646.0914834
+scalar ExamTaskNetwork.RemoteAccessPoint.eth[0].mac 	"bits/sec rcvd" 	1782048.9368598
+scalar ExamTaskNetwork.RemoteAccessPoint.eth[0].mac 	"rx channel idle (%)" 	98.163578711603
+scalar ExamTaskNetwork.RemoteAccessPoint.eth[0].mac 	"rx channel utilization (%)" 	1.8364212883972
+scalar ExamTaskNetwork.RemoteAccessPoint.eth[0].mac 	rxPkFromHL:count 	753441
+attr interpolationmode  none
+attr source  rxPkFromHL
+attr title  "packet bytes from higher layer, count"
+scalar ExamTaskNetwork.RemoteAccessPoint.eth[0].mac 	rxPkFromHL:sum(packetBytes) 	1008082276
+attr interpolationmode  none
+attr source  rxPkFromHL
+attr title  "packet bytes from higher layer, sum(packetBytes)"
+scalar ExamTaskNetwork.RemoteAccessPoint.eth[0].mac 	rxPausePkUnits:count 	0
+attr interpolationmode  none
+attr title  "pause units received, count"
+scalar ExamTaskNetwork.RemoteAccessPoint.eth[0].mac 	rxPausePkUnits:sum 	0
+attr interpolationmode  none
+attr title  "pause units received, sum"
+scalar ExamTaskNetwork.RemoteAccessPoint.eth[0].mac 	txPausePkUnits:count 	0
+attr interpolationmode  none
+attr title  "pause units sent, count"
+scalar ExamTaskNetwork.RemoteAccessPoint.eth[0].mac 	txPausePkUnits:sum 	0
+attr interpolationmode  none
+attr title  "pause units sent, sum"
+scalar ExamTaskNetwork.RemoteAccessPoint.eth[0].mac 	txPk:count 	753440
+attr interpolationmode  none
+attr source  txPk
+attr title  "packets transmitted, count"
+scalar ExamTaskNetwork.RemoteAccessPoint.eth[0].mac 	txPk:sum(packetBytes) 	1008080770
+attr interpolationmode  none
+attr source  txPk
+attr title  "packets transmitted, sum(packetBytes)"
+scalar ExamTaskNetwork.RemoteAccessPoint.eth[0].mac 	droppedPkNotForUs:count 	0
+attr interpolationmode  none
+attr source  dropPkNotForUs
+attr title  "packets dropped/not for us, count"
+scalar ExamTaskNetwork.RemoteAccessPoint.eth[0].mac 	droppedPkNotForUs:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  dropPkNotForUs
+attr title  "packets dropped/not for us, sum(packetBytes)"
+scalar ExamTaskNetwork.RemoteAccessPoint.eth[0].mac 	passedUpPk:count 	849568
+attr interpolationmode  none
+attr source  packetSentToUpper
+attr title  "packets passed to higher layer, count"
+scalar ExamTaskNetwork.RemoteAccessPoint.eth[0].mac 	passedUpPk:sum(packetBytes) 	222756119
+attr interpolationmode  none
+attr source  packetSentToUpper
+attr title  "packets passed to higher layer, sum(packetBytes)"
+scalar ExamTaskNetwork.RemoteAccessPoint.eth[0].mac 	droppedPkBitError:count 	0
+attr interpolationmode  none
+attr source  dropPkBitError
+attr title  "packets dropped/bit error, count"
+scalar ExamTaskNetwork.RemoteAccessPoint.eth[0].mac 	droppedPkBitError:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  dropPkBitError
+attr title  "packets dropped/bit error, sum(packetBytes)"
+scalar ExamTaskNetwork.RemoteAccessPoint.eth[0].mac 	droppedPkIfaceDown:count 	0
+attr interpolationmode  none
+attr source  dropPkIfaceDown
+attr title  "packets dropped/interface down, count"
+scalar ExamTaskNetwork.RemoteAccessPoint.eth[0].mac 	droppedPkIfaceDown:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  dropPkIfaceDown
+attr title  "packets dropped/interface down, sum(packetBytes)"
+scalar ExamTaskNetwork.RemoteAccessPoint.eth[0].mac 	rxPkOk:count 	849568
+attr interpolationmode  none
+attr source  rxPkOk
+attr title  "packets received OK, count"
+scalar ExamTaskNetwork.RemoteAccessPoint.eth[0].mac 	rxPkOk:sum(packetBytes) 	222756119
+attr interpolationmode  none
+attr source  rxPkOk
+attr title  "packets received OK, sum(packetBytes)"
+scalar ExamTaskNetwork.RemoteRouter.networkLayer.arp 	initiatedARPResolution:count 	23
+attr title  "ARP initiated resolutions, count"
+scalar ExamTaskNetwork.RemoteRouter.networkLayer.arp 	sentReply:count 	68
+attr title  "ARP replies sent, count"
+scalar ExamTaskNetwork.RemoteRouter.networkLayer.arp 	sentReq:count 	24
+attr title  "ARP request sent, count"
+scalar ExamTaskNetwork.RemoteRouter.networkLayer.arp 	failedARPResolution:count 	0
+attr title  "ARP failed resolutions, count"
+scalar ExamTaskNetwork.RemoteRouter.networkLayer.arp 	completedARPResolution:count 	90
+attr title  "ARP completed resolutions, count"
+scalar ExamTaskNetwork.RemoteRouter.lo0.lo 	rcvdPkFromHL:count 	0
+attr interpolationmode  none
+attr source  packetReceivedFromUpper
+attr title  "packets received from higher layer, count"
+scalar ExamTaskNetwork.RemoteRouter.lo0.lo 	rcvdPkFromHL:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  packetReceivedFromUpper
+attr title  "packets received from higher layer, sum(packetBytes)"
+scalar ExamTaskNetwork.RemoteRouter.lo0.lo 	passedUpPk:count 	0
+attr interpolationmode  none
+attr source  packetSentToUpper
+attr title  "packets passed to higher layer, count"
+scalar ExamTaskNetwork.RemoteRouter.lo0.lo 	passedUpPk:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  packetSentToUpper
+attr title  "packets passed to higher layer, sum(packetBytes)"
+scalar ExamTaskNetwork.RemoteRouter.lo0.lo 	droppedPkBitError:count 	0
+attr interpolationmode  none
+attr source  dropPkBitError
+attr title  "packets dropped/bit error, count"
+scalar ExamTaskNetwork.RemoteRouter.lo0.lo 	droppedPkBitError:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  dropPkBitError
+attr title  "packets dropped/bit error, sum(packetBytes)"
+scalar ExamTaskNetwork.RemoteRouter.eth[0].mac 	"simulated time" 	1000.0000084959
+scalar ExamTaskNetwork.RemoteRouter.eth[0].mac 	full-duplex 	1
+scalar ExamTaskNetwork.RemoteRouter.eth[0].mac 	"frames/sec sent" 	849.56799278213
+scalar ExamTaskNetwork.RemoteRouter.eth[0].mac 	"frames/sec rcvd" 	753.43999359883
+scalar ExamTaskNetwork.RemoteRouter.eth[0].mac 	"bits/sec sent" 	1782048.9368598
+scalar ExamTaskNetwork.RemoteRouter.eth[0].mac 	"bits/sec rcvd" 	8064646.0914834
+scalar ExamTaskNetwork.RemoteRouter.eth[0].mac 	"rx channel idle (%)" 	91.887133748927
+scalar ExamTaskNetwork.RemoteRouter.eth[0].mac 	"rx channel utilization (%)" 	8.1128662510729
+scalar ExamTaskNetwork.RemoteRouter.eth[0].mac 	rxPkFromHL:count 	849568
+attr interpolationmode  none
+attr source  rxPkFromHL
+attr title  "packet bytes from higher layer, count"
+scalar ExamTaskNetwork.RemoteRouter.eth[0].mac 	rxPkFromHL:sum(packetBytes) 	222756119
+attr interpolationmode  none
+attr source  rxPkFromHL
+attr title  "packet bytes from higher layer, sum(packetBytes)"
+scalar ExamTaskNetwork.RemoteRouter.eth[0].mac 	rxPausePkUnits:count 	0
+attr interpolationmode  none
+attr title  "pause units received, count"
+scalar ExamTaskNetwork.RemoteRouter.eth[0].mac 	rxPausePkUnits:sum 	0
+attr interpolationmode  none
+attr title  "pause units received, sum"
+scalar ExamTaskNetwork.RemoteRouter.eth[0].mac 	txPausePkUnits:count 	0
+attr interpolationmode  none
+attr title  "pause units sent, count"
+scalar ExamTaskNetwork.RemoteRouter.eth[0].mac 	txPausePkUnits:sum 	0
+attr interpolationmode  none
+attr title  "pause units sent, sum"
+scalar ExamTaskNetwork.RemoteRouter.eth[0].mac 	txPk:count 	849568
+attr interpolationmode  none
+attr source  txPk
+attr title  "packets transmitted, count"
+scalar ExamTaskNetwork.RemoteRouter.eth[0].mac 	txPk:sum(packetBytes) 	222756119
+attr interpolationmode  none
+attr source  txPk
+attr title  "packets transmitted, sum(packetBytes)"
+scalar ExamTaskNetwork.RemoteRouter.eth[0].mac 	droppedPkNotForUs:count 	0
+attr interpolationmode  none
+attr source  dropPkNotForUs
+attr title  "packets dropped/not for us, count"
+scalar ExamTaskNetwork.RemoteRouter.eth[0].mac 	droppedPkNotForUs:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  dropPkNotForUs
+attr title  "packets dropped/not for us, sum(packetBytes)"
+scalar ExamTaskNetwork.RemoteRouter.eth[0].mac 	passedUpPk:count 	753440
+attr interpolationmode  none
+attr source  packetSentToUpper
+attr title  "packets passed to higher layer, count"
+scalar ExamTaskNetwork.RemoteRouter.eth[0].mac 	passedUpPk:sum(packetBytes) 	1008080770
+attr interpolationmode  none
+attr source  packetSentToUpper
+attr title  "packets passed to higher layer, sum(packetBytes)"
+scalar ExamTaskNetwork.RemoteRouter.eth[0].mac 	droppedPkBitError:count 	0
+attr interpolationmode  none
+attr source  dropPkBitError
+attr title  "packets dropped/bit error, count"
+scalar ExamTaskNetwork.RemoteRouter.eth[0].mac 	droppedPkBitError:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  dropPkBitError
+attr title  "packets dropped/bit error, sum(packetBytes)"
+scalar ExamTaskNetwork.RemoteRouter.eth[0].mac 	droppedPkIfaceDown:count 	0
+attr interpolationmode  none
+attr source  dropPkIfaceDown
+attr title  "packets dropped/interface down, count"
+scalar ExamTaskNetwork.RemoteRouter.eth[0].mac 	droppedPkIfaceDown:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  dropPkIfaceDown
+attr title  "packets dropped/interface down, sum(packetBytes)"
+scalar ExamTaskNetwork.RemoteRouter.eth[0].mac 	rxPkOk:count 	753440
+attr interpolationmode  none
+attr source  rxPkOk
+attr title  "packets received OK, count"
+scalar ExamTaskNetwork.RemoteRouter.eth[0].mac 	rxPkOk:sum(packetBytes) 	1008080770
+attr interpolationmode  none
+attr source  rxPkOk
+attr title  "packets received OK, sum(packetBytes)"
+scalar ExamTaskNetwork.RemoteRouter.eth[0].encap 	pauseSent:count 	0
+attr title  "pause sent, count"
+scalar ExamTaskNetwork.RemoteRouter.eth[0].encap 	pauseSent:sum 	0
+attr title  "pause sent, sum"
+scalar ExamTaskNetwork.RemoteRouter.eth[0].encap 	decapPk:count 	753440
+attr interpolationmode  none
+attr source  decapPk
+attr title  "packets decapsulated, count"
+scalar ExamTaskNetwork.RemoteRouter.eth[0].encap 	decapPk:sum(packetBytes) 	1006030903
+attr interpolationmode  none
+attr source  decapPk
+attr title  "packets decapsulated, sum(packetBytes)"
+scalar ExamTaskNetwork.RemoteRouter.eth[0].encap 	encapPk:count 	849568
+attr interpolationmode  none
+attr source  encapPk
+attr title  "packets encapsulated, count"
+scalar ExamTaskNetwork.RemoteRouter.eth[0].encap 	encapPk:sum(packetBytes) 	201797838
+attr interpolationmode  none
+attr source  encapPk
+attr title  "packets encapsulated, sum(packetBytes)"
+scalar ExamTaskNetwork.RemoteRouter.eth[1].mac 	"simulated time" 	1000.0000084959
+scalar ExamTaskNetwork.RemoteRouter.eth[1].mac 	full-duplex 	1
+scalar ExamTaskNetwork.RemoteRouter.eth[1].mac 	"frames/sec sent" 	0.08599999926935
+scalar ExamTaskNetwork.RemoteRouter.eth[1].mac 	"frames/sec rcvd" 	174.79199851498
+scalar ExamTaskNetwork.RemoteRouter.eth[1].mac 	"bits/sec sent" 	50.191999573572
+scalar ExamTaskNetwork.RemoteRouter.eth[1].mac 	"bits/sec rcvd" 	2100197.1181569
+scalar ExamTaskNetwork.RemoteRouter.eth[1].mac 	"rx channel idle (%)" 	97.888616193938
+scalar ExamTaskNetwork.RemoteRouter.eth[1].mac 	"rx channel utilization (%)" 	2.1113838060618
+scalar ExamTaskNetwork.RemoteRouter.eth[1].mac 	rxPkFromHL:count 	86
+attr interpolationmode  none
+attr source  rxPkFromHL
+attr title  "packet bytes from higher layer, count"
+scalar ExamTaskNetwork.RemoteRouter.eth[1].mac 	rxPkFromHL:sum(packetBytes) 	6274
+attr interpolationmode  none
+attr source  rxPkFromHL
+attr title  "packet bytes from higher layer, sum(packetBytes)"
+scalar ExamTaskNetwork.RemoteRouter.eth[1].mac 	rxPausePkUnits:count 	0
+attr interpolationmode  none
+attr title  "pause units received, count"
+scalar ExamTaskNetwork.RemoteRouter.eth[1].mac 	rxPausePkUnits:sum 	0
+attr interpolationmode  none
+attr title  "pause units received, sum"
+scalar ExamTaskNetwork.RemoteRouter.eth[1].mac 	txPausePkUnits:count 	0
+attr interpolationmode  none
+attr title  "pause units sent, count"
+scalar ExamTaskNetwork.RemoteRouter.eth[1].mac 	txPausePkUnits:sum 	0
+attr interpolationmode  none
+attr title  "pause units sent, sum"
+scalar ExamTaskNetwork.RemoteRouter.eth[1].mac 	txPk:count 	86
+attr interpolationmode  none
+attr source  txPk
+attr title  "packets transmitted, count"
+scalar ExamTaskNetwork.RemoteRouter.eth[1].mac 	txPk:sum(packetBytes) 	6274
+attr interpolationmode  none
+attr source  txPk
+attr title  "packets transmitted, sum(packetBytes)"
+scalar ExamTaskNetwork.RemoteRouter.eth[1].mac 	droppedPkNotForUs:count 	0
+attr interpolationmode  none
+attr source  dropPkNotForUs
+attr title  "packets dropped/not for us, count"
+scalar ExamTaskNetwork.RemoteRouter.eth[1].mac 	droppedPkNotForUs:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  dropPkNotForUs
+attr title  "packets dropped/not for us, sum(packetBytes)"
+scalar ExamTaskNetwork.RemoteRouter.eth[1].mac 	passedUpPk:count 	174792
+attr interpolationmode  none
+attr source  packetSentToUpper
+attr title  "packets passed to higher layer, count"
+scalar ExamTaskNetwork.RemoteRouter.eth[1].mac 	passedUpPk:sum(packetBytes) 	262524642
+attr interpolationmode  none
+attr source  packetSentToUpper
+attr title  "packets passed to higher layer, sum(packetBytes)"
+scalar ExamTaskNetwork.RemoteRouter.eth[1].mac 	droppedPkBitError:count 	0
+attr interpolationmode  none
+attr source  dropPkBitError
+attr title  "packets dropped/bit error, count"
+scalar ExamTaskNetwork.RemoteRouter.eth[1].mac 	droppedPkBitError:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  dropPkBitError
+attr title  "packets dropped/bit error, sum(packetBytes)"
+scalar ExamTaskNetwork.RemoteRouter.eth[1].mac 	droppedPkIfaceDown:count 	0
+attr interpolationmode  none
+attr source  dropPkIfaceDown
+attr title  "packets dropped/interface down, count"
+scalar ExamTaskNetwork.RemoteRouter.eth[1].mac 	droppedPkIfaceDown:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  dropPkIfaceDown
+attr title  "packets dropped/interface down, sum(packetBytes)"
+scalar ExamTaskNetwork.RemoteRouter.eth[1].mac 	rxPkOk:count 	174792
+attr interpolationmode  none
+attr source  rxPkOk
+attr title  "packets received OK, count"
+scalar ExamTaskNetwork.RemoteRouter.eth[1].mac 	rxPkOk:sum(packetBytes) 	262524642
+attr interpolationmode  none
+attr source  rxPkOk
+attr title  "packets received OK, sum(packetBytes)"
+scalar ExamTaskNetwork.RemoteRouter.eth[1].encap 	pauseSent:count 	0
+attr title  "pause sent, count"
+scalar ExamTaskNetwork.RemoteRouter.eth[1].encap 	pauseSent:sum 	0
+attr title  "pause sent, sum"
+scalar ExamTaskNetwork.RemoteRouter.eth[1].encap 	decapPk:count 	174792
+attr interpolationmode  none
+attr source  decapPk
+attr title  "packets decapsulated, count"
+scalar ExamTaskNetwork.RemoteRouter.eth[1].encap 	decapPk:sum(packetBytes) 	259378224
+attr interpolationmode  none
+attr source  decapPk
+attr title  "packets decapsulated, sum(packetBytes)"
+scalar ExamTaskNetwork.RemoteRouter.eth[1].encap 	encapPk:count 	86
+attr interpolationmode  none
+attr source  encapPk
+attr title  "packets encapsulated, count"
+scalar ExamTaskNetwork.RemoteRouter.eth[1].encap 	encapPk:sum(packetBytes) 	4564
+attr interpolationmode  none
+attr source  encapPk
+attr title  "packets encapsulated, sum(packetBytes)"
+scalar ExamTaskNetwork.RemoteRouter.ppp[0].outputHook[0] 	duration 	1000.0000084959
+scalar ExamTaskNetwork.RemoteRouter.ppp[0].outputHook[0] 	"total packets" 	928142
+scalar ExamTaskNetwork.RemoteRouter.ppp[0].outputHook[0] 	"total bits" 	10123252856
+scalar ExamTaskNetwork.RemoteRouter.ppp[0].outputHook[0] 	"avg throughput (bit/s)" 	10123252.769994
+scalar ExamTaskNetwork.RemoteRouter.ppp[0].outputHook[0] 	"avg packets/s" 	928.14199211457
+scalar ExamTaskNetwork.RemoteRouter.ppp[0].inputHook[0] 	duration 	1000.0000084959
+scalar ExamTaskNetwork.RemoteRouter.ppp[0].inputHook[0] 	"total packets" 	849562
+scalar ExamTaskNetwork.RemoteRouter.ppp[0].inputHook[0] 	"total bits" 	1614398608
+scalar ExamTaskNetwork.RemoteRouter.ppp[0].inputHook[0] 	"avg throughput (bit/s)" 	1614398.5942842
+scalar ExamTaskNetwork.RemoteRouter.ppp[0].inputHook[0] 	"avg packets/s" 	849.56199278218
+statistic ExamTaskNetwork.RemoteRouter.ppp[0].queue 	queueingTime:histogram
+field count 927820
+field mean 0.011820863275566
+field stddev 0.013652454396756
+field sum 10967.633364335
+field sqrsum 302.58262421433
+field min 0
+field max 0.050331499094
+attr interpolationmode  none
+attr title  "queueing time, histogram"
+bin	-INF	0
+bin	-0.004366078456	0
+bin	-0.0037839346618667	0
+bin	-0.0032017908677333	0
+bin	-0.0026196470736	0
+bin	-0.0020375032794667	0
+bin	-0.0014553594853333	0
+bin	-0.0008732156912	0
+bin	-0.00029107189706667	165876
+bin	0.00029107189706667	64243
+bin	0.0008732156912	34106
+bin	0.0014553594853333	29798
+bin	0.0020375032794667	22614
+bin	0.0026196470736	29027
+bin	0.0032017908677333	29309
+bin	0.0037839346618667	23553
+bin	0.004366078456	29267
+bin	0.0049482222501333	31225
+bin	0.0055303660442667	24060
+bin	0.0061125098384	25217
+bin	0.0066946536325333	23643
+bin	0.0072767974266667	18448
+bin	0.0078589412208	12879
+bin	0.0084410850149333	10026
+bin	0.0090232288090667	9794
+bin	0.0096053726032	7214
+bin	0.010187516397333	8730
+bin	0.010769660191467	6852
+bin	0.0113518039856	7451
+bin	0.011933947779733	7761
+bin	0.012516091573867	5754
+bin	0.013098235368	300973
+scalar ExamTaskNetwork.RemoteRouter.ppp[0].queue 	dropPk:count 	280
+attr interpolationmode  none
+attr source  dropPkByQueue
+attr title  "dropped packets, count"
+scalar ExamTaskNetwork.RemoteRouter.ppp[0].queue 	dropPk:sum(packetBytes) 	384940
+attr interpolationmode  none
+attr source  dropPkByQueue
+attr title  "dropped packets, sum(packetBytes)"
+scalar ExamTaskNetwork.RemoteRouter.ppp[0].queue 	queueLength:max 	50
+attr interpolationmode  sample-hold
+attr title  "queue length, max"
+scalar ExamTaskNetwork.RemoteRouter.ppp[0].queue 	queueLength:timeavg 	10.968600324315
+attr interpolationmode  sample-hold
+attr title  "queue length, timeavg"
+scalar ExamTaskNetwork.RemoteRouter.ppp[0].queue 	rcvdPk:count 	928142
+attr interpolationmode  none
+attr title  "received packets, count"
+scalar ExamTaskNetwork.RemoteRouter.ppp[0].queue 	rcvdPk:sum(packetBytes) 	1265406607
+attr interpolationmode  none
+attr title  "received packets, sum(packetBytes)"
+scalar ExamTaskNetwork.RemoteRouter.ppp[0].ppp 	rcvdPkFromHL:count 	927820
+attr interpolationmode  none
+attr source  packetReceivedFromUpper
+attr title  "packets received from higher layer, count"
+scalar ExamTaskNetwork.RemoteRouter.ppp[0].ppp 	rcvdPkFromHL:sum(packetBytes) 	1264958647
+attr interpolationmode  none
+attr source  packetReceivedFromUpper
+attr title  "packets received from higher layer, sum(packetBytes)"
+scalar ExamTaskNetwork.RemoteRouter.ppp[0].ppp 	passedUpPk:count 	849562
+attr interpolationmode  none
+attr source  packetSentToUpper
+attr title  "packets passed to higher layer, count"
+scalar ExamTaskNetwork.RemoteRouter.ppp[0].ppp 	passedUpPk:sum(packetBytes) 	201799826
+attr interpolationmode  none
+attr source  packetSentToUpper
+attr title  "packets passed to higher layer, sum(packetBytes)"
+scalar ExamTaskNetwork.RemoteRouter.ppp[0].ppp 	txPk:count 	927820
+attr interpolationmode  none
+attr source  packetSentToLower
+attr title  "packets transmitted, count"
+scalar ExamTaskNetwork.RemoteRouter.ppp[0].ppp 	txPk:sum(packetBytes) 	1271453387
+attr interpolationmode  none
+attr source  packetSentToLower
+attr title  "packets transmitted, sum(packetBytes)"
+scalar ExamTaskNetwork.RemoteRouter.ppp[0].ppp 	droppedPkBitError:count 	0
+attr interpolationmode  none
+attr source  dropPkBitError
+attr title  "packets dropped/bit error, count"
+scalar ExamTaskNetwork.RemoteRouter.ppp[0].ppp 	droppedPkBitError:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  dropPkBitError
+attr title  "packets dropped/bit error, sum(packetBytes)"
+scalar ExamTaskNetwork.RemoteRouter.ppp[0].ppp 	droppedPkIfaceDown:count 	0
+attr interpolationmode  none
+attr source  dropPkIfaceDown
+attr title  "packets dropped/interface down, count"
+scalar ExamTaskNetwork.RemoteRouter.ppp[0].ppp 	droppedPkIfaceDown:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  dropPkIfaceDown
+attr title  "packets dropped/interface down, sum(packetBytes)"
+scalar ExamTaskNetwork.RemoteRouter.ppp[0].ppp 	rxPkOk:count 	849562
+attr interpolationmode  none
+attr source  rxPkOk
+attr title  "packets received OK, count"
+scalar ExamTaskNetwork.RemoteRouter.ppp[0].ppp 	rxPkOk:sum(packetBytes) 	207746760
+attr interpolationmode  none
+attr source  rxPkOk
+attr title  "packets received OK, sum(packetBytes)"
+scalar ExamTaskNetwork.RemoteRouter.ppp[0].ppp 	txState:timeavg 	0.8476355136502
+attr interpolationmode  sample-hold
+attr title  "tx state, timeavg"
+scalar ExamTaskNetwork.MainRouter.networkLayer.arp 	initiatedARPResolution:count 	18
+attr title  "ARP initiated resolutions, count"
+scalar ExamTaskNetwork.MainRouter.networkLayer.arp 	sentReply:count 	65
+attr title  "ARP replies sent, count"
+scalar ExamTaskNetwork.MainRouter.networkLayer.arp 	sentReq:count 	18
+attr title  "ARP request sent, count"
+scalar ExamTaskNetwork.MainRouter.networkLayer.arp 	failedARPResolution:count 	0
+attr title  "ARP failed resolutions, count"
+scalar ExamTaskNetwork.MainRouter.networkLayer.arp 	completedARPResolution:count 	83
+attr title  "ARP completed resolutions, count"
+scalar ExamTaskNetwork.MainRouter.lo0.lo 	rcvdPkFromHL:count 	0
+attr interpolationmode  none
+attr source  packetReceivedFromUpper
+attr title  "packets received from higher layer, count"
+scalar ExamTaskNetwork.MainRouter.lo0.lo 	rcvdPkFromHL:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  packetReceivedFromUpper
+attr title  "packets received from higher layer, sum(packetBytes)"
+scalar ExamTaskNetwork.MainRouter.lo0.lo 	passedUpPk:count 	0
+attr interpolationmode  none
+attr source  packetSentToUpper
+attr title  "packets passed to higher layer, count"
+scalar ExamTaskNetwork.MainRouter.lo0.lo 	passedUpPk:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  packetSentToUpper
+attr title  "packets passed to higher layer, sum(packetBytes)"
+scalar ExamTaskNetwork.MainRouter.lo0.lo 	droppedPkBitError:count 	0
+attr interpolationmode  none
+attr source  dropPkBitError
+attr title  "packets dropped/bit error, count"
+scalar ExamTaskNetwork.MainRouter.lo0.lo 	droppedPkBitError:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  dropPkBitError
+attr title  "packets dropped/bit error, sum(packetBytes)"
+scalar ExamTaskNetwork.MainRouter.eth[0].mac 	"simulated time" 	1000.0000084959
+scalar ExamTaskNetwork.MainRouter.eth[0].mac 	full-duplex 	1
+scalar ExamTaskNetwork.MainRouter.eth[0].mac 	"frames/sec sent" 	1370.1039883597
+scalar ExamTaskNetwork.MainRouter.eth[0].mac 	"frames/sec rcvd" 	854.68399273867
+scalar ExamTaskNetwork.MainRouter.eth[0].mac 	"bits/sec sent" 	8168752.4985989
+scalar ExamTaskNetwork.MainRouter.eth[0].mac 	"bits/sec rcvd" 	1670768.7138053
+scalar ExamTaskNetwork.MainRouter.eth[0].mac 	"rx channel idle (%)" 	98.27453151066
+scalar ExamTaskNetwork.MainRouter.eth[0].mac 	"rx channel utilization (%)" 	1.7254684893398
+scalar ExamTaskNetwork.MainRouter.eth[0].mac 	rxPkFromHL:count 	1370106
+attr interpolationmode  none
+attr source  rxPkFromHL
+attr title  "packet bytes from higher layer, count"
+scalar ExamTaskNetwork.MainRouter.eth[0].mac 	rxPkFromHL:sum(packetBytes) 	1021095653
+attr interpolationmode  none
+attr source  rxPkFromHL
+attr title  "packet bytes from higher layer, sum(packetBytes)"
+scalar ExamTaskNetwork.MainRouter.eth[0].mac 	rxPausePkUnits:count 	0
+attr interpolationmode  none
+attr title  "pause units received, count"
+scalar ExamTaskNetwork.MainRouter.eth[0].mac 	rxPausePkUnits:sum 	0
+attr interpolationmode  none
+attr title  "pause units received, sum"
+scalar ExamTaskNetwork.MainRouter.eth[0].mac 	txPausePkUnits:count 	0
+attr interpolationmode  none
+attr title  "pause units sent, count"
+scalar ExamTaskNetwork.MainRouter.eth[0].mac 	txPausePkUnits:sum 	0
+attr interpolationmode  none
+attr title  "pause units sent, sum"
+scalar ExamTaskNetwork.MainRouter.eth[0].mac 	txPk:count 	1370104
+attr interpolationmode  none
+attr source  txPk
+attr title  "packets transmitted, count"
+scalar ExamTaskNetwork.MainRouter.eth[0].mac 	txPk:sum(packetBytes) 	1021094071
+attr interpolationmode  none
+attr source  txPk
+attr title  "packets transmitted, sum(packetBytes)"
+scalar ExamTaskNetwork.MainRouter.eth[0].mac 	droppedPkNotForUs:count 	0
+attr interpolationmode  none
+attr source  dropPkNotForUs
+attr title  "packets dropped/not for us, count"
+scalar ExamTaskNetwork.MainRouter.eth[0].mac 	droppedPkNotForUs:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  dropPkNotForUs
+attr title  "packets dropped/not for us, sum(packetBytes)"
+scalar ExamTaskNetwork.MainRouter.eth[0].mac 	passedUpPk:count 	854684
+attr interpolationmode  none
+attr source  packetSentToUpper
+attr title  "packets passed to higher layer, count"
+scalar ExamTaskNetwork.MainRouter.eth[0].mac 	passedUpPk:sum(packetBytes) 	208846091
+attr interpolationmode  none
+attr source  packetSentToUpper
+attr title  "packets passed to higher layer, sum(packetBytes)"
+scalar ExamTaskNetwork.MainRouter.eth[0].mac 	droppedPkBitError:count 	0
+attr interpolationmode  none
+attr source  dropPkBitError
+attr title  "packets dropped/bit error, count"
+scalar ExamTaskNetwork.MainRouter.eth[0].mac 	droppedPkBitError:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  dropPkBitError
+attr title  "packets dropped/bit error, sum(packetBytes)"
+scalar ExamTaskNetwork.MainRouter.eth[0].mac 	droppedPkIfaceDown:count 	0
+attr interpolationmode  none
+attr source  dropPkIfaceDown
+attr title  "packets dropped/interface down, count"
+scalar ExamTaskNetwork.MainRouter.eth[0].mac 	droppedPkIfaceDown:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  dropPkIfaceDown
+attr title  "packets dropped/interface down, sum(packetBytes)"
+scalar ExamTaskNetwork.MainRouter.eth[0].mac 	rxPkOk:count 	854684
+attr interpolationmode  none
+attr source  rxPkOk
+attr title  "packets received OK, count"
+scalar ExamTaskNetwork.MainRouter.eth[0].mac 	rxPkOk:sum(packetBytes) 	208846091
+attr interpolationmode  none
+attr source  rxPkOk
+attr title  "packets received OK, sum(packetBytes)"
+scalar ExamTaskNetwork.MainRouter.eth[0].encap 	pauseSent:count 	0
+attr title  "pause sent, count"
+scalar ExamTaskNetwork.MainRouter.eth[0].encap 	pauseSent:sum 	0
+attr title  "pause sent, sum"
+scalar ExamTaskNetwork.MainRouter.eth[0].encap 	decapPk:count 	854684
+attr interpolationmode  none
+attr source  decapPk
+attr title  "packets decapsulated, count"
+scalar ExamTaskNetwork.MainRouter.eth[0].encap 	decapPk:sum(packetBytes) 	187491208
+attr interpolationmode  none
+attr source  decapPk
+attr title  "packets decapsulated, sum(packetBytes)"
+scalar ExamTaskNetwork.MainRouter.eth[0].encap 	encapPk:count 	1370106
+attr interpolationmode  none
+attr source  encapPk
+attr title  "packets encapsulated, count"
+scalar ExamTaskNetwork.MainRouter.eth[0].encap 	encapPk:sum(packetBytes) 	983089187
+attr interpolationmode  none
+attr source  encapPk
+attr title  "packets encapsulated, sum(packetBytes)"
+scalar ExamTaskNetwork.MainRouter.eth[1].mac 	"simulated time" 	1000.0000084959
+scalar ExamTaskNetwork.MainRouter.eth[1].mac 	full-duplex 	1
+scalar ExamTaskNetwork.MainRouter.eth[1].mac 	"frames/sec sent" 	24.86599978874
+scalar ExamTaskNetwork.MainRouter.eth[1].mac 	"frames/sec rcvd" 	24.979999787772
+scalar ExamTaskNetwork.MainRouter.eth[1].mac 	"bits/sec sent" 	287461.93355774
+scalar ExamTaskNetwork.MainRouter.eth[1].mac 	"bits/sec rcvd" 	288780.68554654
+scalar ExamTaskNetwork.MainRouter.eth[1].mac 	"rx channel idle (%)" 	99.709620594467
+scalar ExamTaskNetwork.MainRouter.eth[1].mac 	"rx channel utilization (%)" 	0.29037940553296
+scalar ExamTaskNetwork.MainRouter.eth[1].mac 	rxPkFromHL:count 	24866
+attr interpolationmode  none
+attr source  rxPkFromHL
+attr title  "packet bytes from higher layer, count"
+scalar ExamTaskNetwork.MainRouter.eth[1].mac 	rxPkFromHL:sum(packetBytes) 	35932742
+attr interpolationmode  none
+attr source  rxPkFromHL
+attr title  "packet bytes from higher layer, sum(packetBytes)"
+scalar ExamTaskNetwork.MainRouter.eth[1].mac 	rxPausePkUnits:count 	0
+attr interpolationmode  none
+attr title  "pause units received, count"
+scalar ExamTaskNetwork.MainRouter.eth[1].mac 	rxPausePkUnits:sum 	0
+attr interpolationmode  none
+attr title  "pause units received, sum"
+scalar ExamTaskNetwork.MainRouter.eth[1].mac 	txPausePkUnits:count 	0
+attr interpolationmode  none
+attr title  "pause units sent, count"
+scalar ExamTaskNetwork.MainRouter.eth[1].mac 	txPausePkUnits:sum 	0
+attr interpolationmode  none
+attr title  "pause units sent, sum"
+scalar ExamTaskNetwork.MainRouter.eth[1].mac 	txPk:count 	24866
+attr interpolationmode  none
+attr source  txPk
+attr title  "packets transmitted, count"
+scalar ExamTaskNetwork.MainRouter.eth[1].mac 	txPk:sum(packetBytes) 	35932742
+attr interpolationmode  none
+attr source  txPk
+attr title  "packets transmitted, sum(packetBytes)"
+scalar ExamTaskNetwork.MainRouter.eth[1].mac 	droppedPkNotForUs:count 	0
+attr interpolationmode  none
+attr source  dropPkNotForUs
+attr title  "packets dropped/not for us, count"
+scalar ExamTaskNetwork.MainRouter.eth[1].mac 	droppedPkNotForUs:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  dropPkNotForUs
+attr title  "packets dropped/not for us, sum(packetBytes)"
+scalar ExamTaskNetwork.MainRouter.eth[1].mac 	passedUpPk:count 	24980
+attr interpolationmode  none
+attr source  packetSentToUpper
+attr title  "packets passed to higher layer, count"
+scalar ExamTaskNetwork.MainRouter.eth[1].mac 	passedUpPk:sum(packetBytes) 	36097586
+attr interpolationmode  none
+attr source  packetSentToUpper
+attr title  "packets passed to higher layer, sum(packetBytes)"
+scalar ExamTaskNetwork.MainRouter.eth[1].mac 	droppedPkBitError:count 	0
+attr interpolationmode  none
+attr source  dropPkBitError
+attr title  "packets dropped/bit error, count"
+scalar ExamTaskNetwork.MainRouter.eth[1].mac 	droppedPkBitError:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  dropPkBitError
+attr title  "packets dropped/bit error, sum(packetBytes)"
+scalar ExamTaskNetwork.MainRouter.eth[1].mac 	droppedPkIfaceDown:count 	0
+attr interpolationmode  none
+attr source  dropPkIfaceDown
+attr title  "packets dropped/interface down, count"
+scalar ExamTaskNetwork.MainRouter.eth[1].mac 	droppedPkIfaceDown:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  dropPkIfaceDown
+attr title  "packets dropped/interface down, sum(packetBytes)"
+scalar ExamTaskNetwork.MainRouter.eth[1].mac 	rxPkOk:count 	24980
+attr interpolationmode  none
+attr source  rxPkOk
+attr title  "packets received OK, count"
+scalar ExamTaskNetwork.MainRouter.eth[1].mac 	rxPkOk:sum(packetBytes) 	36097586
+attr interpolationmode  none
+attr source  rxPkOk
+attr title  "packets received OK, sum(packetBytes)"
+scalar ExamTaskNetwork.MainRouter.eth[1].encap 	pauseSent:count 	0
+attr title  "pause sent, count"
+scalar ExamTaskNetwork.MainRouter.eth[1].encap 	pauseSent:sum 	0
+attr title  "pause sent, sum"
+scalar ExamTaskNetwork.MainRouter.eth[1].encap 	decapPk:count 	24980
+attr interpolationmode  none
+attr source  decapPk
+attr title  "packets decapsulated, count"
+scalar ExamTaskNetwork.MainRouter.eth[1].encap 	decapPk:sum(packetBytes) 	35647640
+attr interpolationmode  none
+attr source  decapPk
+attr title  "packets decapsulated, sum(packetBytes)"
+scalar ExamTaskNetwork.MainRouter.eth[1].encap 	encapPk:count 	24866
+attr interpolationmode  none
+attr source  encapPk
+attr title  "packets encapsulated, count"
+scalar ExamTaskNetwork.MainRouter.eth[1].encap 	encapPk:sum(packetBytes) 	35484848
+attr interpolationmode  none
+attr source  encapPk
+attr title  "packets encapsulated, sum(packetBytes)"
+scalar ExamTaskNetwork.MainRouter.eth[2].mac 	"simulated time" 	1000.0000084959
+scalar ExamTaskNetwork.MainRouter.eth[2].mac 	full-duplex 	1
+scalar ExamTaskNetwork.MainRouter.eth[2].mac 	"frames/sec sent" 	174.67799851595
+scalar ExamTaskNetwork.MainRouter.eth[2].mac 	"frames/sec rcvd" 	0.091999999218375
+scalar ExamTaskNetwork.MainRouter.eth[2].mac 	"bits/sec sent" 	2098811.9021686
+scalar ExamTaskNetwork.MainRouter.eth[2].mac 	"bits/sec rcvd" 	53.263999547473
+scalar ExamTaskNetwork.MainRouter.eth[2].mac 	"rx channel idle (%)" 	99.999940848001
+scalar ExamTaskNetwork.MainRouter.eth[2].mac 	"rx channel utilization (%)" 	5.9151999497449e-05
+scalar ExamTaskNetwork.MainRouter.eth[2].mac 	rxPkFromHL:count 	174678
+attr interpolationmode  none
+attr source  rxPkFromHL
+attr title  "packet bytes from higher layer, count"
+scalar ExamTaskNetwork.MainRouter.eth[2].mac 	rxPkFromHL:sum(packetBytes) 	262351490
+attr interpolationmode  none
+attr source  rxPkFromHL
+attr title  "packet bytes from higher layer, sum(packetBytes)"
+scalar ExamTaskNetwork.MainRouter.eth[2].mac 	rxPausePkUnits:count 	0
+attr interpolationmode  none
+attr title  "pause units received, count"
+scalar ExamTaskNetwork.MainRouter.eth[2].mac 	rxPausePkUnits:sum 	0
+attr interpolationmode  none
+attr title  "pause units received, sum"
+scalar ExamTaskNetwork.MainRouter.eth[2].mac 	txPausePkUnits:count 	0
+attr interpolationmode  none
+attr title  "pause units sent, count"
+scalar ExamTaskNetwork.MainRouter.eth[2].mac 	txPausePkUnits:sum 	0
+attr interpolationmode  none
+attr title  "pause units sent, sum"
+scalar ExamTaskNetwork.MainRouter.eth[2].mac 	txPk:count 	174678
+attr interpolationmode  none
+attr source  txPk
+attr title  "packets transmitted, count"
+scalar ExamTaskNetwork.MainRouter.eth[2].mac 	txPk:sum(packetBytes) 	262351490
+attr interpolationmode  none
+attr source  txPk
+attr title  "packets transmitted, sum(packetBytes)"
+scalar ExamTaskNetwork.MainRouter.eth[2].mac 	droppedPkNotForUs:count 	0
+attr interpolationmode  none
+attr source  dropPkNotForUs
+attr title  "packets dropped/not for us, count"
+scalar ExamTaskNetwork.MainRouter.eth[2].mac 	droppedPkNotForUs:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  dropPkNotForUs
+attr title  "packets dropped/not for us, sum(packetBytes)"
+scalar ExamTaskNetwork.MainRouter.eth[2].mac 	passedUpPk:count 	92
+attr interpolationmode  none
+attr source  packetSentToUpper
+attr title  "packets passed to higher layer, count"
+scalar ExamTaskNetwork.MainRouter.eth[2].mac 	passedUpPk:sum(packetBytes) 	6658
+attr interpolationmode  none
+attr source  packetSentToUpper
+attr title  "packets passed to higher layer, sum(packetBytes)"
+scalar ExamTaskNetwork.MainRouter.eth[2].mac 	droppedPkBitError:count 	0
+attr interpolationmode  none
+attr source  dropPkBitError
+attr title  "packets dropped/bit error, count"
+scalar ExamTaskNetwork.MainRouter.eth[2].mac 	droppedPkBitError:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  dropPkBitError
+attr title  "packets dropped/bit error, sum(packetBytes)"
+scalar ExamTaskNetwork.MainRouter.eth[2].mac 	droppedPkIfaceDown:count 	0
+attr interpolationmode  none
+attr source  dropPkIfaceDown
+attr title  "packets dropped/interface down, count"
+scalar ExamTaskNetwork.MainRouter.eth[2].mac 	droppedPkIfaceDown:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  dropPkIfaceDown
+attr title  "packets dropped/interface down, sum(packetBytes)"
+scalar ExamTaskNetwork.MainRouter.eth[2].mac 	rxPkOk:count 	92
+attr interpolationmode  none
+attr source  rxPkOk
+attr title  "packets received OK, count"
+scalar ExamTaskNetwork.MainRouter.eth[2].mac 	rxPkOk:sum(packetBytes) 	6658
+attr interpolationmode  none
+attr source  rxPkOk
+attr title  "packets received OK, sum(packetBytes)"
+scalar ExamTaskNetwork.MainRouter.eth[2].encap 	pauseSent:count 	0
+attr title  "pause sent, count"
+scalar ExamTaskNetwork.MainRouter.eth[2].encap 	pauseSent:sum 	0
+attr title  "pause sent, sum"
+scalar ExamTaskNetwork.MainRouter.eth[2].encap 	decapPk:count 	92
+attr interpolationmode  none
+attr source  decapPk
+attr title  "packets decapsulated, count"
+scalar ExamTaskNetwork.MainRouter.eth[2].encap 	decapPk:sum(packetBytes) 	4732
+attr interpolationmode  none
+attr source  decapPk
+attr title  "packets decapsulated, sum(packetBytes)"
+scalar ExamTaskNetwork.MainRouter.eth[2].encap 	encapPk:count 	174678
+attr interpolationmode  none
+attr source  encapPk
+attr title  "packets encapsulated, count"
+scalar ExamTaskNetwork.MainRouter.eth[2].encap 	encapPk:sum(packetBytes) 	259207016
+attr interpolationmode  none
+attr source  encapPk
+attr title  "packets encapsulated, sum(packetBytes)"
+scalar ExamTaskNetwork.MainRouter.ppp[0].outputHook[0] 	duration 	1000.0000084959
+scalar ExamTaskNetwork.MainRouter.ppp[0].outputHook[0] 	"total packets" 	879673
+scalar ExamTaskNetwork.MainRouter.ppp[0].outputHook[0] 	"total bits" 	1785130048
+scalar ExamTaskNetwork.MainRouter.ppp[0].outputHook[0] 	"avg throughput (bit/s)" 	1785130.0328337
+scalar ExamTaskNetwork.MainRouter.ppp[0].outputHook[0] 	"avg packets/s" 	879.67299252636
+scalar ExamTaskNetwork.MainRouter.ppp[0].inputHook[0] 	duration 	1000.0000084959
+scalar ExamTaskNetwork.MainRouter.ppp[0].inputHook[0] 	"total packets" 	927810
+scalar ExamTaskNetwork.MainRouter.ppp[0].inputHook[0] 	"total bits" 	10119548696
+scalar ExamTaskNetwork.MainRouter.ppp[0].inputHook[0] 	"avg throughput (bit/s)" 	10119548.610025
+scalar ExamTaskNetwork.MainRouter.ppp[0].inputHook[0] 	"avg packets/s" 	927.8099921174
+statistic ExamTaskNetwork.MainRouter.ppp[0].queue 	queueingTime:histogram
+field count 849569
+field mean 0.00083591645861311
+field stddev 0.0031977707218672
+field sum 710.16870982749
+field sqrsum 9.2811011454844
+field min 0
+field max 0.038338988498
+attr interpolationmode  none
+attr title  "queueing time, histogram"
+bin	-INF	0
+bin	-0.0018443333355	0
+bin	-0.0015984222241	0
+bin	-0.0013525111127	0
+bin	-0.0011066000013	0
+bin	-0.0008606888899	0
+bin	-0.0006147777785	0
+bin	-0.0003688666671	0
+bin	-0.0001229555557	668902
+bin	0.0001229555557	10627
+bin	0.0003688666671	6735
+bin	0.0006147777785	7491
+bin	0.0008606888899	59932
+bin	0.0011066000013	6043
+bin	0.0013525111127	3060
+bin	0.0015984222241	5241
+bin	0.0018443333355	14856
+bin	0.0020902444469	3418
+bin	0.0023361555583	2108
+bin	0.0025820666697	5832
+bin	0.0028279777811	2935
+bin	0.0030738888925	2398
+bin	0.0033198000039	1312
+bin	0.0035657111153	3844
+bin	0.0038116222267	1768
+bin	0.0040575333381	1564
+bin	0.0043034444495	1595
+bin	0.0045493555609	2011
+bin	0.0047952666723	1198
+bin	0.0050411777837	1116
+bin	0.0052870888951	1797
+bin	0.0055330000065	33786
+scalar ExamTaskNetwork.MainRouter.ppp[0].queue 	dropPk:count 	30104
+attr interpolationmode  none
+attr source  dropPkByQueue
+attr title  "dropped packets, count"
+scalar ExamTaskNetwork.MainRouter.ppp[0].queue 	dropPk:sum(packetBytes) 	21341150
+attr interpolationmode  none
+attr source  dropPkByQueue
+attr title  "dropped packets, sum(packetBytes)"
+scalar ExamTaskNetwork.MainRouter.ppp[0].queue 	queueLength:max 	50
+attr interpolationmode  sample-hold
+attr title  "queue length, max"
+scalar ExamTaskNetwork.MainRouter.ppp[0].queue 	queueLength:timeavg 	0.71016870379419
+attr interpolationmode  sample-hold
+attr title  "queue length, timeavg"
+scalar ExamTaskNetwork.MainRouter.ppp[0].queue 	rcvdPk:count 	879673
+attr interpolationmode  none
+attr title  "received packets, count"
+scalar ExamTaskNetwork.MainRouter.ppp[0].queue 	rcvdPk:sum(packetBytes) 	223141256
+attr interpolationmode  none
+attr title  "received packets, sum(packetBytes)"
+scalar ExamTaskNetwork.MainRouter.ppp[0].ppp 	rcvdPkFromHL:count 	849569
+attr interpolationmode  none
+attr source  packetReceivedFromUpper
+attr title  "packets received from higher layer, count"
+scalar ExamTaskNetwork.MainRouter.ppp[0].ppp 	rcvdPkFromHL:sum(packetBytes) 	201800106
+attr interpolationmode  none
+attr source  packetReceivedFromUpper
+attr title  "packets received from higher layer, sum(packetBytes)"
+scalar ExamTaskNetwork.MainRouter.ppp[0].ppp 	passedUpPk:count 	927810
+attr interpolationmode  none
+attr source  packetSentToUpper
+attr title  "packets passed to higher layer, count"
+scalar ExamTaskNetwork.MainRouter.ppp[0].ppp 	passedUpPk:sum(packetBytes) 	1264943587
+attr interpolationmode  none
+attr source  packetSentToUpper
+attr title  "packets passed to higher layer, sum(packetBytes)"
+scalar ExamTaskNetwork.MainRouter.ppp[0].ppp 	txPk:count 	849569
+attr interpolationmode  none
+attr source  packetSentToLower
+attr title  "packets transmitted, count"
+scalar ExamTaskNetwork.MainRouter.ppp[0].ppp 	txPk:sum(packetBytes) 	207747089
+attr interpolationmode  none
+attr source  packetSentToLower
+attr title  "packets transmitted, sum(packetBytes)"
+scalar ExamTaskNetwork.MainRouter.ppp[0].ppp 	droppedPkBitError:count 	0
+attr interpolationmode  none
+attr source  dropPkBitError
+attr title  "packets dropped/bit error, count"
+scalar ExamTaskNetwork.MainRouter.ppp[0].ppp 	droppedPkBitError:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  dropPkBitError
+attr title  "packets dropped/bit error, sum(packetBytes)"
+scalar ExamTaskNetwork.MainRouter.ppp[0].ppp 	droppedPkIfaceDown:count 	0
+attr interpolationmode  none
+attr source  dropPkIfaceDown
+attr title  "packets dropped/interface down, count"
+scalar ExamTaskNetwork.MainRouter.ppp[0].ppp 	droppedPkIfaceDown:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  dropPkIfaceDown
+attr title  "packets dropped/interface down, sum(packetBytes)"
+scalar ExamTaskNetwork.MainRouter.ppp[0].ppp 	rxPkOk:count 	927810
+attr interpolationmode  none
+attr source  rxPkOk
+attr title  "packets received OK, count"
+scalar ExamTaskNetwork.MainRouter.ppp[0].ppp 	rxPkOk:sum(packetBytes) 	1271438257
+attr interpolationmode  none
+attr source  rxPkOk
+attr title  "packets received OK, sum(packetBytes)"
+scalar ExamTaskNetwork.MainRouter.ppp[0].ppp 	txState:timeavg 	0.13849805786417
+attr interpolationmode  sample-hold
+attr title  "tx state, timeavg"
+scalar ExamTaskNetwork.Internet.networkLayer.arp 	initiatedARPResolution:count 	49
+attr title  "ARP initiated resolutions, count"
+scalar ExamTaskNetwork.Internet.networkLayer.arp 	sentReply:count 	2
+attr title  "ARP replies sent, count"
+scalar ExamTaskNetwork.Internet.networkLayer.arp 	sentReq:count 	49
+attr title  "ARP request sent, count"
+scalar ExamTaskNetwork.Internet.networkLayer.arp 	failedARPResolution:count 	0
+attr title  "ARP failed resolutions, count"
+scalar ExamTaskNetwork.Internet.networkLayer.arp 	completedARPResolution:count 	51
+attr title  "ARP completed resolutions, count"
+scalar ExamTaskNetwork.Internet.lo0.lo 	rcvdPkFromHL:count 	0
+attr interpolationmode  none
+attr source  packetReceivedFromUpper
+attr title  "packets received from higher layer, count"
+scalar ExamTaskNetwork.Internet.lo0.lo 	rcvdPkFromHL:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  packetReceivedFromUpper
+attr title  "packets received from higher layer, sum(packetBytes)"
+scalar ExamTaskNetwork.Internet.lo0.lo 	passedUpPk:count 	0
+attr interpolationmode  none
+attr source  packetSentToUpper
+attr title  "packets passed to higher layer, count"
+scalar ExamTaskNetwork.Internet.lo0.lo 	passedUpPk:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  packetSentToUpper
+attr title  "packets passed to higher layer, sum(packetBytes)"
+scalar ExamTaskNetwork.Internet.lo0.lo 	droppedPkBitError:count 	0
+attr interpolationmode  none
+attr source  dropPkBitError
+attr title  "packets dropped/bit error, count"
+scalar ExamTaskNetwork.Internet.lo0.lo 	droppedPkBitError:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  dropPkBitError
+attr title  "packets dropped/bit error, sum(packetBytes)"
+scalar ExamTaskNetwork.Internet.eth[0].mac 	"simulated time" 	1000.0000084959
+scalar ExamTaskNetwork.Internet.eth[0].mac 	full-duplex 	1
+scalar ExamTaskNetwork.Internet.eth[0].mac 	"frames/sec sent" 	854.70799273846
+scalar ExamTaskNetwork.Internet.eth[0].mac 	"frames/sec rcvd" 	1370.0609883601
+scalar ExamTaskNetwork.Internet.eth[0].mac 	"bits/sec sent" 	1670781.0018052
+scalar ExamTaskNetwork.Internet.eth[0].mac 	"bits/sec rcvd" 	8168486.2106011
+scalar ExamTaskNetwork.Internet.eth[0].mac 	"rx channel idle (%)" 	91.743829886145
+scalar ExamTaskNetwork.Internet.eth[0].mac 	"rx channel utilization (%)" 	8.2561701138555
+scalar ExamTaskNetwork.Internet.eth[0].mac 	rxPkFromHL:count 	854708
+attr interpolationmode  none
+attr source  rxPkFromHL
+attr title  "packet bytes from higher layer, count"
+scalar ExamTaskNetwork.Internet.eth[0].mac 	rxPkFromHL:sum(packetBytes) 	208847627
+attr interpolationmode  none
+attr source  rxPkFromHL
+attr title  "packet bytes from higher layer, sum(packetBytes)"
+scalar ExamTaskNetwork.Internet.eth[0].mac 	rxPausePkUnits:count 	0
+attr interpolationmode  none
+attr title  "pause units received, count"
+scalar ExamTaskNetwork.Internet.eth[0].mac 	rxPausePkUnits:sum 	0
+attr interpolationmode  none
+attr title  "pause units received, sum"
+scalar ExamTaskNetwork.Internet.eth[0].mac 	txPausePkUnits:count 	0
+attr interpolationmode  none
+attr title  "pause units sent, count"
+scalar ExamTaskNetwork.Internet.eth[0].mac 	txPausePkUnits:sum 	0
+attr interpolationmode  none
+attr title  "pause units sent, sum"
+scalar ExamTaskNetwork.Internet.eth[0].mac 	txPk:count 	854708
+attr interpolationmode  none
+attr source  txPk
+attr title  "packets transmitted, count"
+scalar ExamTaskNetwork.Internet.eth[0].mac 	txPk:sum(packetBytes) 	208847627
+attr interpolationmode  none
+attr source  txPk
+attr title  "packets transmitted, sum(packetBytes)"
+scalar ExamTaskNetwork.Internet.eth[0].mac 	droppedPkNotForUs:count 	0
+attr interpolationmode  none
+attr source  dropPkNotForUs
+attr title  "packets dropped/not for us, count"
+scalar ExamTaskNetwork.Internet.eth[0].mac 	droppedPkNotForUs:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  dropPkNotForUs
+attr title  "packets dropped/not for us, sum(packetBytes)"
+scalar ExamTaskNetwork.Internet.eth[0].mac 	passedUpPk:count 	1370061
+attr interpolationmode  none
+attr source  packetSentToUpper
+attr title  "packets passed to higher layer, count"
+scalar ExamTaskNetwork.Internet.eth[0].mac 	passedUpPk:sum(packetBytes) 	1021060785
+attr interpolationmode  none
+attr source  packetSentToUpper
+attr title  "packets passed to higher layer, sum(packetBytes)"
+scalar ExamTaskNetwork.Internet.eth[0].mac 	droppedPkBitError:count 	0
+attr interpolationmode  none
+attr source  dropPkBitError
+attr title  "packets dropped/bit error, count"
+scalar ExamTaskNetwork.Internet.eth[0].mac 	droppedPkBitError:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  dropPkBitError
+attr title  "packets dropped/bit error, sum(packetBytes)"
+scalar ExamTaskNetwork.Internet.eth[0].mac 	droppedPkIfaceDown:count 	0
+attr interpolationmode  none
+attr source  dropPkIfaceDown
+attr title  "packets dropped/interface down, count"
+scalar ExamTaskNetwork.Internet.eth[0].mac 	droppedPkIfaceDown:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  dropPkIfaceDown
+attr title  "packets dropped/interface down, sum(packetBytes)"
+scalar ExamTaskNetwork.Internet.eth[0].mac 	rxPkOk:count 	1370061
+attr interpolationmode  none
+attr source  rxPkOk
+attr title  "packets received OK, count"
+scalar ExamTaskNetwork.Internet.eth[0].mac 	rxPkOk:sum(packetBytes) 	1021060785
+attr interpolationmode  none
+attr source  rxPkOk
+attr title  "packets received OK, sum(packetBytes)"
+scalar ExamTaskNetwork.Internet.eth[0].encap 	pauseSent:count 	0
+attr title  "pause sent, count"
+scalar ExamTaskNetwork.Internet.eth[0].encap 	pauseSent:sum 	0
+attr title  "pause sent, sum"
+scalar ExamTaskNetwork.Internet.eth[0].encap 	decapPk:count 	1370060
+attr interpolationmode  none
+attr source  decapPk
+attr title  "packets decapsulated, count"
+scalar ExamTaskNetwork.Internet.eth[0].encap 	decapPk:sum(packetBytes) 	983054089
+attr interpolationmode  none
+attr source  decapPk
+attr title  "packets decapsulated, sum(packetBytes)"
+scalar ExamTaskNetwork.Internet.eth[0].encap 	encapPk:count 	854708
+attr interpolationmode  none
+attr source  encapPk
+attr title  "packets encapsulated, count"
+scalar ExamTaskNetwork.Internet.eth[0].encap 	encapPk:sum(packetBytes) 	187492168
+attr interpolationmode  none
+attr source  encapPk
+attr title  "packets encapsulated, sum(packetBytes)"
+scalar ExamTaskNetwork.Internet.tcpApp[0] 	sentPk:count 	167
+attr interpolationmode  none
+attr source  sentPk
+attr title  "packets sent, count"
+scalar ExamTaskNetwork.Internet.tcpApp[0] 	sentPk:sum(packetBytes) 	116177543
+attr interpolationmode  none
+attr source  sentPk
+attr title  "packets sent, sum(packetBytes)"
+scalar ExamTaskNetwork.Internet.tcpApp[0] 	rcvdPk:count 	167
+attr interpolationmode  none
+attr source  rcvdPk
+attr title  "packets received, count"
+scalar ExamTaskNetwork.Internet.tcpApp[0] 	rcvdPk:sum(packetBytes) 	1368064
+attr interpolationmode  none
+attr source  rcvdPk
+attr title  "packets received, sum(packetBytes)"
+statistic ExamTaskNetwork.Internet.tcpApp[0] 	endToEndDelay:histogram
+field count 167
+field mean 0.29175343340736
+field stddev 0.31358428233723
+field sum 48.722823379029
+field sqrsum 30.538677959539
+field min 0.20774911354
+field max 3.120151582076
+attr interpolationmode  none
+attr source  messageAge(rcvdPk)
+attr title  "end-to-end delay, histogram"
+attr unit  s
+bin	-INF	0
+bin	-1.248452120728	0
+bin	-1.0542919561589	0
+bin	-0.86013179158987	0
+bin	-0.6659716270208	0
+bin	-0.47181146245173	0
+bin	-0.27765129788267	0
+bin	-0.0834911333136	0
+bin	0.11066903125547	140
+bin	0.30482919582453	25
+bin	0.4989893603936	0
+bin	0.69314952496267	0
+bin	0.88730968953173	0
+bin	1.0814698541008	0
+bin	1.2756300186699	0
+bin	1.4697901832389	0
+bin	1.663950347808	0
+bin	1.8581105123771	0
+bin	2.0522706769461	0
+bin	2.2464308415152	0
+bin	2.4405910060843	0
+bin	2.6347511706533	0
+bin	2.8289113352224	0
+bin	3.0230714997915	2
+bin	3.2172316643605	0
+bin	3.4113918289296	0
+bin	3.6055519934987	0
+bin	3.7997121580677	0
+bin	3.9938723226368	0
+bin	4.1880324872059	0
+bin	4.3821926517749	0
+bin	4.576352816344	0
+scalar ExamTaskNetwork.Internet.tcpApp[1] 	rcvdPk:count 	613780
+attr interpolationmode  none
+attr source  rcvdPk
+attr title  "packets received, count"
+scalar ExamTaskNetwork.Internet.tcpApp[1] 	rcvdPk:sum(packetBytes) 	939583221
+attr interpolationmode  none
+attr source  rcvdPk
+attr title  "packets received, sum(packetBytes)"
+statistic ExamTaskNetwork.Internet.tcpApp[1] 	endToEndDelay:histogram
+field count 613780
+field mean 0
+field stddev 0
+field sum 0
+field sqrsum 0
+field min 0
+field max 0
+attr interpolationmode  none
+attr source  messageAge(rcvdPk)
+attr title  "end-to-end delay, histogram"
+attr unit  s
+bin	-INF	0
+bin	-0.5	0
+bin	-0.46666666666667	0
+bin	-0.43333333333333	0
+bin	-0.4	0
+bin	-0.36666666666667	0
+bin	-0.33333333333333	0
+bin	-0.3	0
+bin	-0.26666666666667	0
+bin	-0.23333333333333	0
+bin	-0.2	0
+bin	-0.16666666666667	0
+bin	-0.13333333333333	0
+bin	-0.1	0
+bin	-0.066666666666667	0
+bin	-0.033333333333333	0
+bin	0	613780
+bin	0.033333333333333	0
+bin	0.066666666666667	0
+bin	0.1	0
+bin	0.13333333333333	0
+bin	0.16666666666667	0
+bin	0.2	0
+bin	0.23333333333333	0
+bin	0.26666666666667	0
+bin	0.3	0
+bin	0.33333333333333	0
+bin	0.36666666666667	0
+bin	0.4	0
+bin	0.43333333333333	0
+bin	0.46666666666667	0
+bin	0.5	0

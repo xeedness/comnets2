@@ -11,7 +11,7 @@ x = [1,5,10,15,20,30,40,50,60];
 
 
 % fileBase contains the path to result data file up to the run number
-fileBase = '../results/final1-cctv160820/ExamTaskNetwork-'
+fileBase = '../results/final2-cctv-160821/ExamTaskNetwork-'
 % fileStartNr denotes the first run number
 fileStartNr = 0;
 % fileEndNr denotes the last run number
