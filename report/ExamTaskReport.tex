@@ -33,6 +33,7 @@ BCOR5mm, % Binding correction
 \usepackage{amsmath}
 \usepackage{wrapfig}
 \usepackage{float}
+\usepackage{tabularx}
 
 \hyphenation{Fortran hy-phen-ation} % Specify custom hyphenation points in words with dashes where you would like hyphenation to occur, or alternatively, don't put any dashes in a word to stop hyphenation altogether
 
@@ -114,10 +115,11 @@ For a detailed list of specific configuration parameters, see section \ref{sec:c
 \label{sec:conf_details}
 
 \begin{table}[H]
-\begin{tabular}{ l l }
+\begin{tabularx}{\textwidth}{ l l }
 \multicolumn{2}{ l }{\textbf{Video conference application}} \\
 \hline
-  Message length       & 1388 B payload + 12 B minimal RTP header\\
+  Message length       & 1388 B payload + 12 B minimal RTP header \\
+                       &  = 1400 B\\
   Packet send interval & 40 ms \\
   Maximum packet delay & 100 ms \\
 \multicolumn{2}{ l }{\textbf{Web browsing application}} \\
@@ -130,21 +132,38 @@ For a detailed list of specific configuration parameters, see section \ref{sec:c
   Message length       & 10KiB \\
   Packet send interval & 40 ms \\
   Maximum packet delay & 100 ms \\
-\end{tabular}
+\end{tabularx}
 \caption{Application configuration parameters}
 \label{table:app_config}
 \end{table}
 
-
-\begin{tabular}{ l l }
+\begin{table}[H]
+\begin{tabularx}{\textwidth}{ l l }
 \multicolumn{2}{ l }{\textbf{Network}} \\
 \hline
-    & \\
-\end{tabular}
+  PPP queue size                & 50 frames\\
+  WLAN version \& bandwidth     & IEEE 802.11g, 54 Mbit/s \\
+  Ethernet version \& bandwidth & IEEE 802.3u, 100 Mbit/s \\
+  VDSL bandwidth                & 100 Mbit/s \\
+  VDSL delay                    & Internet: 30 ms \\
+                                & CCTV Monitoring: 0 ms \\
+  DFN bandwidth \& delay        & 100 Mbit/s, 5 ms
+\end{tabularx}
+\caption{Network configuration parameters}
+\label{table:app_config}
+\end{table}
 
-TODO: are there any outstanding configs the customer might need to know? (-> RemoteRouter Queue Size!)
-
-
+\begin{table}[H]
+\begin{tabularx}{\textwidth}{ l l }
+\multicolumn{2}{ l }{\textbf{Simulation}} \\
+\hline
+  Duration          & 1000 s \\
+  Repetitions       & 15 \\
+  Number of laptops & 1, 5, 10, 15, 20, 30, 40, 50 or 60
+\end{tabularx}
+\caption{Simulation configuration parameters}
+\label{table:app_config}
+\end{table}
 
 \subsection{HTTP Traffic modeling}
 \label{subsec:traffic_mod}
