@@ -312,13 +312,6 @@ Additionally it is useful to look at the number of collisions to have a good met
 \section{Simulation Evaluation}
 The following sections contain the seperated evaluation of the network with and without CCTV.
 We would like to mention that we did the simulation with an important change of a parameter increasing primarily the performance of all applications depending on short network delays. We reduced the maximum PPP queue length to 50. We found, that large packets of the CCTV cause a tremendous amount of queueing delay due to high transmission delays of queued up packets. By decreasing the queue size the impact of accumulated CCTV packets at the remote router queue on the video conference is decreased.
-TODO: answer (for with/without CCTV, I guess):\\
-• What is the average data rate of the FTP upload?\\
-• What are the average download rates of the HTTP clients?\\
-• How do the other applications influence the video call?\\
-• Is the direct radio link rate sufficient? Is it required to pause the CCTV service during the video conference?\\
-• Where are the main bottlenecks of each variant?\\
-• Which further changes would you suggest to improve the QoS for the video call?\\
 
 \subsection{Network with CCTV}
 This section contains the final evaluation of the network, when CCTV is included. We will start with an overview of the network behavior to be able to explain the behavior of the applications. After evaluating the application performances we continue with identifying and explaining bottlenecks.
