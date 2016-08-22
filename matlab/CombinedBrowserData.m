@@ -19,17 +19,13 @@ searchArray = {'BrowsingLaptop','tcpApp[0]', 'rcvdPk:sum(packetBytes)';
     'BrowsingLaptop','tcpApp[0]','sentPk:sum(packetBytes)'}
 [ result ] = extractDataMulti( fileBase, fileStartNr, fileEndNr, searchArray);
 
-throughputRcvdBrowser = result3(:,1) ./ simtime;
-throughputSendBrowser = result3(:,2) ./ simtime;
-
-
-
+throughputRcvdBrowser = result(:,1) ./ simtime;
+throughputSendBrowser = result(:,2) ./ simtime;
 
 modResults = [throughputSendBrowser throughputRcvdBrowser];
 
 % calculate confidence intervals
 [mean, e] = confIntervals( modResults, repititions, alpha);
-
 
 resultArray = { 'Browser', 'send throughput all','bytes/s';
                 'Browser', 'rcvd throughput all','bytes/s'}
