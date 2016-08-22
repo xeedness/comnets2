@@ -78,9 +78,7 @@ BCOR5mm, % Binding correction
 
 \section*{Abstract} % This section will not appear in the table of contents due to the star (\section*)
 
-TODO!
-
-\lipsum[1] % Dummy text
+In this report we evaluated a remote campus network connected to the main campus by a radio link. The internet connection is located at the main campus. The evaluation was done by simulating the network. To model the network traffic properly we implemented common services like web browsing, FTP upload and video conferences. Additionally we assessed the possibility to add a CCTV service, which transfers a video stream to the main campus. At the end of this report, we are identifying bottlenecks and give an overview of possible improvements.
 
 \newpage % Start the article content on the second page, remove this if you have a longer abstract that goes onto the second page
 
@@ -265,7 +263,7 @@ Throughout the simulation, we looked at the confidence intervals of several aver
 
 For the final simulation we end up with 9 different client and 2 CCTV settings, resulting in 270 simulation runs with a simulation duration of 1000 seconds.
 
-\subsection{Performance Characteristics}
+\subsection{Performance Characteristics} \label{performance_characteristics}
 In the previous section we determined changing parameters between the simulation runs. The performance characteristics are the simulation measurements influenced by those parameters. The overall procedure is to record the measurements for every combination of parameters several times. Thus we have a set of 15 measurements for each combination. This allows us to calculate confidence intervals for each measurement. In the following we identify the performance characteristics of the implemented applications.
 
 \subsubsection{Video Conference}
@@ -274,8 +272,6 @@ Another characteristic is the average delay. Although you could expect it to be 
 \begin{align*}
 \frac{\text{lost packets} + \text{discarded packets}}{\text{sent packets}}
 \end{align*}
-TODO: formula
-TODO: packet loss bursts? -> Packet loss over time
 \subsubsection{Web Browsing}
 The web browsing follows a simple request response model. The requests are carried out in a single session each. The important characteristic is how long the user has to wait until a response arrives. The response time is depending on the length of the response. For a greater length the user can cope with a longer response time. Therefore the crucial characteristic is the throughput the web client actually achieves.
 It is possible to measure the average throughput of the web clients. But this value is misleading, since the browsers do not use the medium at all times. To address this issue we measured the fraction of the simulation time a session was active. The calculation of the final throughput is thus:
@@ -299,7 +295,6 @@ The FTP Upload is modeled as a continous TCP stream to the internet. It runs for
 The CCTV is used to monitor abnormal behavior at the remote campus. There are two characteristics, which can be considered. At first the delay of stream increases the reaction time of the staff. If the information arrives at the monitor one second late, it does not influence the reaction time of the staff in a significant way. Therefore it is neglectable.
 As of the conference the average packet loss rate influences the quality of the video stream. If the packet loss rate is higher than 5\% the video stream is considered not to be recognizable anymore. Therefore the packet loss rate should not exceed 5\%.
 
-TODO: Ist der Stream ab 5\% wirklich nicht mehr zu gebrauchen?
 \subsection{Bottleneck Identification}
 Besides looking at the performance characteristics of the application, it is advisable to look at potential bottlenecks. We identified the wireless network at the remote campus and the radio link between the remote campus and the main campus as potential bottlenecks. The theoretical maximum bandwidth of 56 Mbps of the wireless network and a 12 Mbps bandwidth of the radio link are much smaller than the bandwidths of the remaining links. Thus it is not necessary to evaluate those.
 
@@ -314,6 +309,8 @@ The practical throughput of a wireless network is much lower than the advertised
 Additionally it is useful to look at the number of collisions to have a good metric to assess the issues caused by the channel.
 
 \section{Simulation Evaluation}
+The following sections contain the seperated evaluation of the network with and without CCTV.
+We would like to mention that we did the simulation with an important change of a parameter increasing primarily the performance of all applications depending on short network delays. We reduced the maximum PPP queue length to 50. We found, that large packets of the CCTV cause a tremendous amount of queueing delay due to high transmission delays of queued up packets. By decreasing the queue size the impact of accumulated CCTV packets at the remote router queue on the video conference is decreased.
 TODO: answer (for with/without CCTV, I guess):\\
 • What is the average data rate of the FTP upload?\\
 • What are the average download rates of the HTTP clients?\\
@@ -323,7 +320,56 @@ TODO: answer (for with/without CCTV, I guess):\\
 • Which further changes would you suggest to improve the QoS for the video call?\\
 
 \subsection{Network with CCTV}
+This section contains the final evaluation of the network, when CCTV is included. We will start with an overview of the network behavior to be able to explain the behavior of the applications. After evaluating the application performances we continue with identifying and explaining bottlenecks.
+\begin{figure}[!ht]
+  \centering
+  \includegraphics[width=\textwidth]{Figures/cctv_network_throughputs.png}
+  \caption{Throughputs of the important links of the simulated network including confidence intervals.} \label{fig:cctv_network_throughputs}
+\end{figure}
+The network throughputs are depicted in fig. \ref{fig:cctv_network_throughputs}. As expected the total rate of the radio link is slightly above the rate of the WLAN. This is due to the steady load, which is added directly by the CCTV stream. The remaining bandwidths is composed of the steady load of the video conference and the browsing and ftp upload traffic. With a rising number of clients the traffic directed to the main campus decreases and the traffic to the remote campus increases. This can be explained by looking at the application throughputs depicted in \ref{fig:cctv_app_throughput_all}. With more clients the traffic of the http traffic uses a higher share of bandwidth. In general one can argue, that the major amount of http traffic flows in the direction of the remote campus, while the traffic of the ftp upload flows directed to the main campus. 
+\begin{figure}[!ht]
+  \centering
+  \includegraphics[width=\textwidth]{Figures/cctv_application_throughputs_all.png}
+  \caption{Average throughputs of the applications of the simulated network including confidence intervals.} \label{fig:cctv_app_throughput_all}
+\end{figure}
+\subsubsection{Application Performance}
+In section \ref{performance_characteristics} we identified the important performance characteristics of the implemented applications. In this section we will step through them and apply the simulation results.
+The performance of the browsers and FTP upload is only depending on the throughput. The application throughputs were previously depicted in fig. \ref{cctv_app_throughput_all}.
+The FTP throughput is comparably high at every number of clients. When a low number of clients is surfing, the ftp upload almost uses the whole available bandwidth of the radio link. Only the steady load of the conference and the CCTV is slowing it down. With a bitrate of roughly 9 Mbps to 4 Mbps a good quality of service is achieved. But it is to be expected, that the FTP throughput decreases further with the number of clients rising above 60. Since a higher number of browsing clients does not fit the scenario, the FTP data rate does not set a maximum amount of clients.
+The important value of the data rates of the browsing clients is actually the data rate for a single HTTP request. These values are depicted in fig. \ref{fig:cctv_http_request_throughput}. 
+\begin{figure}[!ht]
+  \centering
+  \includegraphics[width=\textwidth]{Figures/singe_http_request_throughput.png}
+  \caption{Throughput of a single HTTP request. The adjusted throughput takes into account the time a request was actually active.} \label{fig:cctv_http_request_throughput}
+\end{figure}
+The adjusted data rate is calculated by applying the time a session was actually active instead of the whole simulation time. If only one to five clients are using the network a comparably high datarate of roughly 100 KB/s is achieved. In combination with a mean reply length of 672 KB this results in an average waiting time of 6.7 seconds. This is already a really bad experience. You can argue that it is acceptable at the given circumstances. We argued before that an average waiting time of 10 seconds is acceptable in these circumstances. This time is exceeded, when more than 10 clients are using the network. Therefore 10 clients provide a maximum of the proposed network configuration.
+The performance characteristics of the video conference and the CCTV are the packet loss ratio and packet delays. The simulation results are depicted in fig \ref{fig:cctv_app_packet_loss_rates} and \ref{fig:cctv_app_packet_delays} respectively. 
+\begin{figure}[!ht]
+  \centering
+  \includegraphics[width=\textwidth]{Figures/cctv_application_packet_loss_rates.png}
+  \caption{Packet loss rates of the applications of the simulated network including confidence intervals.} \label{fig:cctv_app_packet_loss_rates}
+\end{figure}
+The packet loss rates of the CCTV stream starts at a comparably high packet loss rate and decreases up to 0 for a higher number of clients. When a low number of clients is using the network almost all tcp traffic is directed to the main campus. Therefore the congestion at the radio link causes the queues at the remote router to drop packets. Therefore increasing the packet loss rate of the CCTV stream. A packet drop loss rate of 5\% is not exceeded at any amount of clients. Therefore a good quality is to be expected.
+The packet loss rate of the stream directed to the professors laptop is low for a small number of clients and increases up to a rate of roughly 0.7% at 10 clients and keeps steady from there on. A possible explanation for the low loss rate at the beginning, while the loss rate for CCTV is high is, that the packet size of the video stream is much smaller than the cctv stream packet size. While the CCTV packets arrive late due to transmission delay the video stream packets arrive faster and are therefore not considered lost.
+The before mentioned loss rates are far below our threshold of 5\%. Therefore they are not a limiting factor on the network. The packet loss rate of the stream received by the conference laptop however reaches a value of 4.2\% at 60 clients. The overall graph suggests, that the 5\% mark is exceeded at about 90 clients. Since 90 clients are an unrealistic number of clients considering the scenario, the performance of the stream can still be considered acceptable. The increase of the packet loss rate is caused by the increasing amount of traffic directed to the remote campus clients and therefore causing packet drops at the main router and access point queues.
+\begin{figure}[!ht]
+  \centering
+  \includegraphics[width=\textwidth]{Figures/cctv_application_packet_delays.png}
+  \caption{Average packet delays of the applications of the simulated network including confidence intervals.} \label{fig:cctv_app_packet_delays}
+\end{figure}
+The delay depicted in figure \ref{fig:cctv_app_packet_delays} are constantly low enough to be considered acceptable. The inverse behavior of the delays is caused by the direction of the expected traffic. At low client numbers only the queue at the remote router delays packets. With an increasing number of clients the access point and the main router delay the packets.
 
+\subsubsection{Bottleneck Analysis}
+The overall throughput of the network components was previously depicted in fig. \ref{fig:cctv_network_throughputs}. It shows that the radio link bandwidth is fully used at every number of clients. This is due to the TCP traffic caused by the FTP upload. The TCP protocol is designed to use all remaining bandwidth not used by steady load of the udp traffic. Since all TCP traffic is originated at the WLAN part of the network, it is expect that the WLAN throughput equals the throughput of the radio link without the steady load of the cctv, which is connected directly to the remote router.
+The packet drop rates of the network queues are depicted in fig. \ref{fig:cctv_netw_packet_drop_rates}. 
+\begin{figure}[!ht]
+  \centering
+  \includegraphics[width=\textwidth]{Figures/cctv_network_packet_drop_rates.png}
+  \caption{Average packet drop rates of the important links of the simulated network including confidence intervals.} \label{fig:cctv_netw_packet_drop_rates}
+\end{figure}
+The drop rate of the wlan is increasing monotonously, while the main router drop rate increases more steeply, but decreases at a higher number of clients. The remote router queue is around zero regardless. This is due to the fact, that the main TCP traffic directed to the main campus is the FTP upload. Since it is only one stream, it can perfectly adapt to the available bandwidth. Furthermore it indicates that the WLAN is used at maximum capacity, because even the 8KiB HTTP requests should cause congestion at the remote router. The WLAN is therefore filtering the traffic originating from the remote campus. So the packets actually reaching the remote router do not get dropped anymore. This means a usable capacity of the WLAN of 10Mbit, which is the bandwidth of the radio link minus the data rate of the CCTV.
+The steep increase of the drop rate at the main router indicates the impact of the HTTP requests. When a request reaches the internet, the server initiates a reply, which causes a congestion at the main router, because the radio link is fully in use at all times. With a low number of clients the number of requests increases linearly. Therefore the drop rates at the main router increase linearly as aswell. With the number of clients however the share of the bandwidth of each client decreases, this results in a longer session duration. A longer session duration means a decrease of the number of requests, since no new request is issued before the current request got served. This opposed effects increase the congestion at the main router up to 30 clients. Afterwards the secondary effect decreases the congestion caused by the primary effect.
+These effects however have no impact on the drop rates of the WLAN. The monotonous increase is just due to the rising number of participants in the WLAN network causing more packets to be dropped. 
 
 \subsection{Network without CCTV}
 
@@ -331,7 +377,9 @@ TODO: answer (for with/without CCTV, I guess):\\
 TODO: are there any things we'd recommend to be changed based on our simulations?
 
 - mehr APs *auf unterschiedlichen channeln!* (da das WLAN medium sonst überlastet ist und zum bottleneck wird) -> ein AP pro 20 clients
-
+- gemeinsames updaten der WLAN und RadioLink bandwidth
+- begrenzung der wlan bandbreite pro client -> reduzierungdes FTP uploads, erhöhung des http throughputs
+- dringend: reduzierung der queue sizes
 \section{Conclusion}
 TODO
 
