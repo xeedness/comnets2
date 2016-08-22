@@ -6,14 +6,14 @@ simtime = 1000;
 repititions = 15;
 alpha = 0.05;
 %Prepend folder for result set
-imageDirectory = 'images/tst/';
+imageDirectory = 'images/finalnocctv/';
 %The amount of clients
 x = [1,5,10,15,20,30,40,50,60];
 %x = [1,5];
 
 
 % fileBase contains the path to result data file up to the run number
-fileBase = '../results/final2-cctv-160821/ExamTaskNetwork-'
+fileBase = '../results/final2-nocctv-160821/ExamTaskNetwork_no_CCTV-'
 
 % fileStartNr denotes the first run number
 fileStartNr = 0;
@@ -39,7 +39,7 @@ searchArray = {'ProfessorsLaptop.udpApp[0]','"packets sent"';
     'Internet.eth[0].mac', 'txPk:sum(packetBytes)';
     'ProfessorsLaptop.eth[0].mac','txPk:sum(packetBytes)';
     %'RemoteAccessPoint.wlan[0].mac','sent and received bits';
-    %'RemoteAccessPoint.wlan[0].mac','number of collisions';
+    
     'Internet.tcpApp[1]', 'rcvdPk:sum(packetBytes)';
     'Internet.tcpApp[0]', 'sentPk:sum(packetBytes)';
     %'MainRouter.ppp[0].inputHook[0]', 'avg throughput (bit/s)'
@@ -47,10 +47,11 @@ searchArray = {'ProfessorsLaptop.udpApp[0]','"packets sent"';
     'CCTVCamera.udpApp[0]','"packets sent"';
     'CCTVMonitoring.udpApp[0]','"packets received"';
     'CCTVMonitoring.udpApp[0]','"discarded packets"';
+    'RemoteAccessPoint.wlan[0].mac','number of collisions';
     }
 
 
-[ result ] = extractDataSca( fileBase, fileStartNr, fileEndNr, searchArray );
+%[ result ] = extractDataSca( fileBase, fileStartNr, fileEndNr, searchArray );
 
 % calculate browser throughput stats
 %searchArray = {'tcpApp[0]', 'rcvdPk:sum(packetBytes)';
@@ -63,7 +64,7 @@ searchArray = {'BrowsingLaptop','tcpApp[0]', 'rcvdPk:sum(packetBytes)';
     'BrowsingLaptop','tcpApp[0]','numActiveSessions:timeavg';
     'BrowsingLaptop','tcpApp[0]','numSessions:last';
     }
-[ result2 ] = extractDataMulti( fileBase, fileStartNr, fileEndNr, searchArray);
+%[ result2 ] = extractDataMulti( fileBase, fileStartNr, fileEndNr, searchArray);
 
 
 
@@ -92,7 +93,7 @@ shareConfTraffic = result(:,8) ./ result(:,7);
 shareConfTraffic = shareConfTraffic .* 100;
 
 %throughputRAP = result(:,17) ./ (simtime*1000*1000);
-%collisionsRAP = result(:,18);
+collisionsRAP = result(:,14);
 
 throughputFTP = (result(:,9)) ./ (simtime*1000*1000);
 throughputBrowser = (result(:,10)) ./ (simtime*1000*1000);
@@ -132,6 +133,7 @@ modResults = [
               lossRatiosConf'
               lossRatiosCamera'
               numberOfSessions'
+              collisionsRAP'
               ]';
 
 % calculate confidence intervals
@@ -155,8 +157,8 @@ hold on;
 %bar(x, mean,'facecolor',[.8 .8 .8]); ylabel(ylab); xlabel(xlab);
 errorbar(x,meanR1(1,:),eR1(1,:),'LineWidth',1);
 errorbar(x,meanR1(2,:),eR1(2,:),'-o','LineWidth',1);
-plot(x,meanR1(3,:),'LineWidth',2);
-plot(x,meanR1(4,:),'LineWidth',2);
+plot(x,meanR1(3,:),'-s','LineWidth',1);
+plot(x,meanR1(4,:),'-p','LineWidth',1);
 ylabel(ylab);
 xlabel(xlab);
 legend(l);
@@ -188,7 +190,7 @@ print(strcat(imageDirectory,param), '-dpng');
 param = 'Application Packet Loss Rates';
 xlab = '# of clients';
 ylab = '%';
-l = {'Professors Laptop ', 'Conference Laptop', 'CCTV Monitor'};
+l = {'Professors Laptop ', 'Conference Laptop'};
 %combPlotConf(imageDirectory, title, x, meanR, eR, '# of clients', yunit, legend);         
 figure('Name',param)
 hold on;
@@ -206,7 +208,7 @@ end
 print(strcat(imageDirectory,param), '-dpng');
 
 
-%meanR3 = mean(7,:) - x;
+meanR3 = mean(7,:);
 eR3 = e(7,:);
             
 param = 'Number of HTTP Sessions';
@@ -221,6 +223,26 @@ errorbar(x,meanR3(1,:),eR3(1,:),'LineWidth',1);
 ylabel(ylab);
 xlabel(xlab);
 legend(l, 'Location','northwest');
+title(param);
+if ~exist(imageDirectory,'dir')
+    mkdir(imageDirectory);
+end
+print(strcat(imageDirectory,param), '-dpng');
+
+meanR4 = mean(8,:);
+eR4 = e(8,:);
+            
+param = 'Collisions at Access Point';
+xlab = '# of clients';
+ylab = '# of collisions';
+%combPlotConf(imageDirectory, title, x, meanR, eR, '# of clients', yunit, legend);         
+figure('Name',param)
+hold on;
+%bar(x, mean,'facecolor',[.8 .8 .8]); ylabel(ylab); xlabel(xlab);
+errorbar(x,meanR4(1,:),eR4(1,:),'LineWidth',1);
+ylabel(ylab);
+xlabel(xlab);
+%legend(l, 'Location','northwest');
 title(param);
 if ~exist(imageDirectory,'dir')
     mkdir(imageDirectory);
