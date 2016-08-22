@@ -151,7 +151,7 @@ resultArray = {'ProfessorsLaptop','packet loss ratio','%';
                 'RAP + Main', 'drop ratio','%';
                 'ConferenceLaptop', 'traffic share','bytes/s';
                 'RAP', 'Throughput', 'Mbps';
-                'RAP', '# of collisions', ' ';
+                'RAP', 'Number of collisions', ' ';
                 'FTPLaptop','Throughput', 'Mbps';
                 'MainRouter', 'Throughput In', 'Mbps';
                 'MainRouter', 'Throughput Out', 'Mbps';
