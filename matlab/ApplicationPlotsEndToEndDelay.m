@@ -48,9 +48,9 @@ ylab = 'ms';
 l = {'Conference Laptop', 'Professors Laptop', 'CCTV Monitoring'};
 figure('Name',param)
 hold on;
-errorbar(x,mean(1,:),e(1,:),'LineWidth',2);
-errorbar(x,mean(2,:),e(2,:),'LineWidth',2);
-errorbar(x,mean(3,:),e(3,:),'LineWidth',2);
+errorbar(x,mean(1,:),e(1,:),'LineWidth',1);
+errorbar(x,mean(2,:),e(2,:),'-o','LineWidth',1);
+errorbar(x,mean(3,:),e(3,:),'-s','LineWidth',1);
 ylabel(ylab);
 xlabel(xlab);
 legend(l,'Location','northwest');

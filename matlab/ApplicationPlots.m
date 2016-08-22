@@ -74,6 +74,7 @@ lossRatiosProf = lossRatiosProf .* 100;
 lossRatiosConf = lossRatiosConf .* 100;
 lossRatiosCamera = (result(:,11) - (result(:,12)-result(:,13))) ./(result(:,11));
 lossRatiosCamera = lossRatiosCamera .* 100;
+
 %dropRatioRemote = result(:,7) ./ (result(:,7) + result(:,8));
 %dropRatioMain = result(:,10) ./ (result(:,10) + result(:,11));
 %dropRatioRemote = dropRatioRemote .* 100;
@@ -93,9 +94,10 @@ shareConfTraffic = shareConfTraffic .* 100;
 %throughputRAP = result(:,17) ./ (simtime*1000*1000);
 %collisionsRAP = result(:,18);
 
-throughputFTP = (result(:,9).*8) ./ (simtime*1000*1000);
-throughputBrowser = (result(:,10).*8) ./ (simtime*1000*1000);
+throughputFTP = (result(:,9)) ./ (simtime*1000*1000);
+throughputBrowser = (result(:,10)) ./ (simtime*1000*1000);
 sessionavgtime = result2(:,3);
+numberOfSessions = result2(:,4);
 %throughputRcvdBrowserAll = (result2(:,1) .* 8 ./ (result2(:,3) .* simtime)) ./ (1000*1000);
 %throughputSendBrowserAll = (result2(:,2) .* 8 ./ (result2(:,3) .* simtime)) ./ (1000*1000);
 
@@ -129,6 +131,7 @@ modResults = [
               lossRatiosProf'
               lossRatiosConf'
               lossRatiosCamera'
+              numberOfSessions'
               ]';
 
 % calculate confidence intervals
@@ -141,32 +144,17 @@ eR1 = [eR1; (e(2,:) ./ x) .*  (x ./ e(3,:))];
 
 meanR2 = mean(4:6,:);
 eR2 = e(4:6,:);
-resultArray = {'ProfessorsLaptop','packet loss ratio','%';
-                'ConferenceLaptop','packet loss ratio','%';
-                'RemoteRouter', 'drop ratio','%';
-                'MainRouter', 'drop ratio','%';
-                'RemoteRouter', 'avg queue length','# of packets';
-                'MainRouter', 'avg queue length','# of packets';
-                'RAP', 'drop ratio hl','%';
-                'RAP + Main', 'drop ratio','%';
-                'ConferenceLaptop', 'traffic share','bytes/s';
-                'RAP', 'Throughput', 'Mbps';
-                'RAP', '# of collisions', ' ';
-                'FTPLaptop','Throughput', 'Mbps';
-                'MainRouter', 'Throughput In', 'Mbps';
-                'MainRouter', 'Throughput Out', 'Mbps';
-                'MainRouter', 'Throughput Combined', 'Mbps'};
             
 param = 'Application Throughputs';
 xlab = '# of clients';
-ylab = 'Mbps';
+ylab = 'MB/s';
 l = {'FTP Throughput', 'Combined HTTP Throughput', 'Single HTTP Throughput', 'Adjusted HTTP Throughput'};
 %combPlotConf(imageDirectory, title, x, meanR, eR, '# of clients', yunit, legend);         
 figure('Name',param)
 hold on;
 %bar(x, mean,'facecolor',[.8 .8 .8]); ylabel(ylab); xlabel(xlab);
-errorbar(x,meanR1(1,:),eR1(1,:),'LineWidth',2);
-errorbar(x,meanR1(2,:),eR1(2,:),'LineWidth',2);
+errorbar(x,meanR1(1,:),eR1(1,:),'LineWidth',1);
+errorbar(x,meanR1(2,:),eR1(2,:),'-o','LineWidth',1);
 plot(x,meanR1(3,:),'LineWidth',2);
 plot(x,meanR1(4,:),'LineWidth',2);
 ylabel(ylab);
@@ -180,14 +168,14 @@ print(strcat(imageDirectory,param), '-dpng');
 
 param = 'Single HTTP Request Throughputs';
 xlab = '# of clients';
-ylab = 'Mbps';
+ylab = 'MB/s';
 l = {'HTTP Throughput', 'Adjusted HTTP Throughput'};
 %combPlotConf(imageDirectory, title, x, meanR, eR, '# of clients', yunit, legend);         
 figure('Name',param)
 hold on;
 %bar(x, mean,'facecolor',[.8 .8 .8]); ylabel(ylab); xlabel(xlab);
-plot(x,meanR1(3,:),'LineWidth',2);
-plot(x,meanR1(4,:),'LineWidth',2);
+plot(x,meanR1(3,:),'LineWidth',1);
+plot(x,meanR1(4,:),'-o','LineWidth',1);
 ylabel(ylab);
 xlabel(xlab);
 legend(l);
@@ -205,9 +193,31 @@ l = {'Professors Laptop ', 'Conference Laptop', 'CCTV Monitor'};
 figure('Name',param)
 hold on;
 %bar(x, mean,'facecolor',[.8 .8 .8]); ylabel(ylab); xlabel(xlab);
-errorbar(x,meanR2(1,:),eR2(1,:),'LineWidth',2);
-errorbar(x,meanR2(2,:),eR2(2,:),'LineWidth',2);
-errorbar(x,meanR2(3,:),eR2(2,:),'LineWidth',2);
+errorbar(x,meanR2(1,:),eR2(1,:),'LineWidth',1);
+errorbar(x,meanR2(2,:),eR2(2,:),'-o','LineWidth',1);
+errorbar(x,meanR2(3,:),eR2(2,:),'-s','LineWidth',1);
+ylabel(ylab);
+xlabel(xlab);
+legend(l, 'Location','northwest');
+title(param);
+if ~exist(imageDirectory,'dir')
+    mkdir(imageDirectory);
+end
+print(strcat(imageDirectory,param), '-dpng');
+
+
+%meanR3 = mean(7,:) - x;
+eR3 = e(7,:);
+            
+param = 'Number of HTTP Sessions';
+xlab = '# of clients';
+ylab = '# of sessions';
+l = {'# of HTTP sessions'};
+%combPlotConf(imageDirectory, title, x, meanR, eR, '# of clients', yunit, legend);         
+figure('Name',param)
+hold on;
+%bar(x, mean,'facecolor',[.8 .8 .8]); ylabel(ylab); xlabel(xlab);
+errorbar(x,meanR3(1,:),eR3(1,:),'LineWidth',1);
 ylabel(ylab);
 xlabel(xlab);
 legend(l, 'Location','northwest');

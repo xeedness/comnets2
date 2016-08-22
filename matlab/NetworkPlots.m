@@ -8,6 +8,7 @@ alpha = 0.05;
 %Prepend folder for result set
 imageDirectory = 'images/tst/';
 %The amount of clients
+%x = [1,5,10,15,20,30,40,50,60];
 x = [1,5,10,15,20,30,40,50,60];
 %x = [1,5];
 
@@ -53,15 +54,20 @@ searchArray = {%'ProfessorsLaptop.udpApp[0]','"packets sent"';
     %'CCTVCamera.udpApp[0]','"packets sent"';
     %'CCTVMonitoring.udpApp[0]','"packets received"';
     %'CCTVMonitoring.udpApp[0]','"discarded packets"';
+    'RemoteAccessPoint.wlan[0].mgmt','dataQueueLen:timeavg';
+    'ConferenceLaptop.wlan[0].mgmt','dataQueueLen:timeavg';
+    'FTPLaptop.wlan[0].mgmt','dataQueueLen:timeavg';
+   
     }
 
 
-[ result ] = extractDataSca( fileBase, fileStartNr, fileEndNr, searchArray );
+%[ result ] = extractDataSca( fileBase, fileStartNr, fileEndNr, searchArray );
 
 searchArray = {'BrowsingLaptop','wlan[0].mgmt', 'dropPkByQueue:count';
     'BrowsingLaptop','wlan[0].mac','rcvdPkFromHL:count';
+    'BrowsingLaptop','wlan[0].mgmt', 'dataQueueLen:timeavg';
     }
-[ result2 ] = extractDataMulti( fileBase, fileStartNr, fileEndNr, searchArray);
+%[ result2 ] = extractDataMulti( fileBase, fileStartNr, fileEndNr, searchArray);
 
 
 
@@ -110,6 +116,11 @@ throughputRAPIn = (result(:,17) .* 8) ./ (1000*1000*simtime);
 throughputRAPOut = (result(:,18) .* 8) ./ (1000*1000*simtime);
 throughputRAPCombined = throughputRAPIn+throughputRAPOut;
 
+queueLengthAvgRAP = result(:,19);
+queueLengthAvgConf = result(:,20);
+queueLengthAvgFTP = result(:,21);
+queueLengthAvgBrowser = result2(:,3);
+
 
 %queueAvgWaitRemote = result2(:,1);
 %queueAvgWaitMain = result2(:,2);
@@ -123,6 +134,10 @@ modResults = [
               throughputRAPIn'
               throughputRAPOut'
               throughputRAPCombined'
+              queueLengthAvgRAP'
+              queueLengthAvgConf'
+              queueLengthAvgFTP'
+              queueLengthAvgBrowser'
               %avgQueueLengthRemote'
               %avgQueueLengthMain'
               %dropRatioRAP'
@@ -154,9 +169,9 @@ l = {'Remote Router', 'Main Router', 'WLAN'};
 figure('Name',param)
 hold on;
 %bar(x, mean,'facecolor',[.8 .8 .8]); ylabel(ylab); xlabel(xlab);
-errorbar(x,meanR1(1,:),eR1(1,:),'LineWidth',2);
-errorbar(x,meanR1(2,:),eR1(2,:),'LineWidth',2);
-errorbar(x,meanR1(3,:),eR1(3,:),'LineWidth',2);
+errorbar(x,meanR1(1,:),eR1(1,:),'LineWidth',1);
+errorbar(x,meanR1(2,:),eR1(2,:),'-o','LineWidth',1);
+errorbar(x,meanR1(3,:),eR1(3,:),'-s','LineWidth',1);
 ylabel(ylab);
 xlabel(xlab);
 legend(l);
@@ -177,10 +192,36 @@ l = {'To Main Campus', 'To Remote Campus', 'Radio Link', 'WLAN'};
 figure('Name',param)
 hold on;
 %bar(x, mean,'facecolor',[.8 .8 .8]); ylabel(ylab); xlabel(xlab);
-errorbar(x,meanR2(1,:),eR2(1,:),'LineWidth',2);
-errorbar(x,meanR2(2,:),eR2(2,:),'LineWidth',2);
-errorbar(x,meanR2(3,:),eR2(3,:),'LineWidth',2);
-errorbar(x,meanR2(4,:),eR2(4,:),'LineWidth',2);
+errorbar(x,meanR2(1,:),eR2(1,:),'LineWidth',1);
+errorbar(x,meanR2(2,:),eR2(2,:),'-o','LineWidth',1);
+errorbar(x,meanR2(3,:),eR2(3,:),'-s','LineWidth',1);
+errorbar(x,meanR2(4,:),eR2(4,:),'-p','LineWidth',1);
+ylabel(ylab);
+xlabel(xlab);
+legend(l, 'Location','southeast');
+title(param);
+if ~exist(imageDirectory,'dir')
+    mkdir(imageDirectory);
+end
+print(strcat(imageDirectory,param), '-dpng');
+
+
+meanR2 = mean(10:12,:);
+eR2 = e(10:12,:);
+meanR2 = [meanR2; mean(13,:) ./ x];
+eR2 = [eR2; (e(13,:) ./ x)];
+param = 'Average Queue Lengths';
+xlab = '# of clients';
+ylab = 'Mbps';
+l = {'Access Point', 'Conference Laptop', 'FTP Laptop', 'Single Browser'};
+%combPlotConf(imageDirectory, title, x, meanR, eR, '# of clients', yunit, legend);         
+figure('Name',param)
+hold on;
+%bar(x, mean,'facecolor',[.8 .8 .8]); ylabel(ylab); xlabel(xlab);
+errorbar(x,meanR2(1,:),eR2(1,:),'LineWidth',1);
+errorbar(x,meanR2(2,:),eR2(2,:),'-o','LineWidth',1);
+errorbar(x,meanR2(3,:),eR2(3,:),'-s','LineWidth',1);
+errorbar(x,meanR2(4,:),eR2(4,:),'-p','LineWidth',1);
 ylabel(ylab);
 xlabel(xlab);
 legend(l, 'Location','southeast');
