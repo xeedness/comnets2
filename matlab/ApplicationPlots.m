@@ -6,14 +6,14 @@ simtime = 1000;
 repititions = 15;
 alpha = 0.05;
 %Prepend folder for result set
-imageDirectory = 'images/tst/';
+imageDirectory = 'images/finalnocctv/';
 %The amount of clients
 x = [1,5,10,15,20,30,40,50,60];
 %x = [1,5];
 
 
 % fileBase contains the path to result data file up to the run number
-fileBase = '../results/final2-cctv-160821/ExamTaskNetwork-'
+fileBase = '../results/final2-nocctv-160821/ExamTaskNetwork_no_CCTV-'
 
 % fileStartNr denotes the first run number
 fileStartNr = 0;
@@ -72,8 +72,8 @@ lossRatiosProf = (result(:,4) - (result(:,2)-result(:,3))) ./(result(:,4));
 lossRatiosConf = (result(:,1) - (result(:,5)-result(:,6))) ./(result(:,1));
 lossRatiosProf = lossRatiosProf .* 100;
 lossRatiosConf = lossRatiosConf .* 100;
-lossRatiosCamera = (result(:,11) - (result(:,12)-result(:,13))) ./(result(:,11));
-lossRatiosCamera = lossRatiosCamera .* 100;
+%lossRatiosCamera = (result(:,11) - (result(:,12)-result(:,13))) ./(result(:,11));
+%lossRatiosCamera = lossRatiosCamera .* 100;
 %dropRatioRemote = result(:,7) ./ (result(:,7) + result(:,8));
 %dropRatioMain = result(:,10) ./ (result(:,10) + result(:,11));
 %dropRatioRemote = dropRatioRemote .* 100;
@@ -128,7 +128,7 @@ modResults = [
               sessionavgtime'
               lossRatiosProf'
               lossRatiosConf'
-              lossRatiosCamera'
+              %lossRatiosCamera'
               ]';
 
 % calculate confidence intervals
@@ -139,8 +139,8 @@ eR1 = [e(1:2,:); (e(2,:) ./ x)];
 meanR1 = [meanR1; (mean(2,:) ./ x) .*  (x ./ mean(3,:))];
 eR1 = [eR1; (e(2,:) ./ x) .*  (x ./ e(3,:))];
 
-meanR2 = mean(4:6,:);
-eR2 = e(4:6,:);
+meanR2 = mean(4:5,:);
+eR2 = e(4:5,:);
 resultArray = {'ProfessorsLaptop','packet loss ratio','%';
                 'ConferenceLaptop','packet loss ratio','%';
                 'RemoteRouter', 'drop ratio','%';
@@ -172,7 +172,7 @@ plot(x,meanR1(4,:),'LineWidth',2);
 ylabel(ylab);
 xlabel(xlab);
 legend(l);
-title(param);
+%title(param);
 if ~exist(imageDirectory,'dir')
     mkdir(imageDirectory);
 end
@@ -183,18 +183,18 @@ print(strcat(imageDirectory,param), '-dpng');
 param = 'Application Packet Loss Rates';
 xlab = '# of clients';
 ylab = '%';
-l = {'Professors Laptop ', 'Conference Laptop', 'CCTV Monitor'};
+l = {'Professors Laptop ', 'Conference Laptop'}%, 'CCTV Monitor'};
 %combPlotConf(imageDirectory, title, x, meanR, eR, '# of clients', yunit, legend);         
 figure('Name',param)
 hold on;
 %bar(x, mean,'facecolor',[.8 .8 .8]); ylabel(ylab); xlabel(xlab);
 errorbar(x,meanR2(1,:),eR2(1,:),'LineWidth',2);
 errorbar(x,meanR2(2,:),eR2(2,:),'LineWidth',2);
-errorbar(x,meanR2(3,:),eR2(2,:),'LineWidth',2);
+%errorbar(x,meanR2(3,:),eR2(2,:),'LineWidth',2);
 ylabel(ylab);
 xlabel(xlab);
 legend(l, 'Location','northwest');
-title(param);
+%title(param);
 if ~exist(imageDirectory,'dir')
     mkdir(imageDirectory);
 end

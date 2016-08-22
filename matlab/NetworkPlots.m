@@ -6,14 +6,14 @@ simtime = 1000;
 repititions = 15;
 alpha = 0.05;
 %Prepend folder for result set
-imageDirectory = 'images/tst/';
+imageDirectory = 'images/finalnocctv/';
 %The amount of clients
 x = [1,5,10,15,20,30,40,50,60];
 %x = [1,5];
 
 
 % fileBase contains the path to result data file up to the run number
-fileBase = '../results/final2-cctv-160821/ExamTaskNetwork-'
+fileBase = '../results/final2-nocctv-160821/ExamTaskNetwork_no_CCTV-'
 
 % fileStartNr denotes the first run number
 fileStartNr = 0;
@@ -160,7 +160,7 @@ errorbar(x,meanR1(3,:),eR1(3,:),'LineWidth',2);
 ylabel(ylab);
 xlabel(xlab);
 legend(l);
-title(param);
+%title(param);
 if ~exist(imageDirectory,'dir')
     mkdir(imageDirectory);
 end
@@ -184,7 +184,7 @@ errorbar(x,meanR2(4,:),eR2(4,:),'LineWidth',2);
 ylabel(ylab);
 xlabel(xlab);
 legend(l, 'Location','southeast');
-title(param);
+%title(param);
 if ~exist(imageDirectory,'dir')
     mkdir(imageDirectory);
 end

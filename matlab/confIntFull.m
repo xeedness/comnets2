@@ -2,24 +2,24 @@
 % voip/video streams of the profesors and conference laptops and plots them
 
 simtime = 100;
-%repititions = 15;
-repititions = 1;
+repititions = 15;
+%repititions = 1;
 alpha = 0.05;
 %Prepend folder for result set
-imageDirectory = 'images/tst/';
+imageDirectory = 'images/finalnocctv/';
 %The amount of clients
-%x = [1,5,10,15,20,30,40,50,60];
-x = [1,5,10];
+x = [1,5,10,15,20,30,40,50,60];
+%x = [1,5,10];
 
 
 % fileBase contains the path to result data file up to the run number
-%fileBase = '../results/final2-cctv-160821/ExamTaskNetwork-'
-fileBase = '../examTask/results/ExamTaskNetwork-'
+fileBase = '../results/final2-nocctv-160821/ExamTaskNetwork_no_CCTV-'
+%fileBase = '../examTask/results/ExamTaskNetwork-'
 % fileStartNr denotes the first run number
 fileStartNr = 0;
 % fileEndNr denotes the last run number
-%fileEndNr = 134;
-fileEndNr = 2;
+fileEndNr = 134;
+%fileEndNr = 2;
 % the search array contains the modulename and parameter name to look at
 % the data is extracted for each row
 searchArray = {'ProfessorsLaptop.udpApp[0]','"packets sent"';
@@ -42,7 +42,8 @@ searchArray = {'ProfessorsLaptop.udpApp[0]','"packets sent"';
     'RemoteAccessPoint.wlan[0].mac','number of collisions';
     'Internet.tcpApp[1]', 'rcvdPk:sum(packetBytes)';
     'MainRouter.ppp[0].inputHook[0]', 'avg throughput (bit/s)'
-    'MainRouter.ppp[0].outputHook[0]', 'avg throughput (bit/s)';}
+    'MainRouter.ppp[0].outputHook[0]', 'avg throughput (bit/s)';
+    'ConferenceLaptop.udpApp[0]','"discarded packets"';}
 
 
 [ result ] = extractDataSca( fileBase, fileStartNr, fileEndNr, searchArray );
@@ -111,7 +112,7 @@ resultArray = {'ProfessorsLaptop','packet loss ratio','%';
                 'RAP', 'drop ratio hl','%';
                 'RAP + Main', 'drop ratio','%';
                 'ConferenceLaptop', 'traffic share','bytes/s';
-                'RAP', 'Throughput', 'Mbps';
+                'RAP', 'WRONG WRONG WRONG Throughput WRONG WRONG WRONG', 'Mbps';
                 'RAP', '# of collisions', ' ';
                 'FTPLaptop','Throughput', 'Mbps';
                 'MainRouter', 'Throughput In', 'Mbps';

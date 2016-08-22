@@ -9,6 +9,10 @@ function [ result ] = extractDataMultiByMod( fileBase, fileStartNr, fileEndNr, m
 %   The result contains the extracted values for each row in the search
 %   array
 
+    %disp(zeros(1+(fileEndNr-fileStartNr)));
+    disp(searchArray)
+    disp(size(searchArray,1));
+
     result = zeros(1+(fileEndNr-fileStartNr),size(searchArray,1));
     fprintf('Starting Multiple Value Extraction.');
     for fileIt=fileStartNr:fileEndNr
