@@ -178,7 +178,24 @@ if ~exist(imageDirectory,'dir')
 end
 print(strcat(imageDirectory,param), '-dpng');
 
-
+param = 'Single HTTP Request Throughputs';
+xlab = '# of clients';
+ylab = 'Mbps';
+l = {'HTTP Throughput', 'Adjusted HTTP Throughput'};
+%combPlotConf(imageDirectory, title, x, meanR, eR, '# of clients', yunit, legend);         
+figure('Name',param)
+hold on;
+%bar(x, mean,'facecolor',[.8 .8 .8]); ylabel(ylab); xlabel(xlab);
+plot(x,meanR1(3,:),'LineWidth',2);
+plot(x,meanR1(4,:),'LineWidth',2);
+ylabel(ylab);
+xlabel(xlab);
+legend(l);
+title(param);
+if ~exist(imageDirectory,'dir')
+    mkdir(imageDirectory);
+end
+print(strcat(imageDirectory,param), '-dpng');
 
 param = 'Application Packet Loss Rates';
 xlab = '# of clients';
