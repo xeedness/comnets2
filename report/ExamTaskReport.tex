@@ -99,6 +99,7 @@ TODO!
 To analyze the desired network setup, simulations were conducted. The simulated network was set up as illustrated in fig. \ref{fig:network}. The following section discusses the implementation of the simulation and its configurations.
 
 \subsection{Applications}
+\label{subsec:apps}
 The network in question contains four different ways of using the network: video conference, FTP upload, web browsing and CCTV. Since all of these traffic types have different characteristics, dedicated applications which model their behavior were created.
 
 \begin{description}
@@ -331,19 +332,47 @@ As a second measure, the same simulations were conducted without any CCTV infras
 \subsubsection{General observations}
 \begin{figure}[!ht]
   \centering
-  \includegraphics[width=\textwidth]{../matlab/images/finalnocctv/Application Throughputs.png}
+  \includegraphics[width=0.6\textwidth]{../matlab/images/finalnocctv/Application Throughputs.png}
   \caption{Throughput of the FTP and web browsing applications} \label{fig:app_throughput}
 \end{figure}
 \begin{figure}[!ht]
   \centering
-  \includegraphics[width=\textwidth]{../matlab/images/finalnocctv/Application Throughputs.png}
-  \caption{Throughput of the FTP and web browsing applications} \label{fig:app_throughput}
+  \includegraphics[width=0.6\textwidth]{../matlab/images/finalnocctv/Browser -average session duration.png}
+  \caption{Throughput of the FTP and web browsing applications} \label{fig:browser_sess_dur}
+\end{figure}
+\begin{figure}[!ht]
+  \centering
+  \includegraphics[width=0.6\textwidth]{../matlab/images/finalnocctv/Application Packet Delays.png}
+  \caption{Throughput of the FTP and web browsing applications} \label{fig:app_pkt_delay}
+\end{figure}
+\begin{figure}[!ht]
+  \centering
+  \includegraphics[width=0.6\textwidth]{../matlab/images/finalnocctv/Application Packet Loss Rates.png}
+  \caption{Throughput of the FTP and web browsing applications} \label{fig:app_pkt_loss}
+\end{figure}
+\begin{figure}[!ht]
+  \centering
+  \includegraphics[width=0.6\textwidth]{../matlab/images/finalnocctv/RAP -Average Queue Length.png}
+  \caption{Throughput of the FTP and web browsing applications} \label{fig:rap_queue_len}
 \end{figure}
 
-\paragraph{The Web browsers} are the parameter continuously changing throughout the simulation, as detailed in section \ref{sec:sim_plan}. Figure \ref{fig:app_throughput} shows that while the overall HTTP traffic throughput rises with the number of web browsing clients, the throughput achieved per browser, demoted as ``Single HTTP throughput'' decreases.
 
+
+In order to analyze the overall network behavior, it is useful that we first familiarize ourselves with the behavior of its components, i.e. the applications described in section \ref{subsec:apps}.
+
+\paragraph{The Web browsers} are the parameter continuously changing throughout the simulation, as detailed in section \ref{sec:sim_plan}. Figure \ref{fig:app_throughput} shows that while the average overall HTTP traffic throughput rises with the number of web browsing clients, the average throughput achieved per browser, called ``Single HTTP throughput'' decreases. Additionally, fig. \ref{fig:browser_sess_dur} shows that the average session duration per browser increases with the number of clients, suggesting a higher latency for HTTP data to reach its destination. Notably, the session duration grows linearly starting at 20 clients.
+
+\paragraph{The FTP client}, shown in fig. \ref{fig:app_throughput} as well, experiences a (TODO: characteristic) decline in throughput that is inverse to the increase in overall HTTP throughput. This can be explained with TCP's congestion control mechanisms: the more bandwidth is used by web browsing clients, the more the FTP client is forced to react by limiting its bandwidth in order to avoid collisions. In short: the FTP client will use up as much bandwidth as you let them.
+
+\paragraph{The video conference} has to be looked at as two distinct data flows: one going from the professor's laptop to the video conference laptop, and one traveling the other way. This becomes apparent when looking at figures \ref{fig:app_pkt_delay} and \ref{fig:app_pkt_loss}, which depict the average packet loss rate and delay for both directions in relation to the number of web browsing clients in the network.\\
+Since it is known that the that the delays of the radio and DFN links are 10 and 5 seconds respectively, all application delays must be at least 15s. While the delay at the professor's laptop stays very close to this ideal value and only increases marginally when adding new clients, the delay at the conference laptop appears to grow logarithmically. This can be explained by examining the average queue length at the remote access point (see fig. \ref{fig:rap_queue_len}): With an increased number of web browsing clients receiving large HTTP responses, the amount of data being sent from the access point into the WLAN increases as well. In combination with the outgoing traffic of the FTP client, increased contention for the wireless medium causes incoming data to aggregate at the access point, resulting in a higher delay at the conference laptop.
+
+% TODO: kann man ableiten dass die queue aus gründen logarithmusch (und nciht zB quadratisch) wächst?)
+%TODO: bis 20 linear, dann beschränkt?
+TODO: explain packet loss!!
 
 \subsubsection{Application influence on video quality}
+
 
 \subsubsection{Maxmimum number of web browsing clients}
 bevor video conf gefährdet ist bzw bis studi browsing erlebnis unbrauchbar ist
