@@ -6,15 +6,15 @@ simtime = 1000;
 repititions = 15;
 alpha = 0.05;
 %Prepend folder for result set
-imageDirectory = 'images/tst/';
+%Prepend folder for result set
+imageDirectory = 'images/finalnocctv/';
 %The amount of clients
-%x = [1,5,10,15,20,30,40,50,60];
 x = [1,5,10,15,20,30,40,50,60];
 %x = [1,5];
 
 
 % fileBase contains the path to result data file up to the run number
-fileBase = '../results/final2-cctv-160821/ExamTaskNetwork-'
+fileBase = '../results/final2-nocctv-160821/ExamTaskNetwork_no_CCTV-'
 
 % fileStartNr denotes the first run number
 fileStartNr = 0;
@@ -121,6 +121,9 @@ queueLengthAvgConf = result(:,20);
 queueLengthAvgFTP = result(:,21);
 queueLengthAvgBrowser = result2(:,3);
 
+queueLengthRR = result(:,3);
+queueLengthMR = result(:,6);
+
 
 %queueAvgWaitRemote = result2(:,1);
 %queueAvgWaitMain = result2(:,2);
@@ -137,6 +140,8 @@ modResults = [
               queueLengthAvgRAP'
               queueLengthAvgConf'
               queueLengthAvgFTP'
+              queueLengthRR'
+              queueLengthMR'
               queueLengthAvgBrowser'
               %avgQueueLengthRemote'
               %avgQueueLengthMain'
@@ -206,14 +211,14 @@ end
 print(strcat(imageDirectory,param), '-dpng');
 
 
-meanR2 = mean(10:12,:);
-eR2 = e(10:12,:);
-meanR2 = [meanR2; mean(13,:) ./ x];
-eR2 = [eR2; (e(13,:) ./ x)];
+meanR2 = mean(10:14,:);
+eR2 = e(10:14,:);
+meanR2 = [meanR2; mean(15,:) ./ x];
+eR2 = [eR2; (e(15,:) ./ x)];
 param = 'Average Queue Lengths';
 xlab = '# of clients';
-ylab = 'Mbps';
-l = {'Access Point', 'Conference Laptop', 'FTP Laptop', 'Single Browser'};
+ylab = '# of packets';
+l = {'Access Point', 'Conference Laptop', 'FTP Laptop','Remote Router', 'Main Router', 'Single Browser'};
 %combPlotConf(imageDirectory, title, x, meanR, eR, '# of clients', yunit, legend);         
 figure('Name',param)
 hold on;
@@ -222,6 +227,8 @@ errorbar(x,meanR2(1,:),eR2(1,:),'LineWidth',1);
 errorbar(x,meanR2(2,:),eR2(2,:),'-o','LineWidth',1);
 errorbar(x,meanR2(3,:),eR2(3,:),'-s','LineWidth',1);
 errorbar(x,meanR2(4,:),eR2(4,:),'-p','LineWidth',1);
+errorbar(x,meanR2(4,:),eR2(4,:),'-h','LineWidth',1);
+errorbar(x,meanR2(4,:),eR2(4,:),'-x','LineWidth',1);
 ylabel(ylab);
 xlabel(xlab);
 legend(l, 'Location','southeast');
