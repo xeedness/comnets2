@@ -43,7 +43,7 @@ modResults = [throughputRcvdBrowserSingle throughputSendBrowserSingle avgSession
 
 resultArray = {'Browser', 'rcvd throughput single', 'bytes/s';
                 'Browser', 'send throughput single', 'bytes/s';
-                'Browser', 'average session duration', 'seconds?'}
+                'Browser', 'average session duration', 'seconds'}
             
 %plot each row of mean and confidence intervals
 % A row corresponds to the row in the search array
