@@ -442,14 +442,15 @@ Even at 60 clients, the Client delay does not significantly exceed half of the p
 When taking the students' web browsing experience into account, however, the maximum number of clients is reached far quicker with the current setup. The acceptable response time of 10s is already reached with \textless 15 clients, as can be seen in fig. \ref{fig:browser_sess_dur}.% TODO: calculate exact number
 
 \section{Recommended Changes To The Network}
-TODO: are there any things we'd recommend to be changed based on our simulations?
-TODO: wie kann man die video QoS verbessern, wie die browsing QoS?
-- mehr APs *auf unterschiedlichen channeln!* (da das WLAN medium sonst überlastet ist und zum bottleneck wird) -> ein AP pro 20 clients
-- gemeinsames updaten der WLAN und RadioLink bandwidth
-- begrenzung der wlan bandbreite pro client -> reduzierungdes FTP uploads, erhöhung des http throughputs
-- dringend: reduzierung der queue sizes
-\section{Conclusion}
-TODO
+%TODO: are there any things we'd recommend to be changed based on our simulations?
+%TODO: wie kann man die video QoS verbessern, wie die browsing QoS?
+%- mehr APs *auf unterschiedlichen channeln!* (da das WLAN medium sonst überlastet ist und zum bottleneck wird) -> ein AP pro 20 clients
+%- gemeinsames updaten der WLAN und RadioLink bandwidth
+%- begrenzung der wlan bandbreite pro client -> reduzierungdes FTP uploads, erhöhung des http throughputs
+%- dringend: reduzierung der queue sizes
+As shown in the previous section, the network at hand provides a satisfactory quality of service for video conference data with up to 90 students browsing the web in parallel. The web browsing experience, however, is sub-par as soon as $\geq$ 15 clients are active. This is due to the fact that the Remote Access Point cannot provide more than 10 Mbit/s of bandwidth and is therefore the main bottleneck.\\
+Based on these findings, we recommend to install additional access points if more than 15 students are expected to be active in the network. With more access points installed, the bottleneck would shift to the radio link, which therefore would need to be upgraded as well.\\
+Additionally, limiting the bandwidth available to each individual user may improve the overall surfing experience as it prevents users such as the FTP client from unfairly occupying the channel at any time.
 
 %----------------------------------------------------------------------------------------
 %   GLOSSARY ETC
@@ -458,6 +459,15 @@ TODO
 
 \section{Distribution of tasks}
 TODO: Aufgabenverteilung aufschlüsseln
+
+Introductory text: Lotte
+Simulation Implementation:  Lotte
+Simulation Execution: Alex
+Simulation Plan text: Alex
+Plotting: Alex
+With CCTV: Alex
+Without CCTV: Lotte
+
 
 \section{Terminology}
 % this is not how it's done properly, but I don't want to fight with latex anymore right now...
