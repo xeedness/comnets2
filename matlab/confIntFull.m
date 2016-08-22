@@ -43,7 +43,8 @@ searchArray = {'ProfessorsLaptop.udpApp[0]','"packets sent"';
     'Internet.tcpApp[1]', 'rcvdPk:sum(packetBytes)';
     'MainRouter.ppp[0].inputHook[0]', 'avg throughput (bit/s)'
     'MainRouter.ppp[0].outputHook[0]', 'avg throughput (bit/s)';
-    'ConferenceLaptop.udpApp[0]','"discarded packets"';}
+    'ConferenceLaptop.udpApp[0]','"discarded packets"';
+    'RemoteAccessPoint.wlan[0].mgmt', 'dataQueueLen:timeavg';}
 
 
 [ result ] = extractDataSca( fileBase, fileStartNr, fileEndNr, searchArray );
@@ -81,6 +82,9 @@ throughputMROut = result(:,21) ./ (1000*1000);
 
 throughputCombinedMR = throughputMRIn+throughputMROut;
 
+avgQueueLengthRAP = result(:,23);
+
+
 %queueAvgWaitRemote = result2(:,1);
 %queueAvgWaitMain = result2(:,2);
 modResults = [lossRatiosProf'
@@ -97,7 +101,8 @@ modResults = [lossRatiosProf'
               throughputFTP'
               throughputMRIn'
               throughputMROut'
-              throughputCombinedMR']';
+              throughputCombinedMR'
+              avgQueueLengthRAP']';
 
 % calculate confidence intervals
 [mean, e] = confIntervals( modResults, repititions, alpha);
@@ -117,7 +122,8 @@ resultArray = {'ProfessorsLaptop','packet loss ratio','%';
                 'FTPLaptop','Throughput', 'Mbps';
                 'MainRouter', 'Throughput In', 'Mbps';
                 'MainRouter', 'Throughput Out', 'Mbps';
-                'MainRouter', 'Throughput Combined', 'Mbps'};
+                'MainRouter', 'Throughput Combined', 'Mbps'
+                'RAP', 'Average Queue Length', '# of packets'};
             
 %plot each row of mean and confidence intervals
 % A row corresponds to the row in the search array
