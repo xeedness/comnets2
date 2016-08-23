@@ -249,7 +249,7 @@ To find a suitable duration of the simulation, we need to examine the behavior o
 \begin{align*}
 y = 1-e^{-{\frac{1}{\mu}x}}
 \end{align*}
-If we want to include 0.95\% of the random values, we need to calculate the upper bound of the waiting time and the reply length, by applying the CDF:
+If we want to include 95\% of the random values, we need to calculate the upper bound of the waiting time and the reply length, by applying the CDF:
 \begin{align*}
 {-ln(0.05)} * 671539 B \approx 2MB
 \end{align*}
@@ -262,7 +262,7 @@ Our simulation showed, that the throughput for 60 clients goes down to 80000 bps
 \end{align*}
 To allow more of these requests, we set the maximum simulation time to 1000 seconds.
 
-Throughout the simulation, we looked at the confidence intervals of several averaged values. We found that a repetition of 15 for each simulation combination produces a sufficient confidence level.
+Throughout the simulation, we looked at the confidence intervals of several averaged values. We found that a repetition of 15 for each simulation combination produces sufficiently small intervals at a confidence level of 95\%.
 
 For the final simulation we end up with 9 different client and 2 CCTV settings, resulting in 270 simulation runs with a simulation duration of 1000 seconds.
 
@@ -320,14 +320,14 @@ This section contains the final evaluation of the network, when CCTV is included
 \begin{figure}[!ht]
   \centering
   \includegraphics[width=\textwidth]{Figures/cctv/Network_Throughputs.png}
-  \caption{Throughputs of the important links of the simulated network including confidence intervals at a confidence level of 0.95.} \label{fig:cctv_network_throughputs}
+  \caption{Throughputs of the important links of the simulated network including confidence intervals.} \label{fig:cctv_network_throughputs}
 \end{figure}
 
 The network throughputs are depicted in fig. \ref{fig:cctv_network_throughputs}. As expected the total rate of the radio link is slightly above the rate of the WLAN. This is due to the steady load, which is added directly by the CCTV stream. The remaining bandwidth is composed of the steady load of the video conference, the web browsing and FTP upload traffic. With a rising number of clients the traffic directed to the main campus decreases and the traffic to the remote campus increases. This can be explained by looking at the application throughputs depicted in \ref{fig:cctv_app_throughput_all}. With more clients the HTTP traffic uses a higher share of bandwidth. In general one can argue, that the major amount of HTTP traffic flows in the direction of the remote campus, while the traffic of the FTP upload flows to the main campus.
 \begin{figure}[!ht]
   \centering
   \includegraphics[width=\textwidth]{Figures/cctv/Application_Throughputs.png}
-  \caption{Average throughputs of the applications of the simulated network including confidence intervals at a confidence level of 0.95.} \label{fig:cctv_app_throughput_all}
+  \caption{Average throughputs of the applications of the simulated network including confidence intervals.} \label{fig:cctv_app_throughput_all}
 \end{figure}
 \subsubsection{Application Performance}
 In section \ref{performance_characteristics} we identified the important performance characteristics of the implemented applications. In this section we will step through them and apply the simulation results.
@@ -355,7 +355,7 @@ The performance characteristics of the video conference and the CCTV are the pac
 \begin{figure}[!ht]
   \centering
   \includegraphics[width=\textwidth]{Figures/cctv/Application_Packet_Loss_Rates.png}
-  \caption{Packet loss rates of the applications of the simulated network including confidence intervals at a confidence level of 0.95.} \label{fig:cctv_app_packet_loss_rates}
+  \caption{Packet loss rates of the applications of the simulated network including confidence intervals.} \label{fig:cctv_app_packet_loss_rates}
 \end{figure}
 
 The packet loss rates of the CCTV stream starts at a comparably high packet loss rate and decreases up to 0 for a higher number of clients. When a low number of clients is using the network almost all TCP traffic is directed to the main campus. Therefore the congestion at the radio link causes the queues at the Remote Router to drop packets. Therefore increasing the packet loss rate of the CCTV stream. A packet loss rate of 5\% is not exceeded at any amount of clients. Therefore a good quality is to be expected.
@@ -366,7 +366,7 @@ The before mentioned loss rates are far below our threshold of 5\%. Therefore th
 \begin{figure}[!ht]
   \centering
   \includegraphics[width=\textwidth]{Figures/cctv/Application_Packet_Delays.png}
-  \caption{Average packet delays of the applications of the simulated network including confidence intervals at a confidence level of 0.95.} \label{fig:cctv_app_packet_delays}
+  \caption{Average packet delays of the applications of the simulated network including confidence intervals.} \label{fig:cctv_app_packet_delays}
 \end{figure}
 
 The delay depicted in figure \ref{fig:cctv_app_packet_delays} is constantly low enough to be considered acceptable. The inverse behavior of the delays is caused by the direction of the expected traffic. At low client numbers only the queue at the Remote Router delays the packets. With an increasing number of clients the access point and the Main Router delay the packets due to the HTTP replies.
@@ -377,13 +377,14 @@ The packet drop rates of the network queues are depicted in fig. \ref{fig:cctv_n
 \begin{figure}[!ht]
   \centering
   \includegraphics[width=\textwidth]{Figures/cctv/Network_Packet_Drop_Rates.png}
-  \caption{Average packet drop rates of the simulated network including confidence intervals at a confidence level of 0.95.} \label{fig:cctv_netw_packet_drop_rates}
+  \caption{Average packet drop rates of the simulated network including confidence intervals.} \label{fig:cctv_netw_packet_drop_rates}
 \end{figure}
 
 The drop rate of the WLAN is increasing monotonously, while the Main Router drop rate increases more steeply, but decreases at a higher number of clients. The Remote Router queue is around zero regardless. This is due to the fact, that the main TCP traffic directed to the main campus is the FTP upload. Since it is only one stream, it can perfectly adapt to the available bandwidth. Furthermore it indicates that the WLAN is used at maximum capacity, because even the 8KiB HTTP requests should cause congestion at the Remote Router. The WLAN is therefore filtering the traffic originating from the remote campus. So the packets actually reaching the Remote Router do not get dropped anymore. This means a usable capacity of the WLAN of 10Mbit, which is the bandwidth of the radio link minus the data rate of the CCTV.
 
-The steep increase of the drop rate at the main router indicates the impact of the HTTP requests. When a request reaches the internet, the server initiates a reply, which causes a congestion at the main router, because the radio link is fully in use at all times. With a low number of clients the increase of requests is primarily linear. Therefore the drop rates at the main router increase linearly as aswell. With the number of clients however the share of the bandwidth of each client decreases, this results in a longer session duration. A longer session duration means a decrease of the number of requests, since no new request is issued before the current request got served. This opposed effects increase the congestion at the main router up to 10 clients linearly. Afterwards the secondary effect decreases the congestion caused by the primary effect, resulting in a logarithmic behavior of several curves. For instance the packet drop rate at the WLAN access point. The queues at the access point and the main router contain the same traffic. Since the congestion at the access point continously rises, the access point reduces the request throughput, which causes the congestion and therefore drop rate of the main router to finally go down, when 30 web clients and more use the network.
-With more than 30 to 40 clients, the access point and therefore the WLAN takes over the role of the crucial bottleneck. 
+The steep increase of the drop rate at the Main Router indicates the impact of the HTTP requests. When a request reaches the Internet, the server initiates a reply, which causes a congestion at the Main Router, because the radio link is fully in use at all times. With a low number of clients the number of requests increases linearly. Therefore the drop rates at the Main Router increase linearly as as well. With the number of clients however the share of the bandwidth of each client decreases, this results in a longer session duration. A longer session duration means a decrease of the number of requests, since no new request is issued before the current request got served. This opposed effects increase the congestion at the Main Router up to 30 clients. Afterwards the secondary effect decreases the congestion caused by the primary effect.
+
+These effects however have no impact on the drop rates of the WLAN. The monotonous increase is just due to the rising number of participants in the WLAN network causing more packets to be dropped.
 
 \begin{figure}[!ht]
   \centering
@@ -392,7 +393,7 @@ With more than 30 to 40 clients, the access point and therefore the WLAN takes o
 \end{figure}
 
 \subsection{Network without CCTV}
-As a second measure, the same simulations were conducted without any CCTV infrastructure present. This section analyzes the simulation results of this configuration. First, the overall network behavior is discussed. Then, it focuses on the influence of FTP and web browsing applications on the video conference. Finally, possible bottlenecks are identified.
+As a second measure, the same simulations were conducted without any CCTV infrastructure present. This section analyzes the simulation results of this configuration. First, the overall network behavior is discussed. Then, it focuses on the influence of FTP and web browsing applications on the video conference. Finally, possible bottlenecks are identified. Note that all confidence intervals displayed in the following have a confidence level of 95\%, as stated in \ref{sec:sim_plan}.
 
 \subsubsection{Overall network behavior}
 
