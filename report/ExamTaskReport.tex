@@ -237,7 +237,7 @@ Since the FTP file transfer is a bulk upload rather than a continuous data strea
 The overall goal of the simulation is to evaluate how the previously described applications perform and what the bottlenecks of the network are. First we identified potentially changing parameters of the network. These are the variables we can modify between different simulation runs. Afterwards we identified critical performance characteristics of the applications and performance metrics of the potential bottlenecks.
 
 \subsection{Simulation Parameters}
-The first parameter to look at is the amount of web browsing clients. We expect a decreasing performance with the amount of clients rising.
+The first parameter to look at is the amount of Web Browsing Laptops. We expect a decreasing performance with the amount of clients rising.
 The second part is the CCTV. To determine the influence of the CCTV on the network performance, we either include or exclude the CCTV from the simulation.
 
 To determine the maximum number of clients to simulate, we looked at the scenario itself. An amount of 60 clients is a reasonable amount of students to be present in a $400m^{2}$ area. It can be assumed that they are surfing at the same time, if the lecture requires web research. To analyze the network thoroughly though, we need to make sure that the behavior with more clients does not change significantly. We found that it is not expected, that the behavior of the system changes significantly at a higher amount of clients, so we are able to extrapolate several network properties from the simulation results.
@@ -249,7 +249,7 @@ To find a suitable duration of the simulation, we need to examine the behavior o
 \begin{align*}
 y = 1-e^{-{\frac{1}{\mu}x}}
 \end{align*}
-If we want to include 0.95\% of the random values, we need to calculate the upper bound of the waiting time and the reply length, by applying the CDF:
+If we want to include 95\% of the random values, we need to calculate the upper bound of the waiting time and the reply length, by applying the CDF:
 \begin{align*}
 {-ln(0.05)} * 671539 B \approx 2MB
 \end{align*}
@@ -262,7 +262,7 @@ Our simulation showed, that the throughput for 60 clients goes down to 80000 bps
 \end{align*}
 To allow more of these requests, we set the maximum simulation time to 1000 seconds.
 
-Throughout the simulation, we looked at the confidence intervals of several averaged values. We found that a repetition of 15 for each simulation combination produces a sufficient confidence level.
+Throughout the simulation, we looked at the confidence intervals of several averaged values. We found that a repetition of 15 for each simulation combination produces sufficiently small intervals at a confidence level of 95\%.
 
 For the final simulation we end up with 9 different client and 2 CCTV settings, resulting in 270 simulation runs with a simulation duration of 1000 seconds.
 
@@ -320,14 +320,14 @@ This section contains the final evaluation of the network, when CCTV is included
 \begin{figure}[!ht]
   \centering
   \includegraphics[width=\textwidth]{Figures/cctv/Network_Throughputs.png}
-  \caption{Throughputs of the important links of the simulated network including confidence intervals at a confidence level of 0.95.} \label{fig:cctv_network_throughputs}
+  \caption{Throughputs of the important links of the simulated network including confidence intervals at a confidence level of 95\%.} \label{fig:cctv_network_throughputs}
 \end{figure}
 
 The network throughputs are depicted in fig. \ref{fig:cctv_network_throughputs}. As expected the total rate of the radio link is slightly above the rate of the WLAN. This is due to the steady load, which is added directly by the CCTV stream. The remaining bandwidth is composed of the steady load of the video conference, the web browsing and FTP upload traffic. With a rising number of clients the traffic directed to the main campus decreases and the traffic to the remote campus increases. This can be explained by looking at the application throughputs depicted in \ref{fig:cctv_app_throughput_all}. With more clients the HTTP traffic uses a higher share of bandwidth. In general one can argue, that the major amount of HTTP traffic flows in the direction of the remote campus, while the traffic of the FTP upload flows to the main campus.
 \begin{figure}[!ht]
   \centering
   \includegraphics[width=\textwidth]{Figures/cctv/Application_Throughputs.png}
-  \caption{Average throughputs of the applications of the simulated network including confidence intervals at a confidence level of 0.95.} \label{fig:cctv_app_throughput_all}
+  \caption{Average throughputs of the applications of the simulated network including confidence intervals at a confidence level of 95\%.} \label{fig:cctv_app_throughput_all}
 \end{figure}
 \subsubsection{Application Performance}
 In section \ref{performance_characteristics} we identified the important performance characteristics of the implemented applications. In this section we will step through them and apply the simulation results.
@@ -355,7 +355,7 @@ The performance characteristics of the video conference and the CCTV are the pac
 \begin{figure}[!ht]
   \centering
   \includegraphics[width=\textwidth]{Figures/cctv/Application_Packet_Loss_Rates.png}
-  \caption{Packet loss rates of the applications of the simulated network including confidence intervals at a confidence level of 0.95.} \label{fig:cctv_app_packet_loss_rates}
+  \caption{Packet loss rates of the applications of the simulated network including confidence intervals.} \label{fig:cctv_app_packet_loss_rates}
 \end{figure}
 
 The packet loss rates of the CCTV stream starts at a comparably high packet loss rate and decreases up to 0 for a higher number of clients. When a low number of clients is using the network almost all TCP traffic is directed to the main campus. Therefore the congestion at the radio link causes the queues at the Remote Router to drop packets. This increasing the packet loss rate of the CCTV stream. A packet loss rate of 5\% is not exceeded at any number of clients, resulting in a good quality.
@@ -366,7 +366,7 @@ The before mentioned loss rates are far below our threshold of 5\%. Therefore th
 \begin{figure}[!ht]
   \centering
   \includegraphics[width=\textwidth]{Figures/cctv/Application_Packet_Delays.png}
-  \caption{Average packet delays of the applications of the simulated network including confidence intervals at a confidence level of 0.95.} \label{fig:cctv_app_packet_delays}
+  \caption{Average packet delays of the applications of the simulated network including confidence intervals.} \label{fig:cctv_app_packet_delays}
 \end{figure}
 
 The delay depicted in figure \ref{fig:cctv_app_packet_delays} is constantly low enough to be considered acceptable. The inverse behavior of the delays is caused by the direction of the expected traffic. At low client numbers only the queue at the Remote Router delays the packets. With an increasing number of clients the access point and the Main Router delay the packets due to the HTTP replies.
@@ -377,7 +377,7 @@ The packet drop rates of the network queues are depicted in fig. \ref{fig:cctv_n
 \begin{figure}[!ht]
   \centering
   \includegraphics[width=\textwidth]{Figures/cctv/Network_Packet_Drop_Rates.png}
-  \caption{Average packet drop rates of the simulated network including confidence intervals at a confidence level of 0.95.} \label{fig:cctv_netw_packet_drop_rates}
+  \caption{Average packet drop rates of the simulated network including confidence intervals.} \label{fig:cctv_netw_packet_drop_rates}
 \end{figure}
 
 The drop rate of the WLAN is increasing monotonously, while the Main Router drop rate increases more steeply, but decreases at a higher number of clients. The Remote Router queue is around zero regardless. This is due to the fact, that the main TCP traffic directed to the main campus is the FTP upload. Since it is only one stream, it can perfectly adapt to the available bandwidth. Furthermore it indicates that the WLAN is used at maximum capacity, because even the 8KiB HTTP requests should cause congestion at the Remote Router. The WLAN is therefore filtering the traffic originating from the remote campus. So the packets actually reaching the Remote Router do not get dropped anymore. This means a usable capacity of the WLAN of 10Mbit, which is the bandwidth of the radio link minus the data rate of the CCTV.
@@ -393,7 +393,7 @@ Since the UDP stream directed to the conference laptop and the vast amount of tr
 \end{figure}
 
 \subsection{Network without CCTV}
-As a second measure, the same simulations were conducted without any CCTV infrastructure present. This section analyzes the simulation results of this configuration. First, the overall network behavior is discussed. Then, it focuses on the influence of FTP and web browsing applications on the video conference. Finally, possible bottlenecks are identified.
+As a second measure, the same simulations were conducted without any CCTV infrastructure present. This section analyzes the simulation results of this configuration. First, the overall network behavior is discussed. Then, it focuses on the influence of FTP and web browsing applications on the video conference. Finally, possible bottlenecks are identified. Note that all confidence intervals displayed in the following have a confidence level of 95\%, as stated in \ref{sec:sim_plan}.
 
 \subsubsection{Overall network behavior}
 
@@ -422,12 +422,12 @@ Due to the aforementioned ceiling, it is worthwhile to inspect the WLAN and the 
 \end{figure*}
 
 
-Fig. \ref{fig:app_throughput} summarizes the average application throughput with regard to the number of web browsing clients present in the network. In order to analyze the influence of the FTP and web browsing applications on the video quality, it is useful to first familiarize ourselves with the behavior of these applications.
+Fig. \ref{fig:app_throughput} summarizes the average application throughput with regard to the number of Web Browsing Laptops present in the network. In order to analyze the influence of the FTP and web browsing applications on the video quality, it is useful to first familiarize ourselves with the behavior of these applications.
 
-\paragraph{The Web browsers} are the parameter continuously changing throughout the simulation, as detailed in section \ref{sec:sim_plan}. Figure \ref{fig:app_throughput} shows that while the average overall HTTP traffic throughput rises with the number of web browsing clients, the average throughput achieved per browser decreases. Since bandwidth is limited, the TCP congestion control of each participant will negotiate a transmission rate that avoids collisions, throttling the overall transmission speed. Fig. \ref{fig:browser_sess_dur} verifies this: The average session duration per browser increases with the number of clients. According to the criteria determined in \ref{performance_characteristics}, browsing quality declines quickly: At less than 15 active clients, the quality threshold of 10 s is surpassed. Notably, the session duration grows linearly with $\geq$ 20 clients in the network.
+\paragraph{The Web browsers} are the parameter continuously changing throughout the simulation, as detailed in section \ref{sec:sim_plan}. Figure \ref{fig:app_throughput} shows that while the average overall HTTP traffic throughput rises with the number of Web Browsing Laptops, the average throughput achieved per browser decreases. Since bandwidth is limited, the TCP congestion control of each participant will negotiate a transmission rate that avoids collisions, throttling the overall transmission speed. Fig. \ref{fig:browser_sess_dur} verifies this: The average session duration per browser increases with the number of clients. According to the criteria determined in \ref{performance_characteristics}, browsing quality declines quickly: At less than 15 active clients, the quality threshold of 10 s is surpassed. Notably, the session duration grows linearly with $\geq$ 20 clients in the network.
 
 \paragraph{The FTP client}, shown in fig. \ref{fig:app_throughput} as well, experiences a %(TODO: characteristic)
-decline in throughput that is inverse to the increase in overall HTTP throughput. This also can be explained with TCP's congestion control mechanisms: the more bandwidth is used by web browsing clients, the more the FTP client is forced to react by limiting its bandwidth in order to avoid collisions. In short: the FTP client will use up as much bandwidth as you let them. It can be argued that the decrease in bandwidth is not as much of a nuisance as it is for the web browser users, since large file transfers are expected to take a while anyway.
+decline in throughput that is inverse to the increase in overall HTTP throughput. This also can be explained with TCP's congestion control mechanisms: the more bandwidth is used by Web Browsing Laptops, the more the FTP client is forced to react by limiting its bandwidth in order to avoid collisions. In short: the FTP client will use up as much bandwidth as you let them. It can be argued that the decrease in bandwidth is not as much of a nuisance as it is for the web browser users, since large file transfers are expected to take a while anyway.
 
 \begin{figure*}[!ht]%
 \makebox[\linewidth][c]{%
@@ -439,11 +439,14 @@ decline in throughput that is inverse to the increase in overall HTTP throughput
     \label{fig:conf_data}%
 \end{figure*}
 
-\paragraph{The video conference} has to be looked at as two distinct data flows: one going from the Professor's Laptop to the Video Conference Laptop, and one traveling the other way. This becomes apparent when looking at fig. \ref{fig:conf_data}, which depicts the average packet loss rate and delay for both directions in relation to the number of web browsing clients in the network. Note that the video conference is a UDP application periodically sending packets of a fixed size, and thus unaware of congestion or collisions.\\
-Since it is known that the that the delays of the radio and DFN links are 10 and 5 seconds respectively, all application delays must be at least 15s. While the delay at the Professor's Laptop stays very close to this ideal value and only increases marginally when adding new clients, the delay at the conference laptop appears to grow logarithmically. This can be explained by examining the average queue length at the Remote Access Point (see fig. \ref{fig:rap_queue_len}): With an increased number of web browsing clients receiving large HTTP responses, the amount of data being sent from the access point into the WLAN increases as well. In combination with the outgoing traffic of the FTP client, increased contention for the wireless medium causes incoming data to aggregate at the access point, resulting in a higher delay at the conference laptop.\\
+\paragraph{The video conference} has to be looked at as two distinct data flows: one going from the Professor's Laptop to the Video Conference Laptop, and one traveling the other way. This becomes apparent when looking at fig. \ref{fig:conf_data}, which depicts the average packet loss rate and delay for both directions in relation to the number of Web Browsing Laptops in the network. Note that the video conference is a UDP application periodically sending packets of a fixed size, and thus unaware of congestion or collisions.\\
+
+Since it is known that the that the delays of the radio and DFN links are 10 and 5 seconds respectively, all application delays must be at least 15 s. While the delay at the Professor's Laptop stays very close to this ideal value and only increases marginally when adding new clients, the delay at the conference laptop appears to grow logarithmically. This can be explained by examining the average queue length at the Remote Access Point (see fig. \ref{fig:rap_queue_len}): With an increased number of Web Browsing Laptops receiving large HTTP responses, the amount of data being sent from the access point into the WLAN increases as well. In combination with the outgoing traffic of the FTP client, increased contention for the wireless medium causes incoming data to aggregate at the access point, resulting in a higher delay at the conference laptop.\\
 % TODO: anhand des netzwerks ableiten dass die queue aus gründen logarithmisch (und nciht zB quadratisch) wächst
-The packet loss at the Conference Laptop can be explained as a combination of collisions occurring in the WLAN, packet loss at the Main Router and an increase in HTTP response traffic. From 1 to 10 web browsing clients, the video conference sees a slight decrease in its loss rate from 2\%. %to TODO.
-Around 0.5 to 2\% of this initial loss rate can be accounted for by the Main Router's loss rate, as illustrated in fig. \ref{fig:net_drop}. All additional packet losses may be caused by collisions in the WLAN (see fig. \ref{fig:rap_collisions}). Starting at 10 clients, the packet loss sees a steep increase, which correlates with the progress of the Main Router's packet drop rates. This increase, however, is dampened by the fact that with the number of web browsing clients, the amount of HTTP response traffic which shares the Main Router's queue with the video conference data rises as well. This way, less video data is discarded in total, as it makes up a smaller amount of the queue data.
+
+The packet loss at the Conference Laptop can be explained as a combination of collisions occurring in the WLAN, packet loss at the Main Router and an increase in HTTP response traffic.\\
+From 1 to 10 Web Browsing Laptops, the video conference sees a slight decrease in its loss rate from 2\%. After this, it increases linearly with a slope of about 0.56.%to TODO.
+Around 0.5 to 2\% of the initial loss rate (up until 10 clients) can be accounted for by the Main Router's loss rate, as illustrated in fig. \ref{fig:net_drop}. All additional packet losses may be caused by collisions in the WLAN (see fig. \ref{fig:rap_collisions}). Starting at 10 clients, the packet loss' steep increase correlates with the progress of the Main Router's packet drop rates. Note that its slope is smaller than that of the Main Router packet loss, though: It is dampened by the fact that with the number of Web Browsing Laptops, the amount of HTTP response traffic which shares the Main Router's queue with the video conference data rises as well. This way, less video data is discarded in total, as it makes up a smaller amount of the queue data.
 % TODO: weniger schwammig.
 
 \subsubsection{Identified bottlenecks}
@@ -455,14 +458,14 @@ Around 0.5 to 2\% of this initial loss rate can be accounted for by the Main Rou
 \end{figure}
 
 
-The main bottleneck is the WLAN: as can be seen in fig. \ref{fig:net_throughput}, its throughput stagnates around 10 Mbit/s, staying below the 12 Mbit/s the radio link would theoretically be capable of transmitting. However, even the radio link itself is not fully occupied. One cause for this may be the drop rate of the Main Router that can be seen in fig. \ref{fig:net_drop} in combination with the increasing session durations shown in fig. \ref{fig:browser_sess_dur}: Until its peak at 20 Web Browsing Laptops, the Main Router is confronted with more traffic caused by HTTP responses and video conference data flowing from the professor to the remote site than it can handle. After 20 clients, the increased session duration has caused an overall smaller number of sessions to be active, resulting in fewer data to be transmitted by the Main Router through the radio link. While this relieves the Main Router's queue, it also decreases the overall throughput of the radio link.
+The main bottleneck is the WLAN: as can be seen in fig. \ref{fig:net_throughput}, its throughput stagnates around 10 Mbit/s, staying below the 12 Mbit/s the radio link would theoretically be capable of transmitting. However, even the radio link itself is not fully occupied, even though the combination of HTTP responses and video data would theoretically be able to exhaust it, leaving the access point as the only bottleneck. One cause for this may be the drop rate of the Main Router that can be seen in fig. \ref{fig:net_drop} in combination with the increasing session durations shown in fig. \ref{fig:browser_sess_dur}: Until its peak at 20 Web Browsing Laptops, the Main Router is confronted with more traffic caused by HTTP responses and video conference data flowing from the professor to the remote site than it can handle. This causes packet loss, which in turn prompts TCP to throttle its transmissions. After 20 clients, the resulting increased session duration has caused an overall smaller number of sessions to be active, resulting in fewer data to be transmitted by the Main Router through the radio link. While this relieves the Main Router's queue, it also decreases the overall throughput of the radio link.
 
-\subsubsection{Maxmimum number of web browsing clients}
-When the video conference is key,the maximum number of web browsing clients is reached when either the average packet loss exceeds the maximum of 5\% or the average delay exceeds the maximum of 100 ms.\\
-Assuming client packet loss is linear starting at 10 clients, the video conference packet loss will exceed its maximum when $\geq$ 90 web browsing clients are present.
- Even at 60 clients, the delay measured at the Conference Laptop does not significantly exceed half of the permitted maximum delay of 100 ms, as can be seen in Fig. \ref{fig:ploss}.When assuming logarithmic growth, unacceptable packet loss rates will occur long before the maximum delay threshold is reached. \\
+\subsubsection{Maxmimum number of Web Browsing Laptops}
+When the video conference is the only criterion for network quality,the maximum number of Web Browsing Laptops is reached when either the average packet loss exceeds the maximum of 5\% or the average delay exceeds the maximum of 100 ms.\\
+Assuming client packet loss is linear starting at 10 clients, the video conference packet loss will exceed its maximum when $\geq$ 90 Web Browsing Laptops are present.
+Even at 60 clients, the delay measured at the Conference Laptop does not significantly exceed half of the permitted maximum delay of 100 ms, as can be seen in Fig. \ref{fig:ploss}.When assuming logarithmic growth, unacceptable packet loss rates will occur long before the maximum delay threshold is reached. \\
 
-When taking the students' web browsing experience into account, however, the maximum number of clients is reached far quicker with the current setup. The acceptable response time of 10s is already reached with \textless 15 clients, as can be seen in fig. \ref{fig:browser_sess_dur}.% TODO: calculate exact number
+When taking the students' web browsing experience into account, however, the maximum number of clients is reached far quicker with the current setup. The acceptable response time of 10s is already reached with \textless 15 Web Browsing laptops present, as can be seen in fig. \ref{fig:browser_sess_dur}.% TODO: calculate exact number
 
 
 \section{Recommended Changes To The Network}
