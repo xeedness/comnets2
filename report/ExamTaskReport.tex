@@ -320,14 +320,14 @@ This section contains the final evaluation of the network, when CCTV is included
 \begin{figure}[!ht]
   \centering
   \includegraphics[width=\textwidth]{Figures/cctv/Network_Throughputs.png}
-  \caption{Throughputs of the important links of the simulated network including confidence intervals.} \label{fig:cctv_network_throughputs}
+  \caption{Throughputs of the important links of the simulated network including confidence intervals at a confidence level of 95\%.} \label{fig:cctv_network_throughputs}
 \end{figure}
 
 The network throughputs are depicted in fig. \ref{fig:cctv_network_throughputs}. As expected the total rate of the radio link is slightly above the rate of the WLAN. This is due to the steady load, which is added directly by the CCTV stream. The remaining bandwidth is composed of the steady load of the video conference, the web browsing and FTP upload traffic. With a rising number of clients the traffic directed to the main campus decreases and the traffic to the remote campus increases. This can be explained by looking at the application throughputs depicted in \ref{fig:cctv_app_throughput_all}. With more clients the HTTP traffic uses a higher share of bandwidth. In general one can argue, that the major amount of HTTP traffic flows in the direction of the remote campus, while the traffic of the FTP upload flows to the main campus.
 \begin{figure}[!ht]
   \centering
   \includegraphics[width=\textwidth]{Figures/cctv/Application_Throughputs.png}
-  \caption{Average throughputs of the applications of the simulated network including confidence intervals.} \label{fig:cctv_app_throughput_all}
+  \caption{Average throughputs of the applications of the simulated network including confidence intervals at a confidence level of 95\%.} \label{fig:cctv_app_throughput_all}
 \end{figure}
 \subsubsection{Application Performance}
 In section \ref{performance_characteristics} we identified the important performance characteristics of the implemented applications. In this section we will step through them and apply the simulation results.
@@ -382,7 +382,7 @@ The packet drop rates of the network queues are depicted in fig. \ref{fig:cctv_n
 
 The drop rate of the WLAN is increasing monotonously, while the Main Router drop rate increases more steeply, but decreases at a higher number of clients. The Remote Router queue is around zero regardless. This is due to the fact, that the main TCP traffic directed to the main campus is the FTP upload. Since it is only one stream, it can perfectly adapt to the available bandwidth. Furthermore it indicates that the WLAN is used at maximum capacity, because even the 8KiB HTTP requests should cause congestion at the Remote Router. The WLAN is therefore filtering the traffic originating from the remote campus. So the packets actually reaching the Remote Router do not get dropped anymore. This means a usable capacity of the WLAN of 10Mbit, which is the bandwidth of the radio link minus the data rate of the CCTV.
 
-The steep increase of the drop rate at the Main Router indicates the impact of the HTTP requests. When a request reaches the Internet, the server initiates a reply, which causes a congestion at the Main Router, because the radio link is fully in use at all times. With a low number of clients the number of requests increases linearly. Therefore the drop rates at the Main Router increase linearly as as well. With the number of clients however the share of the bandwidth of each client decreases, this results in a longer session duration. A longer session duration means a decrease of the number of requests, since no new request is issued before the current request got served. This opposed effects increase the congestion at the Main Router up to 30 clients. Afterwards the secondary effect decreases the congestion caused by the primary effect.
+The steep increase of the drop rate at the Main Router indicates the impact of the HTTP requests. When a request reaches the Internet, the server initiates a reply, which causes a congestion at the Main Router, because the radio link is fully in use at all times. With a low number of clients the number of requests increases linearly. Therefore the drop rates at the Main Router increase linearly as as well. With the number of clients however the share of the bandwidth of each client decreases, this results in a longer session duration. A longer session duration means a decrease of the number of requests, since no new request is issued before the current request got served. This opposed effects increase the congestion at the main router up to 10 clients linearly. Afterwards the secondary effect decreases the congestion caused by the primary effect.
 
 These effects however have no impact on the drop rates of the WLAN. The monotonous increase is just due to the rising number of participants in the WLAN network causing more packets to be dropped.
 
