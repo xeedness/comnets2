@@ -49,8 +49,10 @@ searchArray = {%'ProfessorsLaptop.udpApp[0]','"packets sent"';
     %'Internet.tcpApp[0]', 'sentPk:sum(packetBytes)';
     'MainRouter.ppp[0].inputHook[0]', 'avg throughput (bit/s)'
     'MainRouter.ppp[0].outputHook[0]', 'avg throughput (bit/s)';
-    'RemoteAccessPoint.wlan[0].mac','rcvdPkFromLL:sum(packetBytes)';
-    'RemoteAccessPoint.wlan[0].mac','sentDownPk:sum(packetBytes)';
+    %'RemoteAccessPoint.wlan[0].mac','rcvdPkFromLL:sum(packetBytes)';
+    %'RemoteAccessPoint.wlan[0].mac','sentDownPk:sum(packetBytes)';
+    'RemoteAccessPoint.wlan[0].mac','passedUpPk:sum(packetBytes)';
+    'RemoteAccessPoint.wlan[0].mac','rcvdPkFromHL:sum(packetBytes)';
     %'CCTVCamera.udpApp[0]','"packets sent"';
     %'CCTVMonitoring.udpApp[0]','"packets received"';
     %'CCTVMonitoring.udpApp[0]','"discarded packets"';
@@ -186,13 +188,13 @@ if ~exist(imageDirectory,'dir')
 end
 print(strcat(imageDirectory,param), '-dpng');
 
-meanR2 = [mean(4:6,:);mean(9,:)];
-eR2 = [e(4:6,:);e(9,:)];
+meanR2 = [mean(4:6,:);mean(7:9,:)];
+eR2 = [e(4:6,:);e(7:9,:)];
 
 param = 'Network Throughputs';
 xlab = '# of clients';
 ylab = 'Mbps';
-l = {'To Main Campus', 'To Remote Campus', 'Radio Link', 'WLAN'};
+l = {'To Main Campus', 'To Remote Campus', 'Radio Link','RAP In', 'RAP Out', 'WLAN'};
 %combPlotConf(imageDirectory, title, x, meanR, eR, '# of clients', yunit, legend);         
 figure('Name',param)
 hold on;
@@ -201,6 +203,8 @@ errorbar(x,meanR2(1,:),eR2(1,:),'LineWidth',1);
 errorbar(x,meanR2(2,:),eR2(2,:),'-o','LineWidth',1);
 errorbar(x,meanR2(3,:),eR2(3,:),'-s','LineWidth',1);
 errorbar(x,meanR2(4,:),eR2(4,:),'-p','LineWidth',1);
+errorbar(x,meanR2(5,:),eR2(5,:),'-h','LineWidth',1);
+errorbar(x,meanR2(6,:),eR2(6,:),'-x','LineWidth',1);
 ylabel(ylab);
 xlabel(xlab);
 legend(l, 'Location','southeast');
@@ -227,11 +231,11 @@ errorbar(x,meanR2(1,:),eR2(1,:),'LineWidth',1);
 errorbar(x,meanR2(2,:),eR2(2,:),'-o','LineWidth',1);
 errorbar(x,meanR2(3,:),eR2(3,:),'-s','LineWidth',1);
 errorbar(x,meanR2(4,:),eR2(4,:),'-p','LineWidth',1);
-errorbar(x,meanR2(4,:),eR2(4,:),'-h','LineWidth',1);
-errorbar(x,meanR2(4,:),eR2(4,:),'-x','LineWidth',1);
+errorbar(x,meanR2(5,:),eR2(5,:),'-h','LineWidth',1);
+errorbar(x,meanR2(6,:),eR2(6,:),'-x','LineWidth',1);
 ylabel(ylab);
 xlabel(xlab);
-legend(l, 'Location','southeast');
+legend(l, 'Location','northwest');
 title(param);
 if ~exist(imageDirectory,'dir')
     mkdir(imageDirectory);
