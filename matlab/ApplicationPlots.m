@@ -95,6 +95,8 @@ shareConfTraffic = shareConfTraffic .* 100;
 
 throughputFTP = (result(:,9).*8) ./ (simtime*1000*1000);
 throughputBrowser = (result(:,10).*8) ./ (simtime*1000*1000);
+totalUploadFTP = (result(:,9)./ 8) ./1000000; % in MB. conversion correct?
+
 sessionavgtime = result2(:,3);
 %throughputRcvdBrowserAll = (result2(:,1) .* 8 ./ (result2(:,3) .* simtime)) ./ (1000*1000);
 %throughputSendBrowserAll = (result2(:,2) .* 8 ./ (result2(:,3) .* simtime)) ./ (1000*1000);
@@ -129,6 +131,7 @@ modResults = [
               lossRatiosProf'
               lossRatiosConf'
               %lossRatiosCamera'
+              totalUploadFTP'
               ]';
 
 % calculate confidence intervals
@@ -141,6 +144,9 @@ eR1 = [eR1; (e(2,:) ./ x) .*  (x ./ e(3,:))];
 
 meanR2 = mean(4:5,:);
 eR2 = e(4:5,:);
+
+meanR3 = mean(6,:);
+eR3 = e(6,:);
 resultArray = {'ProfessorsLaptop','packet loss ratio','%';
                 'ConferenceLaptop','packet loss ratio','%';
                 'RemoteRouter', 'drop ratio','%';
@@ -155,8 +161,26 @@ resultArray = {'ProfessorsLaptop','packet loss ratio','%';
                 'FTPLaptop','Throughput', 'Mbps';
                 'MainRouter', 'Throughput In', 'Mbps';
                 'MainRouter', 'Throughput Out', 'Mbps';
-                'MainRouter', 'Throughput Combined', 'Mbps'};
-            
+                'MainRouter', 'Throughput Combined', 'Mbps';},
+                %'FTPLaptop', 'Total Upload', 'bytes'};
+
+param = 'FTP Total Upload';
+xlab = '# of clients';
+ylab = 'MB';
+%combPlotConf(imageDirectory, title, x, meanR, eR, '# of clients', yunit, legend);
+figure('Name',param)
+hold on;
+%bar(x, mean,'facecolor',[.8 .8 .8]); ylabel(ylab); xlabel(xlab);
+errorbar(x,meanR3(1,:),eR3(1,:),'LineWidth',2);
+%plot(x,meanR1(3,:),'LineWidth',2);
+ylabel(ylab);
+xlabel(xlab);
+title(param);
+if ~exist(imageDirectory,'dir')
+    mkdir(imageDirectory);
+end
+print(strcat(imageDirectory,param), '-dpng');
+
 param = 'Application Throughputs';
 xlab = '# of clients';
 ylab = 'Mbps';
