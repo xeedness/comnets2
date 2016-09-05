@@ -22,8 +22,9 @@ fileEndNr = 134;
 %fileEndNr = 29;
 % the search array contains the modulename and parameter name to look at
 % the data is extracted for each row
-searchArray = {'ConferenceLaptop.udpApp[0]','endToEndDelay:stats', 'mean';
+searchArray = {
     'ProfessorsLaptop.udpApp[0]','endToEndDelay:stats', 'mean';
+    'ConferenceLaptop.udpApp[0]','endToEndDelay:stats', 'mean';
     'CCTVMonitoring.udpApp[0]','endToEndDelay:stats', 'mean'}
 [ result3 ] = extractDataHist( fileBase, fileStartNr, fileEndNr, searchArray );
 
@@ -45,7 +46,7 @@ modResults = [
 param = 'Application Packet Delays';
 xlab = '# of clients';
 ylab = 'ms';
-l = {'Conference Laptop', 'Professors Laptop'};
+l = {'Professors Laptop', 'Conference Laptop'};
 figure('Name',param)
 hold on;
 errorbar(x,mean(1,:),e(1,:),'LineWidth',1);
