@@ -51,8 +51,8 @@ ylab = 'ms';
 l = {'Professors Laptop','Conference Laptop', 'CCTV Monitor'};
 figure('Name',param)
 hold on;
-errorbar(x,mean(1,:),e(1,:),'LineWidth',1);
 errorbar(x,mean(2,:),e(2,:),'LineWidth',1);
+errorbar(x,mean(1,:),e(1,:),'LineWidth',1);
 errorbar(x,mean(3,:),e(3,:),'Color', '1.0 0.7 0.0','LineWidth',1);
 ylabel(ylab);
 xlabel(xlab);
